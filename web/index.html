@@ -833,7 +833,7 @@
 
       async function bootstrapCriticalStatus() {
         try {
-          var response = await fetch('/api/status?refresh_if_empty=1&download_images=0', { cache: 'no-store' });
+          var response = await fetch('./data/status.json')
           var payload = await response.json();
           if (!response.ok || !payload || !payload.latest) {
             throw new Error((payload && payload.error) || 'Durum verisi alınamadı.');
