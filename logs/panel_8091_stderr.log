@@ -1,0 +1,861 @@
+2026-03-28 12:52:07,776 | INFO | Web panel hazýr: http://127.0.0.1:8091
+2026-03-28 12:52:08,049 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:52:23,728 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:53:46,004 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:53:46,004 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:53:46,188 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:53:46,217 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:54:16,883 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:54:33,413 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:54:33,522 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:54:56,056 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:54:59,566 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:54:59,579 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 12:54:59,580 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 54039)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    self._send_json({"error": str(exc)}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    self.end_headers()
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 12:55:21,037 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:55:21,163 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:57:09,815 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:57:11,486 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:57:11,500 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 12:57:11,500 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 56560)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    self._send_json({"error": str(exc)}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    self.end_headers()
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 12:57:57,178 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:57:57,197 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:59:06,981 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 12:59:14,555 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:59:14,569 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 12:59:14,569 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 49341)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    self._send_json({"error": str(exc)}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    self.end_headers()
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 12:59:37,032 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 12:59:37,048 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 13:01:25,787 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 13:01:28,847 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:01:28,848 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:01:28,848 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 58596)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    self._send_json({"error": str(exc)}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    self.end_headers()
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:02:15,909 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:02:15,928 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 13:03:23,597 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 13:03:24,832 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:03:24,833 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:03:24,834 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 54188)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    self._send_json(self.app.solar_api_payload(force_refresh=force_refresh))
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    self.wfile.write(body)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    self._send_json({"error": str(exc)}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    self.end_headers()
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:04:21,953 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:04:21,963 | INFO | 127.0.0.1 - "GET /static/turkey-map-photo.jpg HTTP/1.1" 200 -
+2026-03-28 13:04:50,805 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:04:50,819 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:04:50,820 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 49560)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:06:30,060 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:06:30,061 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:06:30,062 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 64365)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:07:20,437 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:08:41,732 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:08:41,746 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:08:41,746 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 54441)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:09:20,047 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:09:40,817 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:12:33,834 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:12:33,835 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:12:33,835 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 57583)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:13:16,900 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:15:23,734 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:15:23,734 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:15:23,735 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 51332)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:16:17,142 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:18:32,690 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:18:32,700 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:18:32,700 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:18:32,701 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 56608)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:18:54,918 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:20:18,206 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:20:18,214 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:20:18,229 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 13:20:18,229 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:20:18,229 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:20:18,230 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 13:20:18,230 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+2026-03-28 13:20:18,231 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 60349)
+2026-03-28 13:20:18,232 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 63056)
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55200)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 13:24:57,614 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+Exception in thread Thread-497:
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\threading.py", line 917, in _bootstrap_inner
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\threading.py", line 865, in run
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 1238, in _readerthread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\codecs.py", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x87 in position 28: invalid start byte
+
+Exception in thread Thread-511:
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\threading.py", line 917, in _bootstrap_inner
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\threading.py", line 865, in run
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 1238, in _readerthread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\codecs.py", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8d in position 28: invalid start byte
+
+Exception in thread Thread-544:
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\threading.py", line 917, in _bootstrap_inner
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\threading.py", line 865, in run
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 1238, in _readerthread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\codecs.py", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa7 in position 30: invalid start byte
+
+2026-03-28 14:06:50,539 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 14:06:50,557 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 14:06:50,590 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 14:06:50,590 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 14:06:50,591 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 14:06:50,593 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 54707)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 14:14:57,143 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 14:51:59,796 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 15:00:38,531 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 15:06:36,097 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 15:14:03,427 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 15:14:03,441 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 15:14:03,441 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 58555)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    return
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    try:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    media_path = self.app.output_dir / "images" / filename
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def _safe_int(value: str, default: int) -> int:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 15:19:47,729 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+Exception in thread Thread-805:
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\threading.py", line 917, in _bootstrap_inner
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\threading.py", line 865, in run
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 1238, in _readerthread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\codecs.py", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8d in position 28: invalid start byte
+
+2026-03-28 16:35:00,170 | ERROR | Chart data fetch failed
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 243, in get_text
+    with urlopen(request, timeout=self.timeout_seconds) as response:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 222, in urlopen
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 525, in open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 548, in _open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 503, in _call_chain
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 1387, in unknown_open
+urllib.error.URLError: <urlopen error unknown url type: https>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1604, in safe_charts_payload
+    window_end = now + timedelta(hours=24)
+  File "space_weather_web_panel.py", line 1593, in charts_payload
+    status = "watch"
+  File "space_weather_web_panel.py", line 451, in fetch_noaa_chart_payload
+    bt_value = _safe_float(noaa.get("bt_nt"))
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 235, in get_json
+    return json.loads(self.get_text(url, params=params))
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 248, in get_text
+    return self._powershell_text(url, params=params)
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 198, in _powershell_text
+    encoding="utf-8",
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 474, in run
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 939, in communicate
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 1290, in _communicate
+IndexError: list index out of range
+2026-03-28 16:35:29,665 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 16:35:29,665 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    topic_url = self._topic_url(settings)
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    settings = load_notification_settings(self.settings_path)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 16:35:29,665 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 60534)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    topic_url = self._topic_url(settings)
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    settings = load_notification_settings(self.settings_path)
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    "Title": title,
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    def send_test(self, access: dict[str, Any] | None = None) -> dict[str, Any]:
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 17:16:00,558 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 18:07:21,268 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 18:07:21,282 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 18:07:21,283 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    priority: str = "3",
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    noaa = evaluation.get("noaa", {})
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 18:07:21,285 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55125)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    priority: str = "3",
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    noaa = evaluation.get("noaa", {})
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    ) -> None:
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    evaluation = payload.get("evaluation", {})
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 19:15:36,505 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 19:33:25,645 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 19:33:25,659 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    priority: str = "3",
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    noaa = evaluation.get("noaa", {})
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 19:33:25,660 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 61185)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    priority: str = "3",
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    noaa = evaluation.get("noaa", {})
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    ) -> None:
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    evaluation = payload.get("evaluation", {})
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 19:41:12,236 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 19:43:10,132 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 20:07:24,487 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 20:10:52,103 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 21:01:00,615 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 21:01:00,630 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    settings: dict[str, Any],
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    f"Invoke-WebRequest -UseBasicParsing -Method Post "
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 21:01:00,634 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 60316)
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    settings: dict[str, Any],
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    f"Invoke-WebRequest -UseBasicParsing -Method Post "
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 650, in process_request_thread
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 360, in finish_request
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 720, in __init__
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 426, in handle
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 414, in handle_one_request
+  File "space_weather_web_panel.py", line 1761, in do_GET
+    priority: str = "3",
+  File "space_weather_web_panel.py", line 1825, in _send_json
+    f"$headers = @{{{'; '.join(header_entries)}}}; "
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 528, in end_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\server.py", line 532, in flush_headers
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+----------------------------------------
+2026-03-28 21:19:18,972 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 22:27:48,220 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 200 -
+2026-03-28 22:27:48,221 | ERROR | Solar API failed
+Traceback (most recent call last):
+  File "space_weather_web_panel.py", line 1758, in do_GET
+    topic = str(settings.get("topic") or "").strip().strip("/")
+  File "space_weather_web_panel.py", line 1826, in _send_json
+    f"'User-Agent'='SpaceWeatherPanel/1.0'",
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\socketserver.py", line 799, in write
+ConnectionAbortedError: [WinError 10053] Kurulan bir baðlantý, ana makinenizdeki yazýlým tarafýndan iptal edildi
+2026-03-28 22:27:48,222 | INFO | 127.0.0.1 - "GET /api/solar HTTP/1.1" 500 -

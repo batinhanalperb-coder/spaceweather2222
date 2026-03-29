@@ -1,0 +1,372 @@
+2026-03-28 22:05:34,978 | INFO | Bildirim iþçisi baþladý. Döngü: 60 saniye
+2026-03-28 22:05:52,779 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:07:09,597 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:08:26,431 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:09:42,336 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:10:58,476 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:12:17,804 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:13:34,529 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:14:52,881 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:16:11,921 | WARNING | Pushbullet direct POST basarisiz, PowerShell fallback denenecek: <urlopen error unknown url type: https>
+2026-03-28 22:16:16,327 | INFO | Telefon bildirimi gönderildi.
+2026-03-28 22:17:31,567 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:18:49,163 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:20:06,003 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:21:22,226 | WARNING | Pushbullet direct POST basarisiz, PowerShell fallback denenecek: <urlopen error unknown url type: https>
+2026-03-28 22:21:26,570 | INFO | Telefon bildirimi gönderildi.
+2026-03-28 22:22:43,106 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:24:02,505 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:25:22,189 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:26:40,170 | WARNING | Pushbullet direct POST basarisiz, PowerShell fallback denenecek: <urlopen error unknown url type: https>
+2026-03-28 22:26:44,567 | INFO | Telefon bildirimi gönderildi.
+2026-03-28 22:28:02,207 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:29:20,524 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:30:36,462 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:31:52,448 | WARNING | Pushbullet direct POST basarisiz, PowerShell fallback denenecek: <urlopen error unknown url type: https>
+2026-03-28 22:31:56,807 | INFO | Telefon bildirimi gönderildi.
+2026-03-28 22:33:13,869 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:34:32,341 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:35:51,507 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:37:10,488 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:38:27,091 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:39:43,383 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:40:59,480 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:42:15,488 | WARNING | Pushbullet direct POST basarisiz, PowerShell fallback denenecek: <urlopen error unknown url type: https>
+2026-03-28 22:42:19,837 | INFO | Telefon bildirimi gönderildi.
+2026-03-28 22:43:35,537 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:44:53,034 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:46:09,542 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:47:27,567 | WARNING | Pushbullet direct POST basarisiz, PowerShell fallback denenecek: <urlopen error unknown url type: https>
+2026-03-28 22:47:31,974 | INFO | Telefon bildirimi gönderildi.
+2026-03-28 22:48:48,773 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:50:05,969 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:51:22,082 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:52:38,263 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:53:53,741 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:55:10,064 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:56:25,959 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:57:42,065 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 22:59:00,058 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:00:24,638 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:01:43,510 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:03:01,770 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:04:19,326 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:05:36,673 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:06:55,136 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:08:13,301 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:09:33,134 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:10:50,948 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:12:08,274 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:13:24,703 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:14:40,490 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:15:58,513 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:17:16,477 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:18:32,945 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:19:50,919 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:21:10,867 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:22:29,223 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:23:48,769 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:25:09,410 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:26:28,946 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:27:44,858 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:29:01,653 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:30:18,470 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:31:35,669 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:32:54,680 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:34:16,332 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:35:35,237 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:36:53,927 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:38:12,038 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:39:30,140 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:40:51,788 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:42:12,941 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:43:36,724 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:44:53,218 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:46:11,334 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:47:28,608 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:48:44,182 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:50:01,438 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:51:19,704 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:52:38,262 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:53:55,593 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:55:14,104 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:56:30,706 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:57:47,708 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-28 23:59:05,443 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:00:32,984 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:01:50,331 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:03:06,667 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:04:24,245 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:05:41,160 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:06:58,538 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:08:24,107 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:10:05,766 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:11:24,669 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:14:01,942 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:15:25,019 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:16:44,621 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:18:03,743 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:19:21,534 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:20:41,051 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:21:57,239 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:23:19,042 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:24:36,588 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:25:54,185 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:27:12,754 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:28:29,741 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:29:46,859 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:31:10,156 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:32:29,064 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:33:46,484 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:35:04,785 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:36:26,524 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:37:46,662 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:39:03,523 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:40:22,468 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:41:42,140 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:43:03,076 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:44:20,075 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:45:46,257 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:47:05,923 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:48:30,416 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:50:02,353 | ERROR | INTERMAGNET station fetch failed for BOU
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 243, in get_text
+    self._build_url(url, params=params),
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 222, in urlopen
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 525, in open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 548, in _open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 503, in _call_chain
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 1387, in unknown_open
+urllib.error.URLError: <urlopen error unknown url type: https>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 1273, in run_once
+    for station in self.config["intermagnet"].get("stations", []):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 664, in fetch_station_snapshot
+    end_time: datetime,
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 235, in get_json
+    )
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 248, in get_text
+    return response.read().decode(charset)
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 198, in _powershell_text
+    check=True,
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 487, in run
+subprocess.CalledProcessError: Command '['powershell', '-NoProfile', '-Command', "Invoke-WebRequest -UseBasicParsing -Headers @{'User-Agent'='space-weather-early-warning/1.0'} -Uri 'https://imag-data.bgs.ac.uk/GIN_V1/hapi/info?id=BOU%2Fbest-avail%2FPT1M%2Fxyzf' -OutFile 'C:\\Users\\PCX\\AppData\\Local\\Temp\\tmpvww9dq62.txt'"]' returned non-zero exit status 1.
+2026-03-29 00:50:16,575 | ERROR | INTERMAGNET station fetch failed for FRD
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 243, in get_text
+    self._build_url(url, params=params),
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 222, in urlopen
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 525, in open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 548, in _open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 503, in _call_chain
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 1387, in unknown_open
+urllib.error.URLError: <urlopen error unknown url type: https>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 1273, in run_once
+    for station in self.config["intermagnet"].get("stations", []):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 664, in fetch_station_snapshot
+    end_time: datetime,
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 235, in get_json
+    )
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 248, in get_text
+    return response.read().decode(charset)
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 198, in _powershell_text
+    check=True,
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 487, in run
+subprocess.CalledProcessError: Command '['powershell', '-NoProfile', '-Command', "Invoke-WebRequest -UseBasicParsing -Headers @{'User-Agent'='space-weather-early-warning/1.0'} -Uri 'https://imag-data.bgs.ac.uk/GIN_V1/hapi/info?id=FRD%2Fbest-avail%2FPT1M%2Fxyzf' -OutFile 'C:\\Users\\PCX\\AppData\\Local\\Temp\\tmppwt2z5uq.txt'"]' returned non-zero exit status 1.
+2026-03-29 00:50:21,722 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:51:59,074 | ERROR | INTERMAGNET station fetch failed for BOU
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 243, in get_text
+    self._build_url(url, params=params),
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 222, in urlopen
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 525, in open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 548, in _open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 503, in _call_chain
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 1387, in unknown_open
+urllib.error.URLError: <urlopen error unknown url type: https>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 1273, in run_once
+    for station in self.config["intermagnet"].get("stations", []):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 664, in fetch_station_snapshot
+    end_time: datetime,
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 235, in get_json
+    )
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 248, in get_text
+    return response.read().decode(charset)
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 198, in _powershell_text
+    check=True,
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 487, in run
+subprocess.CalledProcessError: Command '['powershell', '-NoProfile', '-Command', "Invoke-WebRequest -UseBasicParsing -Headers @{'User-Agent'='space-weather-early-warning/1.0'} -Uri 'https://imag-data.bgs.ac.uk/GIN_V1/hapi/info?id=BOU%2Fbest-avail%2FPT1M%2Fxyzf' -OutFile 'C:\\Users\\PCX\\AppData\\Local\\Temp\\tmpf57e6v3n.txt'"]' returned non-zero exit status 1.
+2026-03-29 00:52:06,966 | ERROR | INTERMAGNET station fetch failed for FRD
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 243, in get_text
+    self._build_url(url, params=params),
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 222, in urlopen
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 525, in open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 548, in _open
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 503, in _call_chain
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\request.py", line 1387, in unknown_open
+urllib.error.URLError: <urlopen error unknown url type: https>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 1273, in run_once
+    for station in self.config["intermagnet"].get("stations", []):
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 664, in fetch_station_snapshot
+    end_time: datetime,
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 235, in get_json
+    )
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 248, in get_text
+    return response.read().decode(charset)
+  File "C:\Users\PCX\Desktop\Yeni klasör (2)\space_weather_early_warning.py", line 198, in _powershell_text
+    check=True,
+  File "D:\obj\Windows-Release\37amd64_Release\msi_python\zip_amd64\subprocess.py", line 487, in run
+subprocess.CalledProcessError: Command '['powershell', '-NoProfile', '-Command', "Invoke-WebRequest -UseBasicParsing -Headers @{'User-Agent'='space-weather-early-warning/1.0'} -Uri 'https://imag-data.bgs.ac.uk/GIN_V1/hapi/info?id=FRD%2Fbest-avail%2FPT1M%2Fxyzf' -OutFile 'C:\\Users\\PCX\\AppData\\Local\\Temp\\tmpc55lpif4.txt'"]' returned non-zero exit status 1.
+2026-03-29 00:52:17,806 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:53:49,576 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:55:17,695 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:56:40,788 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:58:02,878 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 00:59:21,124 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:00:39,425 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:01:56,701 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:03:13,392 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:04:30,746 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:05:48,518 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:07:07,686 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:08:27,576 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:09:50,671 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:11:14,531 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:12:34,556 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:13:51,639 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:15:12,707 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:16:30,315 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:17:48,147 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:19:06,112 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:20:39,707 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:22:12,898 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:23:54,104 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:25:23,368 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:26:46,517 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:28:07,206 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:29:33,603 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:31:03,793 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:32:37,756 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:34:15,152 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:35:52,114 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:37:24,413 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:38:50,709 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:40:21,228 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:42:00,639 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:43:39,850 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:45:13,373 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:46:47,021 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:48:20,655 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:49:52,328 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:51:18,990 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:52:46,565 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:54:16,866 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:55:45,795 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:57:15,348 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 01:58:46,204 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:00:21,059 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:01:49,198 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:03:22,381 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:04:57,456 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:06:34,053 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:07:59,405 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:09:24,558 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:10:50,711 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:12:16,627 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:13:43,525 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:15:13,265 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:16:44,299 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:18:14,914 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:19:46,771 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:21:15,671 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:22:40,502 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:24:06,461 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:25:35,152 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:27:09,595 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:28:40,868 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:30:10,668 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:31:45,763 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:33:16,763 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:34:45,250 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:36:12,044 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:37:40,648 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:39:14,839 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:40:42,169 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:42:10,629 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:43:37,532 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:45:05,070 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:46:37,035 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:48:08,338 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:49:39,589 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:51:06,721 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:52:30,387 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:53:55,924 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:55:19,298 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:56:44,662 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:58:20,535 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 02:59:36,036 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:01:02,042 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:02:31,165 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:03:47,895 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:05:03,153 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:06:21,655 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:07:44,565 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:08:58,549 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:10:12,328 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:11:26,052 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:12:40,511 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:13:55,335 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:15:11,454 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:16:26,803 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:17:42,771 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:18:58,207 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:20:21,324 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:21:45,814 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:23:00,581 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:24:13,450 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:25:27,733 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:26:45,874 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:28:00,021 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:29:19,162 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:30:37,557 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:31:52,272 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:33:07,345 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:34:23,302 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:35:38,139 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:36:52,976 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:38:05,789 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:39:27,281 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:40:39,858 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:41:50,538 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:43:03,128 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:44:18,009 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:45:34,461 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:46:52,891 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:48:07,895 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:49:20,388 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:50:48,760 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:52:03,203 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:53:14,479 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:54:30,769 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:55:48,085 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:57:04,911 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:58:17,056 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 03:59:33,048 | INFO | Bildirim koþulu oluþmadý; durum izlendi.
+2026-03-29 04:01:00,307 | INFO | Bildirim koþulu oluþmadý; durum izlendi.

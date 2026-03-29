@@ -1,0 +1,58 @@
+{
+  "poll_interval_seconds": 60,
+  "output_dir": "output",
+  "download_images": true,
+  "sharing": {
+    "named_tunnel": {
+      "enabled": false,
+      "hostname": "panel.ornek-alanadiniz.com",
+      "tunnel_name": "uzay-havasi-paneli",
+      "tunnel_id": "",
+      "credentials_file": "cloudflared\\TUNNEL-UUID.json",
+      "protocol": "http2"
+    }
+  },
+  "alerting": {
+    "min_level": "warning",
+    "webhook_url": ""
+  },
+  "intermagnet": {
+    "stations": [
+      "BOU",
+      "FRD",
+      "OTT"
+    ],
+    "hours_back": 6
+  },
+  "kp_lstm": {
+    "enabled": true,
+    "lookback_points": 18,
+    "forecast_horizon_minutes": 180,
+    "training_history_limit": 2160,
+    "max_training_samples": 240,
+    "min_training_samples": 24,
+    "hidden_size": 6,
+    "epochs": 12,
+    "learning_rate": 0.015,
+    "gradient_clip": 1.5,
+    "random_seed": 42,
+    "archive_enabled": true,
+    "archive_training_days": 2190,
+    "archive_sample_ratio": 0.45
+  },
+  "thresholds": {
+    "kp_watch": 5.0,
+    "kp_warning": 7.0,
+    "solar_wind_speed_watch": 600.0,
+    "solar_wind_speed_warning": 750.0,
+    "bz_watch": -10.0,
+    "bz_warning": -18.0,
+    "density_watch": 20.0,
+    "density_warning": 35.0,
+    "ground_delta_watch_nt": 120.0,
+    "ground_delta_warning_nt": 250.0,
+    "risk_watch_percent": 35.0,
+    "risk_warning_percent": 60.0,
+    "risk_severe_percent": 85.0
+  }
+}

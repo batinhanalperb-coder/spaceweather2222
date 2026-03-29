@@ -1,0 +1,1731 @@
+﻿<!DOCTYPE html>
+<html lang="tr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Language" content="tr">
+  <title>Uzay Havası Erken Uyarı Paneli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/panel.css?v=20260329-turkey-impact-notes-1">
+</head>
+<body>
+  <div class="backdrop"></div>
+  <main class="shell">
+    <header class="hero">
+      <nav class="hero-command-rail" aria-label="Hızlı gezinme">
+        <a href="#impactPanel">Etki</a>
+        <a href="#kpQueryPanel">Kp Sorgu</a>
+        <a href="#imfBzQueryPanel">IMF Bz</a>
+        <a href="#solarWindQueryPanel">Güneş Hızı</a>
+        <a href="#notifyPanel">Bildirim</a>
+        <a href="#satellitePanel">Uydu</a>
+        <a href="#simulationPanel">Simülasyon</a>
+        <a href="#solarPanel">Solar</a>
+        <a href="#trendsPanel">Grafikler</a>
+        <a href="#nasaPanel">NASA</a>
+      </nav>
+      <div class="hero-copy">
+        <p class="eyebrow">NOAA + NASA + INTERMAGNET</p>
+        <h1>Uzay Havası Erken Uyarı Paneli</h1>
+        <p class="lede">Gerçek zamanlı güneş rüzgârı, jeomanyetik etkinlik ve NASA görüntülerini daha güçlü bir görsel akışla izleyin. Panel, veriyi otomatik toplar, yorumlar ve karar desteği üretir.</p>
+        <div class="hero-actions">
+          <a class="primary hero-action-link" href="#simulationPanel">Simülasyonu Aç</a>
+          <a class="secondary hero-action-link" href="#solarPanel">Solar Veriye Git</a>
+        </div>
+        <div class="hero-tags" aria-label="Öne çıkan özellikler">
+          <span class="hero-tag">Resmî NOAA akışları</span>
+          <span class="hero-tag">NASA canlı görsel akışı</span>
+          <span class="hero-tag">Dakikada bir otomatik yenileme</span>
+        </div>
+      </div>
+      <!--
+        <p class="controls-kicker">Canlı Durum</p>
+        <p class="controls-title">Sistem arka planda sürekli tarama yapıyor; pano veriyi topluyor, yorumluyor ve kendini düzenli olarak güncelliyor.</p>
+        <label class="toggle">
+          <input id="imagesToggle" type="checkbox" checked>
+          <span>NASA görsellerini yerel önbelleğe al</span>
+        </label>
+        <p id="statusLine" class="status-line">Panel hazırlanıyor. Veriler her 1 dakikada bir otomatik olarak yenilenir.</p>
+        <section class="access-panel" aria-label="Paylaşım bağlantıları">
+          <div class="access-head">
+            <p class="access-kicker">Paylaşım Bağlantısı</p>
+            <span id="accessMode" class="badge badge-neutral">Hazırlanıyor</span>
+          </div>
+          <a id="accessPublicUrl" class="access-link access-link-disabled" href="#" target="_blank" rel="noreferrer noopener">Sabit bağlantı hazırlanıyor</a>
+          <p id="accessHint" class="access-hint">Panel aynı Wi-Fi ağında sabit bir bağlantı ile paylaşılacak. Hazır olduğunda adres burada görünecek.</p>
+          <div class="access-meta">
+            <span>Yerel adres</span>
+            <a id="accessLocalUrl" href="#" target="_blank" rel="noreferrer noopener">Yerel adres yükleniyor</a>
+          </div>
+        </section>
+      -->
+    </header>
+
+    <section class="panel-grid notify-panel-grid">
+      <article id="notifyPanel" class="panel panel-wide panel-notify-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Telefon Uyarıları</h2>
+            <span class="panel-note">Her kullanıcı kendi Pushbullet hesabıyla kişisel bildirim alabilir</span>
+          </div>
+          <span id="notificationPanelStatus" class="badge badge-warning">Token bekleniyor</span>
+        </div>
+        <div id="notificationPanelContent" class="notify-panel-content">
+    <div class="notify-shell">
+      <div class="notify-main-stack">
+        <article class="notify-card notify-form-card">
+          <div class="panel-head-inline">
+            <h3>Kişisel telefon bildirimleri</h3>
+          </div>
+          <p class="satellite-panel-note">Her kullanıcı kendi Pushbullet access token'ını girerek bu tarayıcı için kişisel bildirim akışını açabilir.</p>
+          <div class="notify-chip-row">
+            <span class="notify-chip">Sağlayıcı: Pushbullet</span>
+            <span class="notify-chip">Kapsam: Bu tarayıcı</span>
+            <span class="notify-chip">Bildirim: Kullanıcı bazlı</span>
+          </div>
+          <div class="notify-form-grid">
+            <label class="notify-field">
+              <span>Pushbullet access token</span>
+              <input data-notify-pushbullet-token="" type="password" value="" placeholder="o.xxxxx">
+            </label>
+            <label class="notify-field">
+              <span>Eşik seviye</span>
+              <select data-notify-min-level="">
+                <option value="watch" selected="">İzleme ve üzeri</option>
+                <option value="warning">Uyarı ve üzeri</option>
+                <option value="severe">Şiddetli olaylar</option>
+              </select>
+            </label>
+            <label class="notify-field">
+              <span>Soğuma süresi (dk)</span>
+              <input data-notify-cooldown="" type="number" min="5" max="720" step="5" value="60">
+            </label>
+            <label class="notify-field notify-field-wide notify-toggle">
+              <input data-notify-enabled="" type="checkbox" checked="">
+              <div class="notify-toggle-copy">
+                <strong>Otomatik uyarılar aktif olsun</strong>
+                <span>Eşik aşıldığında veya veriler belirgin biçimde yükseldiğinde bu tarayıcı adına telefonuma bildirim gönder.</span>
+              </div>
+            </label>
+          </div>
+          <div class="notify-actions">
+            <button type="button" class="notify-button notify-button-primary" data-notify-save="">Ayarları Kaydet</button>
+            <button type="button" class="notify-button notify-button-secondary" data-notify-test="" disabled="">Test Gönder</button>
+            <button type="button" class="notify-button notify-button-secondary" data-notify-current="" disabled="">Güncel Durumu Gönder</button>
+          </div>
+          <div class="notify-link-box">
+            <span class="notify-link-label">Panel bağlantısı</span>
+            <p class="notify-summary-text">Pushbullet access token yalnızca bu tarayıcının yerel depolamasında saklanır; sunucuda kalıcı olarak tutulmaz.</p>
+            <a class="notify-link" href="http://127.0.0.1:8095" target="_blank" rel="noreferrer noopener">http://127.0.0.1:8095</a>
+          </div>
+        </article>
+
+        <article class="notify-card">
+          <div class="panel-head-inline">
+            <h3>Canlı tetik özeti</h3>
+          </div>
+          <div class="notify-metric-grid">
+            <article class="notify-metric-card">
+              <span>Anlık seviye</span>
+              <strong class="notify-health-ok">Normal</strong>
+              <p>Panelin şu anki genel uzay havası seviyesi</p>
+            </article>
+            <article class="notify-metric-card">
+              <span>Anlık risk</span>
+              <strong>%19</strong>
+              <p>Otomatik karar için kullanılan risk yüzdesi</p>
+            </article>
+            <article class="notify-metric-card">
+              <span>Anlık Kp</span>
+              <strong>3.33</strong>
+              <p>Son gözlenen veya son tahmini Kp girdisi</p>
+            </article>
+            <article class="notify-metric-card">
+              <span>Otomatik eşik</span>
+              <strong>İzleme</strong>
+              <p>Bildirimler bu seviye ve üzerinde devreye girer</p>
+            </article>
+          </div>
+          <p class="notify-summary-text">Otomatik akış bu tarayıcıda aktif. Sayfa açık kaldığı sürece sistem her 60 dakikada bir durum özeti gönderir; seviye, risk veya Kp hızla yükselirse beklemeden yeni uyarı yollar.</p>
+          <div class="notify-chip-row">
+            <span class="notify-chip">Sağlayıcı: Pushbullet</span>
+            <span class="notify-chip">Soğuma: 60 dk</span>
+            <span class="notify-chip">Token girilmedi</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="notify-side-stack">
+        <article class="notify-card notify-last-box" hidden="">
+          <div class="panel-head-inline">
+            <h3>Son gönderim kaydı</h3>
+          </div>
+          <div class="notify-last-meta">
+            <div class="notify-last-row">
+              <span>Zaman</span>
+              <strong>Henüz gönderim yok.</strong>
+            </div>
+            <div class="notify-last-row">
+              <span>Son seviye / risk / Kp</span>
+              <strong><span class="notify-health-ok">Normal</span> · - · -</strong>
+            </div>
+            <div class="notify-last-row">
+              <span>Son başlık</span>
+              <strong>Henüz gönderim yok.</strong>
+            </div>
+          </div>
+          
+          
+        </article>
+
+        <article class="notify-card notify-steps-card">
+          <div class="panel-head-inline">
+            <h3>Hızlı kurulum</h3>
+          </div>
+          <ol class="notify-steps-list">
+            <li>Pushbullet hesabında <strong>Access Token</strong> oluştur.</li>
+            <li>Bu paneldeki token alanına kendi hesabını yapıştır.</li>
+            <li>Otomatik bildirimleri aktif edip ayarları kaydet.</li>
+            <li><strong>Test Gönder</strong> ile hattı doğrula ve sayfayı açık bırakarak canlı takibe geç.</li>
+          </ol>
+          <p class="notify-summary-text">Bu arayüz artık her kullanıcı için kişisel Pushbullet hesabıyla çalışır.</p>
+          <p class="notify-summary-text">Pushbullet access token yalnızca bu tarayıcının yerel depolamasında saklanır; sunucuda kalıcı olarak tutulmaz.</p>
+          <p class="notify-summary-text">Not: Otomatik bildirim akışı, bu sayfa açık kaldığı sürece bulunduğun tarayıcıda çalışır.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+      </article>
+    </section>
+
+    <section class="summary-grid">
+      <article class="signal-card level-card signal-risk">
+        <p class="card-kicker">Güneş Fırtınası Riski</p>
+        <div class="level-row">
+          <span id="levelBadge" class="badge badge-normal">Normal</span>
+          <span id="scoreValue" class="score-value">%19</span>
+        </div>
+        <div class="risk-meter" aria-hidden="true">
+          <div id="riskBar" class="risk-bar" style="width: 19%;"></div>
+        </div>
+        <div class="risk-scale">
+          <span>%0</span>
+          <span>%35</span>
+          <span>%60</span>
+          <span>%85+</span>
+        </div>
+        <div class="summary-card-copy summary-card-copy-risk">
+          <p id="generatedAt" class="meta">Son güncelleme (UTC): 2026-03-29T01:46:43.179318+00:00</p>
+          <p class="summary-card-explainer">Bu skor Kp, IMF Bz, güneş rüzgârı, yoğunluk ve yer ölçümlerini birlikte yorumlar.</p>
+          <p id="riskNarrative" class="risk-narrative">Acil veri yükleyici etkin: canlı veriler gösteriliyor, gelişmiş paneller tarayıcıda ayrıca işlenecek.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-kp">
+        <p class="card-kicker">Kp (Gözlenen)</p>
+        <p id="kpValue" class="metric">3.33</p>
+        <div class="summary-card-copy">
+          <p class="meta"><span class="summary-unit-pill">NOAA</span> Resmî 3 saatlik ölçüm</p>
+          <p class="summary-card-explainer">Dünya manyetik alanındaki son 3 saatlik dalgalanmanın sayısal özetidir.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-kp-est">
+        <p class="card-kicker">Kp (Tahmini)</p>
+        <p id="kpEstimatedValue" class="metric">2.67</p>
+        <div class="summary-card-copy">
+          <p class="meta"><span class="summary-unit-pill">NOAA</span> Dakikalık kısa vade</p>
+          <p class="summary-card-explainer">Yakın saatlerde jeomanyetik yönün güçlenip güçlenmeyeceğini erken gösterir.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-kp-ai">
+        <p class="card-kicker">Kp (LSTM Öngörü)</p>
+        <p id="kpLstmValue" class="metric">1.49</p>
+        <div class="summary-card-copy">
+          <p id="kpLstmMeta" class="meta">Hedef: 29 Mar 2026 07:46 | Güven %78 | Canlı 0 + Arşiv 240 örnek</p>
+          <p class="summary-card-explainer">Model, geçmiş Kp örüntülerinden öğrenerek kısa vadeli eğilimi sayısal olarak tahmin eder.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-wind">
+        <p class="card-kicker">Güneş Rüzgârı</p>
+        <p id="speedValue" class="metric">350.3 km/s</p>
+        <div class="summary-card-copy">
+          <p class="meta"><span class="summary-unit-pill">km/s</span> Plazma akış hızı</p>
+          <p class="summary-card-explainer">Hız arttıkça Dünya manyetosferine binen dinamik basınç ve olası etki artabilir.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-bz">
+        <p class="card-kicker">IMF B<sub>z</sub></p>
+        <p id="bzValue" class="metric">-3.42 nT</p>
+        <div class="summary-card-copy">
+          <p class="meta"><span class="summary-unit-pill">nT</span> Kuzey-güney manyetik yön</p>
+          <p class="summary-card-explainer">Negatif Bz, güneş rüzgârı enerjisinin Dünya manyetosferine aktarımını kolaylaştırır.</p>
+        </div>
+      </article>
+
+      <article class="signal-card confidence-card signal-confidence">
+        <p class="card-kicker">Tahmin Güveni</p>
+        <p id="confidenceValue" class="metric">%98</p>
+        <div class="summary-card-copy">
+          <p id="confidenceMeta" class="meta">Acil veri yükleyici ile temel güven metriği gösteriliyor.</p>
+          <p class="summary-card-explainer">Kaynaklar birbiriyle ne kadar uyumluysa panelin bu yorumdan emin olma düzeyi de o kadar yükselir.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel-grid">
+      <article id="impactPanel" class="panel panel-wide panel-impact-panel">
+        <div class="panel-head">
+          <h2>Türkiye İçin Etki Tahmini</h2>
+          <span class="panel-note">Sektör bazlı hızlı okuma</span>
+        </div>
+        <div id="impactGrid" class="impact-grid">
+      <article class="impact-card">
+        <div class="impact-head">
+          <div>
+            <h3>GPS / GNSS</h3>
+            <p class="impact-subtitle">Türkiye’de hassas konumlama, drone ve RTK uygulamaları</p>
+          </div>
+          <div class="impact-side">
+            <span class="badge badge-normal">Normal</span>
+            <strong class="impact-score">17%</strong>
+          </div>
+        </div>
+        <p class="impact-summary">Standart navigasyon için belirgin bir bozulma beklenmez. Hassas ölçüm kullanan sistemlerde rutin izleme yeterlidir.</p>
+        <div class="impact-footer">
+          <span class="impact-footer-label">Etkileyen sinyaller</span>
+          <ul class="impact-driver-list"><li>Kp yükselişi</li></ul>
+        </div>
+      </article>
+    
+      <article class="impact-card">
+        <div class="impact-head">
+          <div>
+            <h3>HF Haberleşme</h3>
+            <p class="impact-subtitle">Uzun mesafe telsiz, deniz ve yedek haberleşme hatları</p>
+          </div>
+          <div class="impact-side">
+            <span class="badge badge-normal">Normal</span>
+            <strong class="impact-score">20%</strong>
+          </div>
+        </div>
+        <p class="impact-summary">HF haberleşmede dikkat gerektiren belirgin bir bozulma işareti yok. Frekans planı genel olarak stabil kalır.</p>
+        <div class="impact-footer">
+          <span class="impact-footer-label">Etkileyen sinyaller</span>
+          <ul class="impact-driver-list"><li>Kp yükselişi</li></ul>
+        </div>
+      </article>
+    
+      <article class="impact-card">
+        <div class="impact-head">
+          <div>
+            <h3>Uydu Operasyonları</h3>
+            <p class="impact-subtitle">Uydu bağlantı kalitesi, izleme ve operasyonel dikkat seviyesi</p>
+          </div>
+          <div class="impact-side">
+            <span class="badge badge-normal">Normal</span>
+            <strong class="impact-score">19%</strong>
+          </div>
+        </div>
+        <p class="impact-summary">Uydu operasyonları için belirgin baskı işareti görünmüyor. Sistemler rutin izleme seviyesinde kalabilir.</p>
+        <div class="impact-footer">
+          <span class="impact-footer-label">Etkileyen sinyaller</span>
+          <ul class="impact-driver-list"><li>Belirgin sÃ¼rÃ¼kleyici sinyal yok.</li></ul>
+        </div>
+      </article>
+    
+      <article class="impact-card">
+        <div class="impact-head">
+          <div>
+            <h3>Enerji Şebekesi</h3>
+            <p class="impact-subtitle">Türkiye enlemlerinde uzun iletim hatları ve işletme takibi</p>
+          </div>
+          <div class="impact-side">
+            <span class="badge badge-normal">Normal</span>
+            <strong class="impact-score">14%</strong>
+          </div>
+        </div>
+        <p class="impact-summary">Türkiye enlemlerinde şebekeye yansıyan etki çoğu durumda sınırlı kalır. Standart izleme yeterlidir.</p>
+        <div class="impact-footer">
+          <span class="impact-footer-label">Etkileyen sinyaller</span>
+          <ul class="impact-driver-list"><li>Belirgin sÃ¼rÃ¼kleyici sinyal yok.</li></ul>
+        </div>
+      </article>
+    </div>
+      </article>
+
+      <article id="kpQueryPanel" class="panel panel-wide panel-archive-query-panel panel-kp-query-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Tarih Bazlı Kp Sorgulama</h2>
+            <span class="panel-note">Seçilen tarih için günlük maksimum Kp değerini ve varsa ileri tarih öngörüsünü gösterir</span>
+          </div>
+          <span id="kpQueryAvailability" class="panel-note">1932-01-01 → 2026-03-27</span>
+        </div>
+        <div class="kp-query-shell">
+          <div class="kp-query-toolbar">
+            <label class="kp-query-field" for="kpQueryDateInput">
+              <span>Sorgulanacak tarih</span>
+              <div class="kp-query-input-row">
+                <input id="kpQueryDateInput" type="date" inputmode="none" autocomplete="off" step="1" min="1932-01-01">
+                <button id="kpQueryOpenPicker" class="kp-query-picker" type="button" aria-label="Takvimden tarih seç">Takvimden seç</button>
+              </div>
+            </label>
+            <button id="kpQuerySubmit" class="primary kp-query-submit" type="button">Kp sorgula</button>
+          </div>
+          <p id="kpQueryDateHint" class="kp-query-date-hint">Gerçek veri aralığı: <code>1932-01-01</code> → <code>2026-03-27</code>. Daha ileri tarihler için mevcut öngörü sonucu gösterilir.</p>
+          <div class="kp-query-examples" aria-label="Örnek Kp sorguları">
+            <button type="button" class="kp-query-chip" data-kp-query-date="1935-06-15">1935 örneği</button>
+            <button type="button" class="kp-query-chip" data-kp-query-date="1989-03-13">1989 fırtınası</button>
+            <button type="button" class="kp-query-chip" data-kp-query-date="2003-10-29">2003 Halloween</button>
+            <button type="button" class="kp-query-chip" data-kp-query-date="2027-03-28">Gelecek tarih</button>
+          </div>
+          <p id="kpQueryStatus" class="kp-query-status is-ready">Gerçek veri aralığının ötesinde olduğun için ileri tarih öngörüsü gösteriliyor.</p>
+          <div id="kpQueryResult" class="kp-query-result">
+    <div class="kp-query-summary-grid">
+      <article class="kp-query-hero-card">
+        <div class="kp-query-hero-top">
+          <div>
+            <span class="kp-query-kicker">Tahmin</span>
+            <h3>29 Mart 2026</h3>
+          </div>
+          <div class="kp-query-badges">
+            <span class="badge badge-watch">Tahmin</span>
+            <span class="badge badge-watch">Yükselmiş / aktif</span>
+          </div>
+        </div>
+        <p class="kp-query-main-value">4.12</p>
+        <p class="kp-query-main-meta">Günlük maksimum Kp • Tarih bazlı sorgu • İleri tarih sonucu</p>
+      </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Beklenen aralık</span>
+          <strong>2.66 – 5.75</strong>
+          <p>Modelin hesapladığı beklenti bandı</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Risk seviyesi</span>
+          <strong>Yükselmiş / aktif</strong>
+          <p>Günlük maksimum Kp değerine göre yorum</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Güven</span>
+          <strong>%80</strong>
+          <p>Mevcut tahmin sonucunun güven düzeyi</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Kaynak penceresi</span>
+          <strong>1932-01-01 → 2026-03-27</strong>
+          <p>GFZ günlük veri dosyası</p>
+        </article>
+      
+    </div>
+    
+    
+  </div>
+        </div>
+      </article>
+
+      <article id="solarWindQueryPanel" class="panel panel-wide panel-archive-query-panel panel-solar-wind-query-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Tarih Bazlı Güneş Rüzgârı Hızı Sorgulama</h2>
+            <span class="panel-note">Seçilen tarih için 5 günlük temsilî güneş rüzgârı hızını ve varsa ileri tarih öngörüsünü gösterir</span>
+          </div>
+          <span id="solarWindQueryAvailability" class="panel-note">1998-02-15 -&gt; 2023-09-07</span>
+        </div>
+        <div class="kp-query-shell">
+          <div class="kp-query-toolbar">
+            <label class="kp-query-field" for="solarWindQueryDateInput">
+              <span>Sorgulanacak tarih</span>
+              <div class="kp-query-input-row">
+                <input id="solarWindQueryDateInput" type="date" inputmode="none" autocomplete="off" step="1" min="1998-02-15">
+                <button id="solarWindQueryOpenPicker" class="kp-query-picker" type="button" aria-label="Takvimden tarih seç">Takvimden seç</button>
+              </div>
+            </label>
+            <button id="solarWindQuerySubmit" class="primary kp-query-submit" type="button">Hızı sorgula</button>
+          </div>
+          <p id="solarWindQueryDateHint" class="kp-query-date-hint">Gerçek veri aralığı: <code>1998-02-15</code> → <code>2023-09-07</code>. Daha ileri tarihler için mevcut öngörü sonucu gösterilir.</p>
+          <div class="kp-query-examples" aria-label="Örnek güneş rüzgârı sorguları">
+            <button type="button" class="kp-query-chip" data-solar-wind-query-date="1998-01-05">Erken arşiv</button>
+            <button type="button" class="kp-query-chip" data-solar-wind-query-date="2003-10-29">2003 örneği</button>
+            <button type="button" class="kp-query-chip" data-solar-wind-query-date="2023-09-07">Son gerçek blok</button>
+            <button type="button" class="kp-query-chip" data-solar-wind-query-date="2027-03-28">Gelecek tarih</button>
+          </div>
+          <p id="solarWindQueryStatus" class="kp-query-status is-ready">Gerçek veri aralığının ötesinde olduğun için ileri tarih öngörüsü gösteriliyor.</p>
+          <div id="solarWindQueryResult" class="kp-query-result">
+    <div class="kp-query-summary-grid">
+      <article class="kp-query-hero-card">
+        <div class="kp-query-hero-top">
+          <div>
+            <span class="kp-query-kicker">Tahmin</span>
+            <h3>29 Mart 2026</h3>
+          </div>
+          <div class="kp-query-badges">
+            <span class="badge badge-watch">Tahmin</span>
+            <span class="badge badge-watch">Yükselmiş</span>
+          </div>
+        </div>
+        <p class="kp-query-main-value">475.68 km/s</p>
+        <p class="kp-query-main-meta">5 günlük temsilî hız - Tarih bazlı sorgu - İleri tarih sonucu</p>
+      </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Beklenen aralık</span>
+          <strong>404.05 km/s - 544.31 km/s</strong>
+          <p>Modelin hesapladığı beklenti bandı</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Seviye</span>
+          <strong>Yükselmiş</strong>
+          <p>Yükselmiş güneş rüzgârı hızları görülebilir.</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Tahmin dayanağı</span>
+          <strong>Tarih bazlı öngörü modeli</strong>
+          <p>Seçilen tarih için hesaplanan ileri tarih öngörüsü bu veri kümesine dayanır</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Güven</span>
+          <strong>Orta (%68)</strong>
+          <p>Aralık genişliğine göre ölçeklenen tahmin güveni</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Kaynak penceresi</span>
+          <strong>1998-02-15 → 2023-09-07</strong>
+          <p>rtsw_plot_data_1998-01-01T00_00_00.txt</p>
+        </article>
+      
+    </div>
+    
+    
+    
+      <section class="kp-query-section">
+        <div class="panel-head-inline">
+          <h3>Yorum notları</h3>
+          <span class="badge badge-neutral">Model açıklaması</span>
+        </div>
+        <div class="kp-query-note-list">
+          <p class="kp-query-note">Dosya 5 günlük bloklar halinde olduğu için çıktı günlük/anlık değil; seçilen tarihin çevresindeki yaklaşık 5 günlük dönemin temsilî değeridir.</p>
+        </div>
+      </section>
+    
+  </div>
+        </div>
+      </article>
+
+      <article id="imfBzQueryPanel" class="panel panel-wide panel-archive-query-panel panel-imf-bz-query-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Tarih Bazlı IMF Bz Sorgulama</h2>
+            <span class="panel-note">Seçilen tarih için 5 günlük temsilî IMF Bz değerini ve varsa ileri tarih öngörüsünü gösterir</span>
+          </div>
+          <span id="imfBzQueryAvailability" class="panel-note">Arşiv hazır</span>
+        </div>
+        <div class="kp-query-shell">
+          <div class="kp-query-toolbar">
+            <label class="kp-query-field" for="imfBzQueryDateInput">
+              <span>Sorgulanacak tarih</span>
+              <div class="kp-query-input-row">
+                <input id="imfBzQueryDateInput" type="date" inputmode="none" autocomplete="off" step="1" min="1998-02-15">
+                <button id="imfBzQueryOpenPicker" class="kp-query-picker" type="button" aria-label="Takvimden tarih seç">Takvimden seç</button>
+              </div>
+            </label>
+            <button id="imfBzQuerySubmit" class="primary kp-query-submit" type="button">IMF Bz sorgula</button>
+          </div>
+          <p id="imfBzQueryDateHint" class="kp-query-date-hint">Takvimden bir gün seçebilir ya da alana <code>YYYY-AA-GG</code> biçiminde tarih yazabilirsin. Daha ileri tarihler için mevcut öngörü sonucu gösterilir.</p>
+          <div class="kp-query-examples" aria-label="Örnek IMF Bz sorguları">
+            <button type="button" class="kp-query-chip" data-imf-bz-query-date="1998-02-15">Erken arşiv</button>
+            <button type="button" class="kp-query-chip" data-imf-bz-query-date="2003-10-29">2003 örneği</button>
+            <button type="button" class="kp-query-chip" data-imf-bz-query-date="2023-09-07">Son gerçek blok</button>
+            <button type="button" class="kp-query-chip" data-imf-bz-query-date="2027-03-28">Gelecek tarih</button>
+          </div>
+          <p id="imfBzQueryStatus" class="kp-query-status is-ready">Gerçek veri aralığının ötesinde olduğun için ileri tarih öngörüsü gösteriliyor.</p>
+          <div id="imfBzQueryResult" class="kp-query-result">
+    <div class="kp-query-summary-grid">
+      <article class="kp-query-hero-card">
+        <div class="kp-query-hero-top">
+          <div>
+            <span class="kp-query-kicker">Tahmin</span>
+            <h3>29 Mart 2026</h3>
+          </div>
+          <div class="kp-query-badges">
+            <span class="badge badge-watch">Tahmin</span>
+            <span class="badge badge-normal">Nötr / Zayıf</span>
+          </div>
+        </div>
+        <p class="kp-query-main-value">+0.31 nT</p>
+        <p class="kp-query-main-meta">5 günlük temsilî IMF Bz - Tarih bazlı sorgu - İleri tarih sonucu</p>
+      </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Beklenen aralık</span>
+          <strong>-0.07 nT - +0.72 nT</strong>
+          <p>Modelin hesapladığı beklenti bandı</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Seviye</span>
+          <strong>Nötr / Zayıf</strong>
+          <p>IMF Bz nötr ya da zayıf bölgede; belirgin yönlü etki sınırlı olabilir.</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Tahmin dayanağı</span>
+          <strong>Tarih bazlı öngörü modeli</strong>
+          <p>Seçilen tarih için hesaplanan ileri tarih öngörüsü bu veri kümesine dayanır</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Güven</span>
+          <strong>Yüksek (%84)</strong>
+          <p>Aralık genişliğine göre ölçeklenen tahmin güveni</p>
+        </article>
+      
+        <article class="kp-query-mini-card">
+          <span>Arşiv durumu</span>
+          <strong>Arşiv hazır</strong>
+          <p>RTSW veri dosyası</p>
+        </article>
+      
+    </div>
+    
+    
+    
+      <section class="kp-query-section">
+        <div class="panel-head-inline">
+          <h3>Yorum notları</h3>
+          <span class="badge badge-neutral">Model açıklaması</span>
+        </div>
+        <div class="kp-query-note-list">
+          <p class="kp-query-note">Dosya 5 günlük bloklar halinde olduğu için çıktı günlük/anlık değil; seçilen tarihin çevresindeki yaklaşık 5 günlük dönemin temsilî değeridir.</p>
+        </div>
+      </section>
+    
+  </div>
+        </div>
+      </article>
+
+      <article id="satellitePanel" class="panel panel-wide panel-satellite-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Uydu Etki Paneli</h2>
+            <span class="panel-note">Yörünge bazlı operasyon riski</span>
+          </div>
+          <span id="satelliteUpdated" class="panel-note">Son gÃ¼ncelleme 29 Mar 2026 04:44</span>
+        </div>
+        <div id="satellitePanelContent" class="satellite-panel-content">
+    <div class="satellite-shell">
+      <div class="satellite-controls">
+        <div class="satellite-controls-group satellite-controls-group-presets">
+          <span class="satellite-controls-label">Hazır profil</span>
+          <div class="satellite-chip-row">
+    <button type="button" class="satellite-chip" data-satellite-preset="leo_420">
+      LEO 420
+    </button>
+  
+    <button type="button" class="satellite-chip is-active" data-satellite-preset="leo_550">
+      SSO 550
+    </button>
+  
+    <button type="button" class="satellite-chip" data-satellite-preset="meo_20200">
+      GNSS MEO
+    </button>
+  
+    <button type="button" class="satellite-chip" data-satellite-preset="geo_35786">
+      GEO 35786
+    </button>
+  </div>
+        </div>
+        <div class="satellite-controls-group">
+          <span class="satellite-controls-label">Uydu tipi</span>
+          <div class="satellite-chip-row">
+    <button type="button" class="satellite-chip is-active" data-satellite-orbit="LEO">
+      LEO
+    </button>
+  
+    <button type="button" class="satellite-chip" data-satellite-orbit="MEO">
+      MEO
+    </button>
+  
+    <button type="button" class="satellite-chip" data-satellite-orbit="GEO">
+      GEO
+    </button>
+  </div>
+        </div>
+        <div class="satellite-controls-group satellite-controls-group-slider">
+          <span class="satellite-controls-label">Irtifa</span>
+          <input type="range" min="200" max="36000" step="50" value="550" data-satellite-altitude="">
+          <div class="satellite-controls-meta">
+            <strong id="satelliteAltitudeLabel">550 km</strong>
+            <span>İrtifa katkısı: 10</span>
+          </div>
+        </div>
+        <div class="satellite-controls-group satellite-controls-group-override">
+          <label class="satellite-override-toggle">
+            <input type="checkbox" data-satellite-override="">
+            <span>Manuel override</span>
+          </label>
+          <div class="satellite-override-grid">
+            <label>
+              <span>Kp</span>
+              <input type="number" min="0" max="9" step="0.1" value="4" data-satellite-override-kp="">
+            </label>
+            <label>
+              <span>X-ray</span>
+              <select data-satellite-override-xray="">
+    <option value="Low" selected="">Düşük</option>
+  
+    <option value="Moderate">Orta</option>
+  
+    <option value="High">Yüksek</option>
+  </select>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="satellite-summary-shell">
+        <div>
+          <p class="satellite-panel-note">LEO profili için izleme sıklığını artırmak uygun. Jeomanyetik seviye ve X-ray durumu operasyon marjlarını zorlamaya başlayabilir. Yardimci ASRI motoru secili profil icin 34/100 duzeyinde muhendislik riski hesapliyor.</p>
+          <div class="satellite-source-list">
+            <span class="satellite-source-pill">Kp girdisi canlı NOAA gözleminden alındı.</span><span class="satellite-source-pill">X-ray girdisi canlı GOES akışından alındı.</span><span class="satellite-source-pill">GOES geçmiş serisi aktif.</span><span class="satellite-source-pill">Skor sadece Kp + GOES X-ray + yörünge/irtifa maruziyeti ile hesaplanır.</span><span class="satellite-source-pill">Skor canlı veriyle hesaplandı.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="satellite-metric-grid">
+        
+    <article class="satellite-metric-card">
+      <span>Anlık Kp</span>
+      <strong class="satellite-metric-accent">3.33</strong>
+      <p>Skorda kullanılan anlık Kp</p>
+    </article>
+  
+    <article class="satellite-metric-card">
+      <span>Kp +3s</span>
+      <strong class="satellite-metric-accent">1.49</strong>
+      <p>3 saatlik ufuk tahmini</p>
+    </article>
+  
+    <article class="satellite-metric-card">
+      <span>GOES X-ray</span>
+      <strong class="satellite-risk-low">C1.12</strong>
+      <p>Kullan1lan kategori Low | Ak1 1.12e-6 W/m²</p>
+    </article>
+  
+    <article class="satellite-metric-card">
+      <span>Fırtına düzeyi</span>
+      <strong class="satellite-risk-low">G0</strong>
+      <p>NOAA G seviyesi eslestirmesi</p>
+    </article>
+  
+    <article class="satellite-metric-card">
+      <span>Etki skoru</span>
+      <strong class="satellite-risk-low">23/100</strong>
+      <p>Weather 10/100 | Maruziyet 25/25</p>
+    </article>
+  
+    <article class="satellite-metric-card">
+      <span>Trend</span>
+      <strong class="satellite-metric-trend">Dengeli</strong>
+      <p>Son Kp serisinin yönü</p>
+    </article>
+  
+    <article class="satellite-metric-card">
+      <span>Son güncelleme</span>
+      <strong class="satellite-metric-muted">29 Mar 2026 04:44</strong>
+      <p>24 saatlik maksimum Kp: 3.33 | Veri Canlı</p>
+    </article>
+  
+      </div>
+
+      <div class="satellite-risk-grid">
+        
+    <article class="satellite-risk-card">
+      <span>LEO sürüklenme riski</span>
+      <strong class="satellite-risk-low">Düşük</strong>
+      <p>Uydu tipi, 550 km irtifa ve Kp birlikte yorumlandı.</p>
+    </article>
+  
+    <article class="satellite-risk-card">
+      <span>Elektronik / radyasyon riski</span>
+      <strong class="satellite-risk-low">Düşük</strong>
+      <p>Kp ve X-ray seviyesi ile yörünge hassasiyeti birlikte değerlendirildi.</p>
+    </article>
+  
+    <article class="satellite-risk-card">
+      <span>Haberleşme riski</span>
+      <strong class="satellite-risk-low">Düşük</strong>
+      <p>Haberleşme riski sadece jeomanyetik aktivite ve X-ray aktivitesiyle yorumlandı.</p>
+    </article>
+  
+    <article class="satellite-risk-card">
+      <span>Önerilen aksiyon</span>
+      <strong class="satellite-risk-moderate">Orta</strong>
+      <p>Ana skor Low, ASRI 34/100 (Orta). İzleme sıklığını artır ve telemetri marjlarını kontrol et.</p>
+    </article>
+  
+      </div>
+
+      <section class="satellite-asri-section">
+        <div class="panel-head panel-head-inline">
+          <h3>ASRI Muhendislik Motoru</h3>
+          <span class="panel-note">34/100 | Orta</span>
+        </div>
+        <p class="satellite-panel-note">Bu katman canli solar wind, temsili enlem bandi ve zirhlama varsayimi kullanir. Anlik TLE/konum akisi olmadigi icin fiziksel bir yorge simulasyonu degil; hizli operasyonel karar destegi icin yardimci muhendislik yorumudur.</p>
+        <div class="satellite-asri-grid">
+          
+    <article class="satellite-asri-profile is-selected">
+      <div class="satellite-asri-head">
+        <div>
+          <span>Secili profil</span>
+          <strong class="satellite-risk-moderate">34/100</strong>
+        </div>
+        <span class="satellite-asri-badge satellite-risk-moderate">Orta</span>
+      </div>
+      <p class="satellite-asri-note">Panelde secilen yoringe ve muhendislik varsayimlari</p>
+      <div class="satellite-asri-meta">
+        <span>LEO · 550 km</span>
+        <span>Orta enlem · 51.6°</span>
+        <span>Zirhlama 5/10</span>
+      </div>
+      <p class="satellite-asri-driver">Baskin surucu: enlem maruziyeti. Telemetri ve baglanti marjlarini daha sik izle.</p>
+    </article>
+  
+    <article class="satellite-asri-profile">
+      <div class="satellite-asri-head">
+        <div>
+          <span>Polar CubeSat referansı</span>
+          <strong class="satellite-risk-moderate">52/100</strong>
+        </div>
+        <span class="satellite-asri-badge satellite-risk-moderate">Orta</span>
+      </div>
+      <p class="satellite-asri-note">Küçük platform, yüksek kutup geçişi ve zayıf koruma</p>
+      <div class="satellite-asri-meta">
+        <span>LEO · 350 km</span>
+        <span>Kutup ge�i_li · 78.0°</span>
+        <span>Zirhlama 2/10</span>
+      </div>
+      <p class="satellite-asri-driver">Baskin surucu: enlem maruziyeti. Telemetri ve baglanti marjlarini daha sik izle.</p>
+    </article>
+  
+    <article class="satellite-asri-profile">
+      <div class="satellite-asri-head">
+        <div>
+          <span>ISS benzeri LEO</span>
+          <strong class="satellite-risk-moderate">36/100</strong>
+        </div>
+        <span class="satellite-asri-badge satellite-risk-moderate">Orta</span>
+      </div>
+      <p class="satellite-asri-note">Orta enlem geçişi ve güçlü yaşamsal koruma</p>
+      <div class="satellite-asri-meta">
+        <span>LEO · 420 km</span>
+        <span>Orta enlem · 51.6°</span>
+        <span>Zirhlama 7/10</span>
+      </div>
+      <p class="satellite-asri-driver">Baskin surucu: zirhlama seviyesi. Telemetri ve baglanti marjlarini daha sik izle.</p>
+    </article>
+  
+    <article class="satellite-asri-profile">
+      <div class="satellite-asri-head">
+        <div>
+          <span>GNSS MEO referansı</span>
+          <strong class="satellite-risk-moderate">33/100</strong>
+        </div>
+        <span class="satellite-asri-badge satellite-risk-moderate">Orta</span>
+      </div>
+      <p class="satellite-asri-note">Yüksek irtifa navigasyon takımı</p>
+      <div class="satellite-asri-meta">
+        <span>MEO · 20200 km</span>
+        <span>Y�ksek enlem · 55.0°</span>
+        <span>Zirhlama 6/10</span>
+      </div>
+      <p class="satellite-asri-driver">Baskin surucu: enlem maruziyeti. Telemetri ve baglanti marjlarini daha sik izle.</p>
+    </article>
+  
+    <article class="satellite-asri-profile">
+      <div class="satellite-asri-head">
+        <div>
+          <span>Türksat GEO benzeri</span>
+          <strong class="satellite-risk-low">16/100</strong>
+        </div>
+        <span class="satellite-asri-badge satellite-risk-low">Düşük</span>
+      </div>
+      <p class="satellite-asri-note">Ekvatoryal haberleşme yörüngesi ve güçlü koruma</p>
+      <div class="satellite-asri-meta">
+        <span>GEO · 35786 km</span>
+        <span>Ekvatoryal · 0.0°</span>
+        <span>Zirhlama 9/10</span>
+      </div>
+      <p class="satellite-asri-driver">Baskin surucu: zirhlama seviyesi. Nominal operasyon penceresi korunabilir.</p>
+    </article>
+  
+        </div>
+      </section>
+
+      <div class="satellite-chart-grid">
+        <section class="chart-card">
+          <div class="panel-head panel-head-inline">
+            <h3>Son Kp Serisi</h3>
+            <span class="panel-note">Operasyon girdisi</span>
+          </div>
+          <svg id="satelliteKpChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none" style="cursor: crosshair;">
+    <defs>
+      <linearGradient id="satelliteKpChartGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="rgba(114, 212, 255, 0.16)"></stop>
+        <stop offset="65%" stop-color="rgba(114, 212, 255, 0.05)"></stop>
+        <stop offset="100%" stop-color="rgba(114, 212, 255, 0.01)"></stop>
+      </linearGradient>
+      <filter id="satelliteKpChartGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="2" stdDeviation="1.8" flood-color="rgba(114, 212, 255, 0.14)"></feDropShadow>
+      </filter>
+    </defs>
+    <rect x="0" y="0" width="380" height="230" rx="16" fill="#ffffff"></rect>
+    
+      <line x1="56" y1="186" x2="362" y2="186" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="190" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">0.0</text>
+    
+      <line x1="56" y1="144.5" x2="362" y2="144.5" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="148.5" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">2.3</text>
+    
+      <line x1="56" y1="103" x2="362" y2="103" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="107" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">4.5</text>
+    
+      <line x1="56" y1="61.5" x2="362" y2="61.5" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="65.5" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">6.8</text>
+    
+      <line x1="56" y1="20" x2="362" y2="20" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="24" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">9.0</text>
+    
+    
+      <line x1="56" y1="20" x2="56" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="56" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">02 Mar</text>
+    
+      <line x1="132.5" y1="20" x2="132.5" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="132.5" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">08 Mar</text>
+    
+      <line x1="209" y1="20" x2="209" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="209" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">15 Mar</text>
+    
+      <line x1="285.5" y1="20" x2="285.5" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="285.5" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">22 Mar</text>
+    
+      <line x1="362" y1="20" x2="362" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="362" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">29 Mar</text>
+    
+    <line x1="56" y1="186" x2="362" y2="186" stroke="rgba(15,23,42,0.14)"></line>
+    <line x1="56" y1="20" x2="56" y2="186" stroke="rgba(15,23,42,0.14)"></line>
+    
+    <path d="M 56.57453703703704 186 L 56.57453703703704 155.19777777777776 C 60.35231481481482 153.1688888888889, 71.68564814814815 140.96481481481482, 79.2412037037037 143.02444444444444 C 86.79675925925926 145.08407407407407, 94.35231481481482 174.74888888888887, 101.90787037037038 167.55555555555554 C 109.46342592592593 160.36222222222221, 117.01898148148148 107.02703703703703, 124.57453703703703 99.86444444444444 C 132.13009259259258 92.70185185185186, 139.68564814814818 118.43185185185185, 147.24120370370372 124.58 C 154.79675925925926 130.72814814814814, 162.35231481481483 143.94666666666666, 169.90787037037038 136.75333333333333 C 177.46342592592592 129.56, 185.0189814814815 82.43444444444445, 192.57453703703703 81.42 C 200.13009259259258 80.40555555555555, 207.68564814814812 116.31074074074073, 215.2412037037037 130.66666666666666 C 222.79675925925926 145.0225925925926, 230.3523148148148 164.48148148148147, 237.90787037037038 167.55555555555554 C 245.46342592592595 170.62962962962962, 253.01898148148155 157.3188888888889, 260.5745370370371 149.11111111111111 C 268.13009259259263 140.90333333333334, 275.6856481481482 120.36851851851851, 283.2412037037037 118.30888888888889 C 290.79675925925926 116.24925925925926, 298.3523148148148 133.67925925925925, 305.90787037037035 136.75333333333333 C 313.4634259259259 139.8274074074074, 323.58341049382716 128.54555555555555, 328.57453703703703 136.75333333333333 C 333.5656635802469 144.9611111111111, 334.4300925925926 183.94037037037037, 335.85462962962964 186 C 337.2791666666667 188.05962962962963, 336.7059413580247 155.25925925925927, 337.12175925925925 149.11111111111111 C 337.5375771604938 142.96296296296296, 338.09375 149.11111111111111, 338.34953703703707 149.11111111111111 C 338.60532407407413 149.11111111111111, 338.5725308641975 149.11111111111111, 338.6564814814815 149.11111111111111 C 338.74043209876544 149.11111111111111, 338.0911265432099 148.09666666666666, 338.8532407407408 149.11111111111111 C 339.61535493827165 150.12555555555556, 342.2335648148148 154.1833333333333, 343.2291666666667 155.19777777777776 C 344.22476851851854 156.2122222222222, 344.5369598765432 155.19777777777776, 344.82685185185187 155.19777777777776 C 345.1167438271605 155.19777777777776, 344.8898148148148 155.19777777777776, 344.9685185185185 155.19777777777776 C 345.0472222222222 155.19777777777776, 345.2164351851852 155.19777777777776, 345.2990740740741 155.19777777777776 C 345.381712962963 155.19777777777776, 345.3804012345679 154.15259259259255, 345.46435185185186 155.19777777777776 C 345.5483024691358 156.24296296296296, 345.7188271604938 160.42370370370372, 345.80277777777775 161.4688888888889 C 345.8867283950617 162.51407407407407, 345.912962962963 161.4688888888889, 345.96805555555557 161.4688888888889 C 346.02314814814815 161.4688888888889, 346.0729938271605 161.4688888888889, 346.1333333333333 161.4688888888889 C 346.1936728395062 161.4688888888889, 346.2631944444445 161.4688888888889, 346.3300925925926 161.4688888888889 C 346.39699074074076 161.4688888888889, 346.4704475308642 161.4688888888889, 346.53472222222223 161.4688888888889 C 346.59899691358027 161.4688888888889, 346.65671296296296 161.4688888888889, 346.7157407407407 161.4688888888889 C 346.7747685185185 161.4688888888889, 345.79753086419754 163.52851851851852, 346.8888888888889 161.4688888888889 C 347.9802469135803 159.40925925925927, 352.160725308642 151.17074074074074, 353.2638888888889 149.11111111111111 C 354.36705246913584 147.0514814814815, 353.43572530864196 149.11111111111111, 353.50787037037037 149.11111111111111 C 353.5800154320988 149.11111111111111, 353.6337962962963 149.11111111111111, 353.69675925925924 149.11111111111111 C 353.7597222222222 149.11111111111111, 353.8266203703704 149.11111111111111, 353.88564814814816 149.11111111111111 C 353.94467592592594 149.11111111111111, 353.99714506172836 151.17074074074074, 354.0509259259259 149.11111111111111 C 354.1047067901235 147.0514814814815, 354.1453703703704 138.81296296296296, 354.20833333333337 136.75333333333333 C 354.2712962962963 134.6937037037037, 354.3604938271605 136.75333333333333, 354.4287037037037 136.75333333333333 C 354.49691358024694 136.75333333333333, 354.54938271604937 136.75333333333333, 354.6175925925926 136.75333333333333 C 354.6858024691358 136.75333333333333, 354.7710648148148 136.75333333333333, 354.83796296296293 136.75333333333333 C 354.9048611111111 136.75333333333333, 354.95733024691356 136.75333333333333, 355.0189814814815 136.75333333333333 C 355.0806327160494 136.75333333333333, 355.13966049382714 136.75333333333333, 355.20787037037036 136.75333333333333 C 355.2760802469136 136.75333333333333, 355.36134259259256 136.75333333333333, 355.4282407407407 136.75333333333333 C 355.49513888888885 136.75333333333333, 355.5528549382716 136.75333333333333, 355.60925925925926 136.75333333333333 C 355.6656635802469 136.75333333333333, 355.6997685185185 136.75333333333333, 355.76666666666665 136.75333333333333 C 355.8335648148148 136.75333333333333, 355.93587962962965 136.75333333333333, 356.01064814814816 136.75333333333333 C 356.0854166666667 136.75333333333333, 356.14050925925926 136.75333333333333, 356.21527777777777 136.75333333333333 C 356.2900462962963 136.75333333333333, 356.3923611111111 136.75333333333333, 356.4592592592592 136.75333333333333 C 356.52615740740737 136.75333333333333, 356.5641975308642 136.75333333333333, 356.6166666666667 136.75333333333333 C 356.66913580246916 136.75333333333333, 356.7124228395062 133.67925925925925, 356.77407407407406 136.75333333333333 C 356.83572530864194 139.8274074074074, 356.92492283950617 152.12370370370368, 356.9865740740741 155.19777777777776 C 357.04822530864203 158.27185185185184, 357.090200617284 155.19777777777776, 357.1439814814815 155.19777777777776 C 357.197762345679 155.19777777777776, 357.25416666666666 155.19777777777776, 357.30925925925925 155.19777777777776 C 357.36435185185184 155.19777777777776, 357.4194444444445 155.19777777777776, 357.47453703703707 155.19777777777776 C 357.52962962962965 155.19777777777776, 357.58341049382716 155.19777777777776, 357.6398148148148 155.19777777777776 C 357.6962191358025 155.19777777777776, 357.7565586419753 155.19777777777776, 357.81296296296296 155.19777777777776 C 357.8693672839506 155.19777777777776, 357.9231481481482 155.19777777777776, 357.9782407407408 155.19777777777776 C 358.03333333333336 155.19777777777776, 358.08711419753087 155.19777777777776, 358.14351851851853 155.19777777777776 C 358.1999228395062 155.19777777777776, 358.260262345679 155.19777777777776, 358.31666666666666 155.19777777777776 C 358.37307098765433 155.19777777777776, 358.42816358024686 155.19777777777776, 358.4819444444444 155.19777777777776 C 358.535725308642 155.19777777777776, 358.5842592592593 155.19777777777776, 358.63935185185187 155.19777777777776 C 358.69444444444446 155.19777777777776, 358.75609567901233 155.19777777777776, 358.8125 155.19777777777776 C 358.86890432098767 155.19777777777776, 358.92399691358025 155.19777777777776, 358.97777777777776 155.19777777777776 C 359.03155864197527 155.19777777777776, 359.0787808641975 155.19777777777776, 359.13518518518515 155.19777777777776 C 359.1915895061728 155.19777777777776, 359.25979938271604 155.19777777777776, 359.3162037037037 155.19777777777776 C 359.3726080246914 155.19777777777776, 359.4158950617284 155.19777777777776, 359.4736111111111 155.19777777777776 C 359.5313271604938 155.19777777777776, 359.60609567901236 154.15259259259255, 359.6625 155.19777777777776 C 359.7189043209877 156.24296296296296, 359.7621913580247 160.42370370370372, 359.81203703703704 161.4688888888889 C 359.86188271604937 162.51407407407407, 359.91172839506174 161.4688888888889, 359.96157407407406 161.4688888888889 C 360.0114197530864 161.4688888888889, 360.0599537037037 161.4688888888889, 360.1111111111111 161.4688888888889 C 360.1622685185185 161.4688888888889, 360.21998456790124 161.4688888888889, 360.26851851851853 161.4688888888889 C 360.31705246913583 161.4688888888889, 360.3537808641975 161.4688888888889, 360.4023148148148 161.4688888888889 C 360.4508487654321 161.4688888888889, 360.5085648148148 161.4688888888889, 360.5597222222222 161.4688888888889 C 360.6108796296296 161.4688888888889, 360.660725308642 161.4688888888889, 360.7092592592593 161.4688888888889 C 360.7577932098766 161.4688888888889, 360.80239197530864 161.4688888888889, 360.85092592592594 161.4688888888889 C 360.89945987654323 161.4688888888889, 360.9440586419753 167.61703703703705, 361.00046296296296 161.4688888888889 C 361.0568672839506 155.32074074074075, 361.12770061728395 130.72814814814814, 361.1893518518518 124.58 C 361.2510030864197 118.43185185185185, 361.30871913580245 124.58, 361.3703703703704 124.58 C 361.4320216049383 124.58, 361.4884259259259 124.58, 361.55925925925925 124.58 C 361.6300925925926 124.58, 361.7297839506173 124.58, 361.79537037037034 124.58 C 361.8609567901234 124.58, 361.9239197530864 124.58, 361.9527777777778 124.58 C 361.98163580246916 124.58, 361.9658950617284 124.58, 361.9685185185185 124.58 L 361.9685185185185 186 Z" fill="url(#satelliteKpChartGradient)"></path>
+    <path d="M 56.57453703703704 155.19777777777776 C 60.35231481481482 153.1688888888889, 71.68564814814815 140.96481481481482, 79.2412037037037 143.02444444444444 C 86.79675925925926 145.08407407407407, 94.35231481481482 174.74888888888887, 101.90787037037038 167.55555555555554 C 109.46342592592593 160.36222222222221, 117.01898148148148 107.02703703703703, 124.57453703703703 99.86444444444444 C 132.13009259259258 92.70185185185186, 139.68564814814818 118.43185185185185, 147.24120370370372 124.58 C 154.79675925925926 130.72814814814814, 162.35231481481483 143.94666666666666, 169.90787037037038 136.75333333333333 C 177.46342592592592 129.56, 185.0189814814815 82.43444444444445, 192.57453703703703 81.42 C 200.13009259259258 80.40555555555555, 207.68564814814812 116.31074074074073, 215.2412037037037 130.66666666666666 C 222.79675925925926 145.0225925925926, 230.3523148148148 164.48148148148147, 237.90787037037038 167.55555555555554 C 245.46342592592595 170.62962962962962, 253.01898148148155 157.3188888888889, 260.5745370370371 149.11111111111111 C 268.13009259259263 140.90333333333334, 275.6856481481482 120.36851851851851, 283.2412037037037 118.30888888888889 C 290.79675925925926 116.24925925925926, 298.3523148148148 133.67925925925925, 305.90787037037035 136.75333333333333 C 313.4634259259259 139.8274074074074, 323.58341049382716 128.54555555555555, 328.57453703703703 136.75333333333333 C 333.5656635802469 144.9611111111111, 334.4300925925926 183.94037037037037, 335.85462962962964 186 C 337.2791666666667 188.05962962962963, 336.7059413580247 155.25925925925927, 337.12175925925925 149.11111111111111 C 337.5375771604938 142.96296296296296, 338.09375 149.11111111111111, 338.34953703703707 149.11111111111111 C 338.60532407407413 149.11111111111111, 338.5725308641975 149.11111111111111, 338.6564814814815 149.11111111111111 C 338.74043209876544 149.11111111111111, 338.0911265432099 148.09666666666666, 338.8532407407408 149.11111111111111 C 339.61535493827165 150.12555555555556, 342.2335648148148 154.1833333333333, 343.2291666666667 155.19777777777776 C 344.22476851851854 156.2122222222222, 344.5369598765432 155.19777777777776, 344.82685185185187 155.19777777777776 C 345.1167438271605 155.19777777777776, 344.8898148148148 155.19777777777776, 344.9685185185185 155.19777777777776 C 345.0472222222222 155.19777777777776, 345.2164351851852 155.19777777777776, 345.2990740740741 155.19777777777776 C 345.381712962963 155.19777777777776, 345.3804012345679 154.15259259259255, 345.46435185185186 155.19777777777776 C 345.5483024691358 156.24296296296296, 345.7188271604938 160.42370370370372, 345.80277777777775 161.4688888888889 C 345.8867283950617 162.51407407407407, 345.912962962963 161.4688888888889, 345.96805555555557 161.4688888888889 C 346.02314814814815 161.4688888888889, 346.0729938271605 161.4688888888889, 346.1333333333333 161.4688888888889 C 346.1936728395062 161.4688888888889, 346.2631944444445 161.4688888888889, 346.3300925925926 161.4688888888889 C 346.39699074074076 161.4688888888889, 346.4704475308642 161.4688888888889, 346.53472222222223 161.4688888888889 C 346.59899691358027 161.4688888888889, 346.65671296296296 161.4688888888889, 346.7157407407407 161.4688888888889 C 346.7747685185185 161.4688888888889, 345.79753086419754 163.52851851851852, 346.8888888888889 161.4688888888889 C 347.9802469135803 159.40925925925927, 352.160725308642 151.17074074074074, 353.2638888888889 149.11111111111111 C 354.36705246913584 147.0514814814815, 353.43572530864196 149.11111111111111, 353.50787037037037 149.11111111111111 C 353.5800154320988 149.11111111111111, 353.6337962962963 149.11111111111111, 353.69675925925924 149.11111111111111 C 353.7597222222222 149.11111111111111, 353.8266203703704 149.11111111111111, 353.88564814814816 149.11111111111111 C 353.94467592592594 149.11111111111111, 353.99714506172836 151.17074074074074, 354.0509259259259 149.11111111111111 C 354.1047067901235 147.0514814814815, 354.1453703703704 138.81296296296296, 354.20833333333337 136.75333333333333 C 354.2712962962963 134.6937037037037, 354.3604938271605 136.75333333333333, 354.4287037037037 136.75333333333333 C 354.49691358024694 136.75333333333333, 354.54938271604937 136.75333333333333, 354.6175925925926 136.75333333333333 C 354.6858024691358 136.75333333333333, 354.7710648148148 136.75333333333333, 354.83796296296293 136.75333333333333 C 354.9048611111111 136.75333333333333, 354.95733024691356 136.75333333333333, 355.0189814814815 136.75333333333333 C 355.0806327160494 136.75333333333333, 355.13966049382714 136.75333333333333, 355.20787037037036 136.75333333333333 C 355.2760802469136 136.75333333333333, 355.36134259259256 136.75333333333333, 355.4282407407407 136.75333333333333 C 355.49513888888885 136.75333333333333, 355.5528549382716 136.75333333333333, 355.60925925925926 136.75333333333333 C 355.6656635802469 136.75333333333333, 355.6997685185185 136.75333333333333, 355.76666666666665 136.75333333333333 C 355.8335648148148 136.75333333333333, 355.93587962962965 136.75333333333333, 356.01064814814816 136.75333333333333 C 356.0854166666667 136.75333333333333, 356.14050925925926 136.75333333333333, 356.21527777777777 136.75333333333333 C 356.2900462962963 136.75333333333333, 356.3923611111111 136.75333333333333, 356.4592592592592 136.75333333333333 C 356.52615740740737 136.75333333333333, 356.5641975308642 136.75333333333333, 356.6166666666667 136.75333333333333 C 356.66913580246916 136.75333333333333, 356.7124228395062 133.67925925925925, 356.77407407407406 136.75333333333333 C 356.83572530864194 139.8274074074074, 356.92492283950617 152.12370370370368, 356.9865740740741 155.19777777777776 C 357.04822530864203 158.27185185185184, 357.090200617284 155.19777777777776, 357.1439814814815 155.19777777777776 C 357.197762345679 155.19777777777776, 357.25416666666666 155.19777777777776, 357.30925925925925 155.19777777777776 C 357.36435185185184 155.19777777777776, 357.4194444444445 155.19777777777776, 357.47453703703707 155.19777777777776 C 357.52962962962965 155.19777777777776, 357.58341049382716 155.19777777777776, 357.6398148148148 155.19777777777776 C 357.6962191358025 155.19777777777776, 357.7565586419753 155.19777777777776, 357.81296296296296 155.19777777777776 C 357.8693672839506 155.19777777777776, 357.9231481481482 155.19777777777776, 357.9782407407408 155.19777777777776 C 358.03333333333336 155.19777777777776, 358.08711419753087 155.19777777777776, 358.14351851851853 155.19777777777776 C 358.1999228395062 155.19777777777776, 358.260262345679 155.19777777777776, 358.31666666666666 155.19777777777776 C 358.37307098765433 155.19777777777776, 358.42816358024686 155.19777777777776, 358.4819444444444 155.19777777777776 C 358.535725308642 155.19777777777776, 358.5842592592593 155.19777777777776, 358.63935185185187 155.19777777777776 C 358.69444444444446 155.19777777777776, 358.75609567901233 155.19777777777776, 358.8125 155.19777777777776 C 358.86890432098767 155.19777777777776, 358.92399691358025 155.19777777777776, 358.97777777777776 155.19777777777776 C 359.03155864197527 155.19777777777776, 359.0787808641975 155.19777777777776, 359.13518518518515 155.19777777777776 C 359.1915895061728 155.19777777777776, 359.25979938271604 155.19777777777776, 359.3162037037037 155.19777777777776 C 359.3726080246914 155.19777777777776, 359.4158950617284 155.19777777777776, 359.4736111111111 155.19777777777776 C 359.5313271604938 155.19777777777776, 359.60609567901236 154.15259259259255, 359.6625 155.19777777777776 C 359.7189043209877 156.24296296296296, 359.7621913580247 160.42370370370372, 359.81203703703704 161.4688888888889 C 359.86188271604937 162.51407407407407, 359.91172839506174 161.4688888888889, 359.96157407407406 161.4688888888889 C 360.0114197530864 161.4688888888889, 360.0599537037037 161.4688888888889, 360.1111111111111 161.4688888888889 C 360.1622685185185 161.4688888888889, 360.21998456790124 161.4688888888889, 360.26851851851853 161.4688888888889 C 360.31705246913583 161.4688888888889, 360.3537808641975 161.4688888888889, 360.4023148148148 161.4688888888889 C 360.4508487654321 161.4688888888889, 360.5085648148148 161.4688888888889, 360.5597222222222 161.4688888888889 C 360.6108796296296 161.4688888888889, 360.660725308642 161.4688888888889, 360.7092592592593 161.4688888888889 C 360.7577932098766 161.4688888888889, 360.80239197530864 161.4688888888889, 360.85092592592594 161.4688888888889 C 360.89945987654323 161.4688888888889, 360.9440586419753 167.61703703703705, 361.00046296296296 161.4688888888889 C 361.0568672839506 155.32074074074075, 361.12770061728395 130.72814814814814, 361.1893518518518 124.58 C 361.2510030864197 118.43185185185185, 361.30871913580245 124.58, 361.3703703703704 124.58 C 361.4320216049383 124.58, 361.4884259259259 124.58, 361.55925925925925 124.58 C 361.6300925925926 124.58, 361.7297839506173 124.58, 361.79537037037034 124.58 C 361.8609567901234 124.58, 361.9239197530864 124.58, 361.9527777777778 124.58 C 361.98163580246916 124.58, 361.9658950617284 124.58, 361.9685185185185 124.58" fill="none" stroke="#72d4ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#satelliteKpChartGlow)"></path>
+       <path d="M 56.57453703703704 155.19777777777776 C 60.35231481481482 153.1688888888889, 71.68564814814815 140.96481481481482, 79.2412037037037 143.02444444444444 C 86.79675925925926 145.08407407407407, 94.35231481481482 174.74888888888887, 101.90787037037038 167.55555555555554 C 109.46342592592593 160.36222222222221, 117.01898148148148 107.02703703703703, 124.57453703703703 99.86444444444444 C 132.13009259259258 92.70185185185186, 139.68564814814818 118.43185185185185, 147.24120370370372 124.58 C 154.79675925925926 130.72814814814814, 162.35231481481483 143.94666666666666, 169.90787037037038 136.75333333333333 C 177.46342592592592 129.56, 185.0189814814815 82.43444444444445, 192.57453703703703 81.42 C 200.13009259259258 80.40555555555555, 207.68564814814812 116.31074074074073, 215.2412037037037 130.66666666666666 C 222.79675925925926 145.0225925925926, 230.3523148148148 164.48148148148147, 237.90787037037038 167.55555555555554 C 245.46342592592595 170.62962962962962, 253.01898148148155 157.3188888888889, 260.5745370370371 149.11111111111111 C 268.13009259259263 140.90333333333334, 275.6856481481482 120.36851851851851, 283.2412037037037 118.30888888888889 C 290.79675925925926 116.24925925925926, 298.3523148148148 133.67925925925925, 305.90787037037035 136.75333333333333 C 313.4634259259259 139.8274074074074, 323.58341049382716 128.54555555555555, 328.57453703703703 136.75333333333333 C 333.5656635802469 144.9611111111111, 334.4300925925926 183.94037037037037, 335.85462962962964 186 C 337.2791666666667 188.05962962962963, 336.7059413580247 155.25925925925927, 337.12175925925925 149.11111111111111 C 337.5375771604938 142.96296296296296, 338.09375 149.11111111111111, 338.34953703703707 149.11111111111111 C 338.60532407407413 149.11111111111111, 338.5725308641975 149.11111111111111, 338.6564814814815 149.11111111111111 C 338.74043209876544 149.11111111111111, 338.0911265432099 148.09666666666666, 338.8532407407408 149.11111111111111 C 339.61535493827165 150.12555555555556, 342.2335648148148 154.1833333333333, 343.2291666666667 155.19777777777776 C 344.22476851851854 156.2122222222222, 344.5369598765432 155.19777777777776, 344.82685185185187 155.19777777777776 C 345.1167438271605 155.19777777777776, 344.8898148148148 155.19777777777776, 344.9685185185185 155.19777777777776 C 345.0472222222222 155.19777777777776, 345.2164351851852 155.19777777777776, 345.2990740740741 155.19777777777776 C 345.381712962963 155.19777777777776, 345.3804012345679 154.15259259259255, 345.46435185185186 155.19777777777776 C 345.5483024691358 156.24296296296296, 345.7188271604938 160.42370370370372, 345.80277777777775 161.4688888888889 C 345.8867283950617 162.51407407407407, 345.912962962963 161.4688888888889, 345.96805555555557 161.4688888888889 C 346.02314814814815 161.4688888888889, 346.0729938271605 161.4688888888889, 346.1333333333333 161.4688888888889 C 346.1936728395062 161.4688888888889, 346.2631944444445 161.4688888888889, 346.3300925925926 161.4688888888889 C 346.39699074074076 161.4688888888889, 346.4704475308642 161.4688888888889, 346.53472222222223 161.4688888888889 C 346.59899691358027 161.4688888888889, 346.65671296296296 161.4688888888889, 346.7157407407407 161.4688888888889 C 346.7747685185185 161.4688888888889, 345.79753086419754 163.52851851851852, 346.8888888888889 161.4688888888889 C 347.9802469135803 159.40925925925927, 352.160725308642 151.17074074074074, 353.2638888888889 149.11111111111111 C 354.36705246913584 147.0514814814815, 353.43572530864196 149.11111111111111, 353.50787037037037 149.11111111111111 C 353.5800154320988 149.11111111111111, 353.6337962962963 149.11111111111111, 353.69675925925924 149.11111111111111 C 353.7597222222222 149.11111111111111, 353.8266203703704 149.11111111111111, 353.88564814814816 149.11111111111111 C 353.94467592592594 149.11111111111111, 353.99714506172836 151.17074074074074, 354.0509259259259 149.11111111111111 C 354.1047067901235 147.0514814814815, 354.1453703703704 138.81296296296296, 354.20833333333337 136.75333333333333 C 354.2712962962963 134.6937037037037, 354.3604938271605 136.75333333333333, 354.4287037037037 136.75333333333333 C 354.49691358024694 136.75333333333333, 354.54938271604937 136.75333333333333, 354.6175925925926 136.75333333333333 C 354.6858024691358 136.75333333333333, 354.7710648148148 136.75333333333333, 354.83796296296293 136.75333333333333 C 354.9048611111111 136.75333333333333, 354.95733024691356 136.75333333333333, 355.0189814814815 136.75333333333333 C 355.0806327160494 136.75333333333333, 355.13966049382714 136.75333333333333, 355.20787037037036 136.75333333333333 C 355.2760802469136 136.75333333333333, 355.36134259259256 136.75333333333333, 355.4282407407407 136.75333333333333 C 355.49513888888885 136.75333333333333, 355.5528549382716 136.75333333333333, 355.60925925925926 136.75333333333333 C 355.6656635802469 136.75333333333333, 355.6997685185185 136.75333333333333, 355.76666666666665 136.75333333333333 C 355.8335648148148 136.75333333333333, 355.93587962962965 136.75333333333333, 356.01064814814816 136.75333333333333 C 356.0854166666667 136.75333333333333, 356.14050925925926 136.75333333333333, 356.21527777777777 136.75333333333333 C 356.2900462962963 136.75333333333333, 356.3923611111111 136.75333333333333, 356.4592592592592 136.75333333333333 C 356.52615740740737 136.75333333333333, 356.5641975308642 136.75333333333333, 356.6166666666667 136.75333333333333 C 356.66913580246916 136.75333333333333, 356.7124228395062 133.67925925925925, 356.77407407407406 136.75333333333333 C 356.83572530864194 139.8274074074074, 356.92492283950617 152.12370370370368, 356.9865740740741 155.19777777777776 C 357.04822530864203 158.27185185185184, 357.090200617284 155.19777777777776, 357.1439814814815 155.19777777777776 C 357.197762345679 155.19777777777776, 357.25416666666666 155.19777777777776, 357.30925925925925 155.19777777777776 C 357.36435185185184 155.19777777777776, 357.4194444444445 155.19777777777776, 357.47453703703707 155.19777777777776 C 357.52962962962965 155.19777777777776, 357.58341049382716 155.19777777777776, 357.6398148148148 155.19777777777776 C 357.6962191358025 155.19777777777776, 357.7565586419753 155.19777777777776, 357.81296296296296 155.19777777777776 C 357.8693672839506 155.19777777777776, 357.9231481481482 155.19777777777776, 357.9782407407408 155.19777777777776 C 358.03333333333336 155.19777777777776, 358.08711419753087 155.19777777777776, 358.14351851851853 155.19777777777776 C 358.1999228395062 155.19777777777776, 358.260262345679 155.19777777777776, 358.31666666666666 155.19777777777776 C 358.37307098765433 155.19777777777776, 358.42816358024686 155.19777777777776, 358.4819444444444 155.19777777777776 C 358.535725308642 155.19777777777776, 358.5842592592593 155.19777777777776, 358.63935185185187 155.19777777777776 C 358.69444444444446 155.19777777777776, 358.75609567901233 155.19777777777776, 358.8125 155.19777777777776 C 358.86890432098767 155.19777777777776, 358.92399691358025 155.19777777777776, 358.97777777777776 155.19777777777776 C 359.03155864197527 155.19777777777776, 359.0787808641975 155.19777777777776, 359.13518518518515 155.19777777777776 C 359.1915895061728 155.19777777777776, 359.25979938271604 155.19777777777776, 359.3162037037037 155.19777777777776 C 359.3726080246914 155.19777777777776, 359.4158950617284 155.19777777777776, 359.4736111111111 155.19777777777776 C 359.5313271604938 155.19777777777776, 359.60609567901236 154.15259259259255, 359.6625 155.19777777777776 C 359.7189043209877 156.24296296296296, 359.7621913580247 160.42370370370372, 359.81203703703704 161.4688888888889 C 359.86188271604937 162.51407407407407, 359.91172839506174 161.4688888888889, 359.96157407407406 161.4688888888889 C 360.0114197530864 161.4688888888889, 360.0599537037037 161.4688888888889, 360.1111111111111 161.4688888888889 C 360.1622685185185 161.4688888888889, 360.21998456790124 161.4688888888889, 360.26851851851853 161.4688888888889 C 360.31705246913583 161.4688888888889, 360.3537808641975 161.4688888888889, 360.4023148148148 161.4688888888889 C 360.4508487654321 161.4688888888889, 360.5085648148148 161.4688888888889, 360.5597222222222 161.4688888888889 C 360.6108796296296 161.4688888888889, 360.660725308642 161.4688888888889, 360.7092592592593 161.4688888888889 C 360.7577932098766 161.4688888888889, 360.80239197530864 161.4688888888889, 360.85092592592594 161.4688888888889 C 360.89945987654323 161.4688888888889, 360.9440586419753 167.61703703703705, 361.00046296296296 161.4688888888889 C 361.0568672839506 155.32074074074075, 361.12770061728395 130.72814814814814, 361.1893518518518 124.58 C 361.2510030864197 118.43185185185185, 361.30871913580245 124.58, 361.3703703703704 124.58 C 361.4320216049383 124.58, 361.4884259259259 124.58, 361.55925925925925 124.58 C 361.6300925925926 124.58, 361.7297839506173 124.58, 361.79537037037034 124.58 C 361.8609567901234 124.58, 361.9239197530864 124.58, 361.9527777777778 124.58 C 361.98163580246916 124.58, 361.9658950617284 124.58, 361.9685185185185 124.58" fill="none" stroke="rgba(255,255,255,0.64)" stroke-width="0.58" stroke-linecap="round" stroke-linejoin="round"></path>
+    <circle cx="361.9685185185185" cy="124.58" r="4.2" fill="rgba(255,255,255,0.96)" stroke="#f8fbff" stroke-width="1.5"></circle>
+    <circle cx="361.9685185185185" cy="124.58" r="1.5999999999999999" fill="#f8fbff"></circle>
+    <text x="190" y="226" fill="rgba(31,26,23,0.58)" font-size="12" text-anchor="middle">Zaman (TSI)</text>
+    <text x="18" y="115" fill="rgba(31,26,23,0.58)" font-size="12" text-anchor="middle" transform="rotate(-90 18 115)">Kp</text>
+  <g data-chart-hover-layer="true"></g></svg>
+          <p id="satelliteKpMeta" class="chart-meta">Skorda kullanılan Kp 3.33 | Storm G0 | Trend Stable</p>
+        </section>
+
+        <section class="chart-card">
+          <div class="panel-head panel-head-inline">
+            <h3>X-ray Geçmişi</h3>
+            <span class="panel-note">GOES long band | log ölçek</span>
+          </div>
+          <svg id="satelliteXrayChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none" style="cursor: crosshair;">
+    <defs>
+      <linearGradient id="satelliteXrayChartGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="rgba(244, 185, 66, 0.16)"></stop>
+        <stop offset="65%" stop-color="rgba(244, 185, 66, 0.05)"></stop>
+        <stop offset="100%" stop-color="rgba(244, 185, 66, 0.01)"></stop>
+      </linearGradient>
+      <filter id="satelliteXrayChartGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="2" stdDeviation="1.8" flood-color="rgba(244, 185, 66, 0.14)"></feDropShadow>
+      </filter>
+    </defs>
+    <rect x="0" y="0" width="380" height="230" rx="16" fill="#ffffff"></rect>
+    
+      <line x1="56" y1="186" x2="362" y2="186" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="190" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">-7.13</text>
+    
+      <line x1="56" y1="144.5" x2="362" y2="144.5" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="148.5" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">-6.56</text>
+    
+      <line x1="56" y1="103.00000000000004" x2="362" y2="103.00000000000004" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="107.00000000000004" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">-6.00</text>
+    
+      <line x1="56" y1="61.49999999999998" x2="362" y2="61.49999999999998" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="65.49999999999997" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">-5.44</text>
+    
+      <line x1="56" y1="20" x2="362" y2="20" stroke="rgba(15,23,42,0.08)" stroke-width="1"></line>
+      <text x="48" y="24" fill="rgba(31,26,23,0.58)" font-size="11" text-anchor="end">-4.87</text>
+    
+    
+      <line x1="56" y1="20" x2="56" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="56" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">28 Mar</text>
+    
+      <line x1="132.5" y1="20" x2="132.5" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="132.5" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">28 Mar</text>
+    
+      <line x1="209" y1="20" x2="209" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="209" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">28 Mar</text>
+    
+      <line x1="285.5" y1="20" x2="285.5" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="285.5" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">28 Mar</text>
+    
+      <line x1="362" y1="20" x2="362" y2="186" stroke="rgba(15,23,42,0.06)" stroke-width="1"></line>
+      <text x="362" y="218" fill="rgba(31,26,23,0.56)" font-size="11" text-anchor="middle">29 Mar</text>
+    
+    <line x1="56" y1="186" x2="362" y2="186" stroke="rgba(15,23,42,0.14)"></line>
+    <line x1="56" y1="20" x2="56" y2="186" stroke="rgba(15,23,42,0.14)"></line>
+    
+    <path d="M 56 186 L 56 105.36492005668546 C 56.2839248434238 105.47083210256979, 57.135699373695196 105.70330595321195, 57.7035490605428 106.00039233199139 C 58.2713987473904 106.29747871077083, 58.839248434237994 106.91990023382411, 59.407098121085596 107.14743832936212 C 59.9749478079332 107.37497642490013, 60.54279749478079 107.56280257065025, 61.110647181628394 107.36562090521944 C 61.678496868475996 107.16843923978864, 62.24634655532359 107.55507817630127, 62.81419624217119 105.96434833677729 C 63.382045929018794 104.37361849725332, 63.94989561586639 100.2082689147789, 64.51774530271399 97.82124186807556 C 65.08559498956159 95.43421482137222, 65.6534446764092 93.31753354499412, 66.22129436325679 91.64218605655726 C 66.78914405010438 89.96683856812041, 67.35699373695199 89.71170174234648, 67.92484342379959 87.76915693745441 C 68.49269311064718 85.82661213256235, 69.06054279749479 82.76095150264638, 69.62839248434238 79.98691722720487 C 70.19624217118998 77.21288295176336, 70.76409185803759 74.47566127901547, 71.33194154488518 71.12495128480536 C 71.89979123173278 67.77424129059526, 72.46764091858039 63.2172162098797, 73.03549060542798 59.88265726194421 C 73.60334029227558 56.54809831400872, 74.17118997912318 53.92572514797183, 74.73903966597078 51.117597597192415 C 75.30688935281837 48.309470046413, 75.87473903966597 45.32910553412203, 76.44258872651356 43.033891957267684 C 77.01043841336116 40.73867838041334, 77.57828810020877 39.07969396457867, 78.14613778705638 37.34631613606636 C 78.71398747390398 35.61293830755406, 79.28183716075158 34.14201666870365, 79.84968684759917 32.63362498619389 C 80.41753653444677 31.125233303684123, 80.98538622129436 29.719539335270735, 81.55323590814196 28.295966041007784 C 82.12108559498955 26.872392746744833, 82.68893528183717 25.214538586904176, 83.25678496868477 24.092185220616184 C 83.82463465553236 22.96983185432819, 84.39248434237996 22.20501793035635, 84.96033402922755 21.56184584327984 C 85.52818371607515 20.91867375620333, 86.09603340292276 20.49346033870375, 86.66388308977035 20.23315269815711 C 87.23173277661795 19.97284505761047, 87.79958246346555 19.926230620165917, 88.36743215031315 20 C 88.93528183716074 20.073769379834083, 89.50313152400835 20.269521510635418, 90.07098121085595 20.675768977161603 C 90.63883089770354 21.082016443687788, 91.20668058455115 21.780625950858592, 91.77453027139875 22.43748479915712 C 92.34237995824634 23.094343647455645, 92.91022964509395 23.88724205665592, 93.47807933194154 24.616922066952764 C 94.04592901878914 25.346602077249607, 94.61377870563675 26.02513721938064, 95.18162839248434 26.81556486093818 C 95.74947807933194 27.605992502495724, 96.31732776617953 28.51356877301359, 96.88517745302713 29.35948791629802 C 97.45302713987472 30.20540705958245, 98.02087682672234 31.077208686797384, 98.58872651356994 31.89107972064476 C 99.15657620041753 32.70495075449214, 99.72442588726514 33.45372907051623, 100.29227557411274 34.24271411938227 C 100.86012526096033 35.03169916824831, 101.42797494780793 35.81812206210863, 101.99582463465552 36.62499001384098 C 102.56367432150311 37.43185796557333, 103.13152400835074 38.291124975586044, 103.69937369519833 39.08392182977637 C 104.26722338204593 39.8767186839667, 104.83507306889354 40.63972970868687, 105.40292275574113 41.38177113898294 C 105.97077244258872 42.12381256927901, 106.53862212943632 42.85446282126867, 107.10647181628391 43.5361704115528 C 107.67432150313151 44.21787800183694, 108.2421711899791 44.85453193221997, 108.81002087682671 45.47201668068773 C 109.37787056367432 46.08950142915549, 109.94572025052193 46.64490816195339, 110.51356993736952 47.24107890235935 C 111.08141962421712 47.83724964276531, 111.64926931106471 48.492455284632214, 112.21711899791231 49.04904112312349 C 112.7849686847599 49.60562696161476, 113.35281837160751 50.10032946535841, 113.9206680584551 50.580593933306965 C 114.4885177453027 51.060858401255516, 115.05636743215031 51.47164045424876, 115.6242171189979 51.93062793081478 C 116.1920668058455 52.3896154073808, 116.75991649269311 52.87635667035947, 117.3277661795407 53.33451879270311 C 117.8956158663883 53.792680915046745, 118.4634655532359 54.24926464299412, 119.0313152400835 54.67960066487661 C 119.5991649269311 55.1099366867591, 120.16701461377869 55.53799136030668, 120.7348643006263 55.916534923998036 C 121.30271398747391 56.295078487689395, 121.87056367432152 56.57733315592509, 122.43841336116911 56.95086204702477 C 123.0062630480167 57.32439093812445, 123.5741127348643 57.75999853581256, 124.1419624217119 58.1577082705961 C 124.70981210855949 58.55541800537965, 125.2776617954071 59.018673273071414, 125.8455114822547 59.33712045572607 C 126.41336116910229 59.65556763838073, 126.9812108559499 59.86612224236015, 127.54906054279749 60.068391366524075 C 128.1169102296451 60.270660490688, 128.68475991649268 60.54180005948551, 129.2526096033403 60.55073520070965 C 129.8204592901879 60.559670341933796, 130.38830897703548 60.35773402005492, 130.9561586638831 60.12200221386894 C 131.5240083507307 59.88627040768296, 132.09185803757828 59.43925287117431, 132.65970772442589 59.136344363593786 C 133.2275574112735 58.83343585601326, 133.79540709812107 58.34772491273308, 134.36325678496868 58.3045511683858 C 134.9311064718163 58.26137742403852, 135.49895615866387 58.516599430243865, 136.06680584551148 58.87730189751013 C 136.6346555323591 59.238004364776394, 137.20250521920664 59.974786124269265, 137.77035490605425 60.46876597198338 C 138.33820459290186 60.962745819697496, 138.90605427974947 61.35740831476473, 139.47390396659708 61.84118098379483 C 140.0417536534447 62.324953652824924, 140.60960334029227 62.87984340687925, 141.17745302713988 63.37140198616395 C 141.74530271398748 63.86296056544865, 140.11273486430062 44.35243279053036, 142.88100208768267 64.79053245950303 C 145.64926931106473 85.2286321284757, 155.01878914405012 184.18884622237388, 157.78705636743217 186 C 160.55532359081423 187.81115377762612, 158.92275574112736 93.92518346665825, 159.49060542797497 75.65745512525966 C 160.05845511482258 57.389726783861065, 160.6263048016702 76.13454736019034, 161.19415448851777 76.39362995160845 C 161.76200417536535 76.65271254302655, 162.32985386221293 77.14328388816482, 162.89770354906054 77.21195067376831 C 163.46555323590815 77.28061745937181, 164.03340292275573 76.83444662291569, 164.60125260960334 76.80563066522942 C 165.16910229645094 76.77681470754314, 165.73695198329852 76.96398667348993, 166.30480167014613 77.03905492765062 C 166.87265135699374 77.11412318181132, 167.44050104384132 76.92543666833666, 168.00835073068893 77.2560401901936 C 168.57620041753654 77.58664371205055, 169.14405010438415 78.81337050789264, 169.71189979123176 79.02267605879226 C 170.27974947807937 79.23198160969187, 170.84759916492698 78.65462311293065, 171.41544885177456 78.51187349559132 C 171.98329853862214 78.36912387825198, 172.55114822546972 77.97935279170629, 173.11899791231733 78.16617835475625 C 173.68684759916493 78.35300391780622, 174.25469728601252 79.2430827232564, 174.82254697286012 79.6328268738911 C 175.39039665970773 80.0225710245258, 175.9582463465553 80.9841914262719, 176.52609603340292 80.50464325856441 C 177.09394572025053 80.02509509085692, 177.6617954070981 80.00579828530515, 178.22964509394572 76.75553786764618 C 178.79749478079333 73.50527744998722, 179.3653444676409 64.12432962902598, 179.93319415448852 61.00308075261063 C 180.50104384133613 57.88183187619528, 181.06889352818368 57.99151850434887, 181.6367432150313 58.02804460915407 C 182.2045929018789 58.06457071395928, 182.7724425887265 60.07943911396212, 183.34029227557411 61.22223738144186 C 183.90814196242172 62.3650356489216, 184.4759916492693 63.71692442460535, 185.0438413361169 64.88483421403251 C 185.61169102296452 66.05274400345967, 186.1795407098121 67.13089361677866, 186.7473903966597 68.2296961180048 C 187.31524008350732 69.32849861923093, 187.8830897703549 70.4851313584447, 188.4509394572025 71.47764922138933 C 189.01878914405012 72.47016708433395, 189.5866388308977 73.49973756462549, 190.1544885177453 74.18480329567257 C 190.72233820459292 74.86986902671964, 191.2901878914405 75.10073898039256, 191.8580375782881 75.58804360767182 C 192.4258872651357 76.07534823495108, 192.9937369519833 76.6925385931616, 193.5615866388309 77.10863105934813 C 194.1294363256785 77.52472352553465, 194.6972860125261 77.67976748420219, 195.2651356993737 78.084598404791 C 195.8329853862213 78.4894293253798, 196.4008350730689 79.13780975571827, 196.9686847599165 79.53761658288101 C 197.5365344467641 79.93742341004376, 198.1043841336117 80.09770872120612, 198.6722338204593 80.48343936776746 C 199.2400835073069 80.8691700143288, 199.8079331941545 81.46931156202346, 200.3757828810021 81.8520004622491 C 200.9436325678497 82.23468936247473, 201.51148225469728 82.58655377457961, 202.0793319415449 82.77957276912124 C 202.6471816283925 82.97259176366288, 203.21503131524008 83.01527911933961, 203.7828810020877 83.01011442949888 C 204.3507306889353 83.00494973965816, 204.91858037578288 83.38054619126706, 205.48643006263046 82.74858463007689 C 206.05427974947804 82.11662306888672, 206.62212943632565 80.13839516290577, 207.18997912317326 79.2183450623579 C 207.75782881002087 78.29829496181003, 208.32567849686848 76.81568083868714, 208.89352818371609 77.22828402678967 C 209.4613778705637 77.64088721489219, 210.02922755741128 80.39618591391039, 210.59707724425886 81.69396419097305 C 211.16492693110644 82.99174246803571, 211.73277661795404 84.09885989144021, 212.30062630480165 85.01495368916561 C 212.86847599164926 85.931047486891, 213.43632567849687 86.61166496720158, 214.00417536534448 87.19052697732539 C 214.5720250521921 87.7693889874492, 215.13987473903967 88.08474319745409, 215.70772442588728 88.48812574990852 C 216.2755741127349 88.89150830236295, 216.84342379958247 89.30799773033793, 217.41127348643008 89.61082229205199 C 217.97912317327769 89.91364685376605, 218.54697286012527 90.22083186033012, 219.11482254697287 90.30507312019286 C 219.68267223382048 90.3893143800556, 220.25052192066806 90.4561000580531, 220.81837160751567 90.11626985122841 C 221.38622129436328 89.77643964440372, 221.95407098121086 88.7848231779913, 222.52192066805847 88.26609187924471 C 223.08977035490608 87.74736058049812, 223.65762004175366 87.80866232380707, 224.22546972860127 87.00388205874889 C 224.79331941544888 86.1991017936907, 225.36116910229646 84.6612347321219, 225.92901878914404 83.43741028889562 C 226.49686847599162 82.21358584566934, 227.06471816283923 80.82327468175737, 227.63256784968684 79.66093539939124 C 228.20041753653445 78.4985961170251, 228.76826722338203 77.22853225248366, 229.33611691022963 76.4633745946988 C 229.90396659707724 75.69821693691395, 230.47181628392482 75.32812954630322, 231.03966597077243 75.06998945268207 C 231.60751565762004 74.81184935906091, 232.17536534446762 75.06054265795568, 232.74321503131523 74.91453403297189 C 233.31106471816284 74.7685254079881, 233.87891440501042 74.03383291923657, 234.44676409185803 74.1939377027793 C 235.01461377870564 74.35404248632202, 235.58246346555322 75.31429280761343, 236.15031315240083 75.87516273422825 C 236.71816283924844 76.43603266084308, 237.28601252609602 76.83726438356598, 237.85386221294362 77.55915726246826 C 238.42171189979123 78.28105014137054, 238.98956158663884 79.49746078009919, 239.55741127348645 80.20652000764194 C 240.12526096033406 80.9155792351847, 240.69311064718164 81.36140948534161, 241.26096033402925 81.8135126277248 C 241.82881002087686 82.265615770108, 242.39665970772444 82.29321384352897, 242.96450939457205 82.91913886194114 C 243.53235908141966 83.5450638803533, 244.10020876826724 84.86512364250734, 244.66805845511485 85.56906273819776 C 245.23590814196245 86.27300183388817, 245.80375782881003 86.5940670335046, 246.37160751565762 87.14277343608362 C 246.9394572025052 87.69147983866263, 247.5073068893528 88.83363247133231, 248.0751565762004 88.86130115367187 C 248.64300626304802 88.88896983601144, 249.2108559498956 87.67645995832113, 249.7787056367432 87.30878553012101 C 250.34655532359082 86.9411111019209, 250.9144050104384 86.80958657125738, 251.482254697286 86.65525458447114 C 252.05010438413362 86.50092259768489, 252.6179540709812 86.36770549268326, 253.1858037578288 86.38279360940354 C 253.75365344467642 86.39788172612381, 254.321503131524 86.43823094858689, 254.8893528183716 86.74578328479278 C 255.45720250521921 87.05333562099867, 256.0250521920668 87.76774835207243, 256.5929018789144 88.2281076266389 C 257.160751565762 88.68846690120537, 257.7286012526096 89.19165812381125, 258.2964509394572 89.50793893219164 C 258.8643006263048 89.82421974057202, 259.4321503131524 89.63365463778031, 260 90.12579247692122 C 260.5678496868476 90.61793031606213, 261.1356993736952 92.1095963053925, 261.7035490605428 92.4607659670371 C 262.2713987473904 92.81193562868171, 262.839248434238 92.06133575043089, 263.4070981210856 92.23281044678883 C 263.9749478079332 92.40428514314678, 264.5427974947808 93.23329661295314, 265.1106471816284 93.48961414518475 C 265.678496868476 93.74593167741635, 266.2463465553236 93.84260408219427, 266.8141962421712 93.77071564017847 C 267.3820459290188 93.69882719816266, 267.9498956158664 93.52046083143712, 268.517745302714 93.0582834930899 C 269.08559498956157 92.59610615474269, 269.6534446764092 91.45561840734392, 270.2212943632568 90.99765161009515 C 270.78914405010437 90.53968481284637, 271.356993736952 90.35628593097029, 271.9248434237996 90.3104827095973 C 272.49269311064717 90.2646794882243, 273.0605427974948 90.67243922681266, 273.6283924843424 90.7228322818572 C 274.19624217118997 90.77322533690173, 274.7640918580376 90.5779412921362, 275.3319415448852 90.61284103986456 C 275.89979123173276 90.64774078759292, 276.4676409185804 90.5230257814065, 277.035490605428 90.93223076822736 C 277.60334029227556 91.34143575504821, 278.1711899791232 92.55432909938965, 278.7390396659708 93.06807096078965 C 279.30688935281836 93.58181282218966, 279.874739039666 93.92711513939642, 280.4425887265136 94.01468193662741 C 281.01043841336116 94.1022487338584, 281.57828810020874 93.64447650621241, 282.1461377870563 93.59347174417559 C 282.7139874739039 93.54246698213876, 283.2818371607516 93.73827721909053, 283.8496868475992 93.70865336440643 C 284.41753653444675 93.67902950972233, 284.98538622129433 93.38735163481931, 285.5532359081419 93.41572861607094 C 286.1210855949895 93.44410559732256, 286.6889352818372 93.81397666656362, 287.25678496868477 93.87891525191623 C 287.82463465553235 93.94385383726883, 288.39248434237993 93.72957283705429, 288.9603340292275 93.80536012818658 C 289.5281837160751 93.88114741931886, 290.0960334029228 94.10502731251928, 290.66388308977037 94.33363899870992 C 291.23173277661795 94.56225068490055, 291.7995824634656 97.21266961332576, 292.36743215031316 95.17703024533034 C 292.93528183716074 93.14139087733493, 293.5031315240084 83.33497246255993, 294.07098121085596 82.11980279073742 C 294.63883089770354 80.90463311891492, 295.2066805845512 86.45186591270887, 295.77453027139876 87.88601221439528 C 296.34237995824634 89.32015851608169, 296.910229645094 90.06959064116752, 297.47807933194156 90.72468060085588 C 298.04592901878914 91.37977056054423, 298.6137787056368 91.3169527836906, 299.18162839248436 91.81655197252542 C 299.74947807933194 92.31615116136024, 300.3173277661796 94.59359508841902, 300.88517745302715 93.72227573386482 C 301.45302713987473 92.85095637931062, 302.0208768267223 88.68574666743753, 302.5887265135699 86.58863584520024 C 303.1565762004175 84.49152502296296, 303.72442588726517 80.9246733499622, 304.29227557411275 81.1396108004411 C 304.86012526096033 81.35454825092, 305.4279749478079 86.11638368214989, 305.9958246346555 87.8782605480736 C 306.5636743215031 89.64013741399731, 307.13152400835077 90.93314607252933, 307.69937369519835 91.71087199598333 C 308.2672233820459 92.48859791943732, 308.8350730688935 92.66703005741135, 309.4029227557411 92.54461608879757 C 309.97077244258867 92.42220212018378, 310.53862212943636 91.13736332251753, 311.10647181628394 90.97638818430066 C 311.6743215031315 90.81541304608379, 312.2421711899791 91.14549598494663, 312.8100208768267 91.57876525949635 C 313.37787056367426 92.01203453404607, 313.94572025052184 92.97259564320194, 314.5135699373695 93.57600383159894 C 315.0814196242171 94.17941201999594, 315.6492693110647 94.97701384913526, 316.21711899791234 95.19921438987829 C 316.78496868476 95.42141493062132, 317.35281837160755 94.80693182143813, 317.92066805845513 94.90920707605711 C 318.4885177453027 95.0114823306761, 319.05636743215035 95.57913624845236, 319.62421711899793 95.81286591759219 C 320.1920668058455 96.04659558673202, 320.75991649269315 96.21108034487648, 321.32776617954073 96.31158509089616 C 321.8956158663883 96.41208983691584, 322.46346555323595 96.30249215759916, 323.03131524008353 96.41589439371025 C 323.5991649269311 96.52929662982133, 324.16701461377875 96.75884113511967, 324.7348643006263 96.99199850756267 C 325.3027139874739 97.22515588000567, 325.87056367432155 97.67416386393298, 326.4384133611691 97.81483862836829 C 327.0062630480167 97.95551339280361, 327.57411273486434 97.63570146656599, 328.1419624217119 97.83604709417459 C 328.7098121085595 98.03639272178319, 329.27766179540714 98.53043502177597, 329.8455114822547 99.01691239401985 C 330.4133611691023 99.50338976626374, 330.9812108559499 100.29185987607468, 331.54906054279746 100.75491132763788 C 332.11691022964504 101.21796277920109, 332.6847599164927 101.48245492767097, 333.25260960334026 101.7952211033991 C 333.82045929018784 102.10798727912723, 334.3883089770355 102.43222689702615, 334.95615866388306 102.63150838200669 C 335.52400835073064 102.83078986698722, 336.0918580375783 103.03332871191319, 336.65970772442586 102.99091001328229 C 337.22755741127344 102.94849131465139, 337.795407098121 102.60366295295185, 338.36325678496866 102.3769961902213 C 338.9311064718163 102.15032942749076, 339.4989561586639 101.74794094141106, 340.0668058455115 101.63090943689902 C 340.63465553235915 101.51387793238698, 341.2025052192067 101.44281868957728, 341.7703549060543 101.6748071631491 C 342.3382045929019 101.90679563672091, 342.9060542797495 102.7902803030113, 343.4739039665971 103.0228402783299 C 344.0417536534447 103.25540025364849, 344.6096033402923 103.05128247049493, 345.1774530271399 103.07016701506066 C 345.7453027139875 103.0890515596264, 346.3131524008351 103.13658355902318, 346.8810020876827 103.1361475457243 C 347.4488517745303 103.13571153242542, 348.0167014613779 103.23483500802149, 348.5845511482255 103.06755093526739 C 349.1524008350731 102.90026686251329, 349.72025052192066 102.37755795704304, 350.28810020876824 102.13244310919968 C 350.8559498956158 101.88732826135633, 351.42379958246346 101.83989251826286, 351.99164926931104 101.59686184820727 C 352.5594989561586 101.35383117815168, 353.12734864300626 100.93034780171877, 353.69519832985384 100.67425908886614 C 354.2630480167014 100.4181703760135, 354.83089770354906 100.20278148021015, 355.39874739039664 100.06032957109151 C 355.9665970772442 99.91787766197288, 356.53444676409185 99.90326040521667, 357.10229645093943 99.81954763415438 C 357.670146137787 99.73583486309208, 358.23799582463465 99.63020447360886, 358.80584551148223 99.55805294471776 C 359.3736951983298 99.48590141582666, 359.97703549060543 99.45037464754881, 360.50939457202503 99.38663846080777 C 361.04175365344463 99.32290227406673, 361.7515657620042 99.21080293036093, 362 99.17563582427155 L 362 186 Z" fill="url(#satelliteXrayChartGradient)"></path>
+    <path d="M 56 105.36492005668546 C 56.2839248434238 105.47083210256979, 57.135699373695196 105.70330595321195, 57.7035490605428 106.00039233199139 C 58.2713987473904 106.29747871077083, 58.839248434237994 106.91990023382411, 59.407098121085596 107.14743832936212 C 59.9749478079332 107.37497642490013, 60.54279749478079 107.56280257065025, 61.110647181628394 107.36562090521944 C 61.678496868475996 107.16843923978864, 62.24634655532359 107.55507817630127, 62.81419624217119 105.96434833677729 C 63.382045929018794 104.37361849725332, 63.94989561586639 100.2082689147789, 64.51774530271399 97.82124186807556 C 65.08559498956159 95.43421482137222, 65.6534446764092 93.31753354499412, 66.22129436325679 91.64218605655726 C 66.78914405010438 89.96683856812041, 67.35699373695199 89.71170174234648, 67.92484342379959 87.76915693745441 C 68.49269311064718 85.82661213256235, 69.06054279749479 82.76095150264638, 69.62839248434238 79.98691722720487 C 70.19624217118998 77.21288295176336, 70.76409185803759 74.47566127901547, 71.33194154488518 71.12495128480536 C 71.89979123173278 67.77424129059526, 72.46764091858039 63.2172162098797, 73.03549060542798 59.88265726194421 C 73.60334029227558 56.54809831400872, 74.17118997912318 53.92572514797183, 74.73903966597078 51.117597597192415 C 75.30688935281837 48.309470046413, 75.87473903966597 45.32910553412203, 76.44258872651356 43.033891957267684 C 77.01043841336116 40.73867838041334, 77.57828810020877 39.07969396457867, 78.14613778705638 37.34631613606636 C 78.71398747390398 35.61293830755406, 79.28183716075158 34.14201666870365, 79.84968684759917 32.63362498619389 C 80.41753653444677 31.125233303684123, 80.98538622129436 29.719539335270735, 81.55323590814196 28.295966041007784 C 82.12108559498955 26.872392746744833, 82.68893528183717 25.214538586904176, 83.25678496868477 24.092185220616184 C 83.82463465553236 22.96983185432819, 84.39248434237996 22.20501793035635, 84.96033402922755 21.56184584327984 C 85.52818371607515 20.91867375620333, 86.09603340292276 20.49346033870375, 86.66388308977035 20.23315269815711 C 87.23173277661795 19.97284505761047, 87.79958246346555 19.926230620165917, 88.36743215031315 20 C 88.93528183716074 20.073769379834083, 89.50313152400835 20.269521510635418, 90.07098121085595 20.675768977161603 C 90.63883089770354 21.082016443687788, 91.20668058455115 21.780625950858592, 91.77453027139875 22.43748479915712 C 92.34237995824634 23.094343647455645, 92.91022964509395 23.88724205665592, 93.47807933194154 24.616922066952764 C 94.04592901878914 25.346602077249607, 94.61377870563675 26.02513721938064, 95.18162839248434 26.81556486093818 C 95.74947807933194 27.605992502495724, 96.31732776617953 28.51356877301359, 96.88517745302713 29.35948791629802 C 97.45302713987472 30.20540705958245, 98.02087682672234 31.077208686797384, 98.58872651356994 31.89107972064476 C 99.15657620041753 32.70495075449214, 99.72442588726514 33.45372907051623, 100.29227557411274 34.24271411938227 C 100.86012526096033 35.03169916824831, 101.42797494780793 35.81812206210863, 101.99582463465552 36.62499001384098 C 102.56367432150311 37.43185796557333, 103.13152400835074 38.291124975586044, 103.69937369519833 39.08392182977637 C 104.26722338204593 39.8767186839667, 104.83507306889354 40.63972970868687, 105.40292275574113 41.38177113898294 C 105.97077244258872 42.12381256927901, 106.53862212943632 42.85446282126867, 107.10647181628391 43.5361704115528 C 107.67432150313151 44.21787800183694, 108.2421711899791 44.85453193221997, 108.81002087682671 45.47201668068773 C 109.37787056367432 46.08950142915549, 109.94572025052193 46.64490816195339, 110.51356993736952 47.24107890235935 C 111.08141962421712 47.83724964276531, 111.64926931106471 48.492455284632214, 112.21711899791231 49.04904112312349 C 112.7849686847599 49.60562696161476, 113.35281837160751 50.10032946535841, 113.9206680584551 50.580593933306965 C 114.4885177453027 51.060858401255516, 115.05636743215031 51.47164045424876, 115.6242171189979 51.93062793081478 C 116.1920668058455 52.3896154073808, 116.75991649269311 52.87635667035947, 117.3277661795407 53.33451879270311 C 117.8956158663883 53.792680915046745, 118.4634655532359 54.24926464299412, 119.0313152400835 54.67960066487661 C 119.5991649269311 55.1099366867591, 120.16701461377869 55.53799136030668, 120.7348643006263 55.916534923998036 C 121.30271398747391 56.295078487689395, 121.87056367432152 56.57733315592509, 122.43841336116911 56.95086204702477 C 123.0062630480167 57.32439093812445, 123.5741127348643 57.75999853581256, 124.1419624217119 58.1577082705961 C 124.70981210855949 58.55541800537965, 125.2776617954071 59.018673273071414, 125.8455114822547 59.33712045572607 C 126.41336116910229 59.65556763838073, 126.9812108559499 59.86612224236015, 127.54906054279749 60.068391366524075 C 128.1169102296451 60.270660490688, 128.68475991649268 60.54180005948551, 129.2526096033403 60.55073520070965 C 129.8204592901879 60.559670341933796, 130.38830897703548 60.35773402005492, 130.9561586638831 60.12200221386894 C 131.5240083507307 59.88627040768296, 132.09185803757828 59.43925287117431, 132.65970772442589 59.136344363593786 C 133.2275574112735 58.83343585601326, 133.79540709812107 58.34772491273308, 134.36325678496868 58.3045511683858 C 134.9311064718163 58.26137742403852, 135.49895615866387 58.516599430243865, 136.06680584551148 58.87730189751013 C 136.6346555323591 59.238004364776394, 137.20250521920664 59.974786124269265, 137.77035490605425 60.46876597198338 C 138.33820459290186 60.962745819697496, 138.90605427974947 61.35740831476473, 139.47390396659708 61.84118098379483 C 140.0417536534447 62.324953652824924, 140.60960334029227 62.87984340687925, 141.17745302713988 63.37140198616395 C 141.74530271398748 63.86296056544865, 140.11273486430062 44.35243279053036, 142.88100208768267 64.79053245950303 C 145.64926931106473 85.2286321284757, 155.01878914405012 184.18884622237388, 157.78705636743217 186 C 160.55532359081423 187.81115377762612, 158.92275574112736 93.92518346665825, 159.49060542797497 75.65745512525966 C 160.05845511482258 57.389726783861065, 160.6263048016702 76.13454736019034, 161.19415448851777 76.39362995160845 C 161.76200417536535 76.65271254302655, 162.32985386221293 77.14328388816482, 162.89770354906054 77.21195067376831 C 163.46555323590815 77.28061745937181, 164.03340292275573 76.83444662291569, 164.60125260960334 76.80563066522942 C 165.16910229645094 76.77681470754314, 165.73695198329852 76.96398667348993, 166.30480167014613 77.03905492765062 C 166.87265135699374 77.11412318181132, 167.44050104384132 76.92543666833666, 168.00835073068893 77.2560401901936 C 168.57620041753654 77.58664371205055, 169.14405010438415 78.81337050789264, 169.71189979123176 79.02267605879226 C 170.27974947807937 79.23198160969187, 170.84759916492698 78.65462311293065, 171.41544885177456 78.51187349559132 C 171.98329853862214 78.36912387825198, 172.55114822546972 77.97935279170629, 173.11899791231733 78.16617835475625 C 173.68684759916493 78.35300391780622, 174.25469728601252 79.2430827232564, 174.82254697286012 79.6328268738911 C 175.39039665970773 80.0225710245258, 175.9582463465553 80.9841914262719, 176.52609603340292 80.50464325856441 C 177.09394572025053 80.02509509085692, 177.6617954070981 80.00579828530515, 178.22964509394572 76.75553786764618 C 178.79749478079333 73.50527744998722, 179.3653444676409 64.12432962902598, 179.93319415448852 61.00308075261063 C 180.50104384133613 57.88183187619528, 181.06889352818368 57.99151850434887, 181.6367432150313 58.02804460915407 C 182.2045929018789 58.06457071395928, 182.7724425887265 60.07943911396212, 183.34029227557411 61.22223738144186 C 183.90814196242172 62.3650356489216, 184.4759916492693 63.71692442460535, 185.0438413361169 64.88483421403251 C 185.61169102296452 66.05274400345967, 186.1795407098121 67.13089361677866, 186.7473903966597 68.2296961180048 C 187.31524008350732 69.32849861923093, 187.8830897703549 70.4851313584447, 188.4509394572025 71.47764922138933 C 189.01878914405012 72.47016708433395, 189.5866388308977 73.49973756462549, 190.1544885177453 74.18480329567257 C 190.72233820459292 74.86986902671964, 191.2901878914405 75.10073898039256, 191.8580375782881 75.58804360767182 C 192.4258872651357 76.07534823495108, 192.9937369519833 76.6925385931616, 193.5615866388309 77.10863105934813 C 194.1294363256785 77.52472352553465, 194.6972860125261 77.67976748420219, 195.2651356993737 78.084598404791 C 195.8329853862213 78.4894293253798, 196.4008350730689 79.13780975571827, 196.9686847599165 79.53761658288101 C 197.5365344467641 79.93742341004376, 198.1043841336117 80.09770872120612, 198.6722338204593 80.48343936776746 C 199.2400835073069 80.8691700143288, 199.8079331941545 81.46931156202346, 200.3757828810021 81.8520004622491 C 200.9436325678497 82.23468936247473, 201.51148225469728 82.58655377457961, 202.0793319415449 82.77957276912124 C 202.6471816283925 82.97259176366288, 203.21503131524008 83.01527911933961, 203.7828810020877 83.01011442949888 C 204.3507306889353 83.00494973965816, 204.91858037578288 83.38054619126706, 205.48643006263046 82.74858463007689 C 206.05427974947804 82.11662306888672, 206.62212943632565 80.13839516290577, 207.18997912317326 79.2183450623579 C 207.75782881002087 78.29829496181003, 208.32567849686848 76.81568083868714, 208.89352818371609 77.22828402678967 C 209.4613778705637 77.64088721489219, 210.02922755741128 80.39618591391039, 210.59707724425886 81.69396419097305 C 211.16492693110644 82.99174246803571, 211.73277661795404 84.09885989144021, 212.30062630480165 85.01495368916561 C 212.86847599164926 85.931047486891, 213.43632567849687 86.61166496720158, 214.00417536534448 87.19052697732539 C 214.5720250521921 87.7693889874492, 215.13987473903967 88.08474319745409, 215.70772442588728 88.48812574990852 C 216.2755741127349 88.89150830236295, 216.84342379958247 89.30799773033793, 217.41127348643008 89.61082229205199 C 217.97912317327769 89.91364685376605, 218.54697286012527 90.22083186033012, 219.11482254697287 90.30507312019286 C 219.68267223382048 90.3893143800556, 220.25052192066806 90.4561000580531, 220.81837160751567 90.11626985122841 C 221.38622129436328 89.77643964440372, 221.95407098121086 88.7848231779913, 222.52192066805847 88.26609187924471 C 223.08977035490608 87.74736058049812, 223.65762004175366 87.80866232380707, 224.22546972860127 87.00388205874889 C 224.79331941544888 86.1991017936907, 225.36116910229646 84.6612347321219, 225.92901878914404 83.43741028889562 C 226.49686847599162 82.21358584566934, 227.06471816283923 80.82327468175737, 227.63256784968684 79.66093539939124 C 228.20041753653445 78.4985961170251, 228.76826722338203 77.22853225248366, 229.33611691022963 76.4633745946988 C 229.90396659707724 75.69821693691395, 230.47181628392482 75.32812954630322, 231.03966597077243 75.06998945268207 C 231.60751565762004 74.81184935906091, 232.17536534446762 75.06054265795568, 232.74321503131523 74.91453403297189 C 233.31106471816284 74.7685254079881, 233.87891440501042 74.03383291923657, 234.44676409185803 74.1939377027793 C 235.01461377870564 74.35404248632202, 235.58246346555322 75.31429280761343, 236.15031315240083 75.87516273422825 C 236.71816283924844 76.43603266084308, 237.28601252609602 76.83726438356598, 237.85386221294362 77.55915726246826 C 238.42171189979123 78.28105014137054, 238.98956158663884 79.49746078009919, 239.55741127348645 80.20652000764194 C 240.12526096033406 80.9155792351847, 240.69311064718164 81.36140948534161, 241.26096033402925 81.8135126277248 C 241.82881002087686 82.265615770108, 242.39665970772444 82.29321384352897, 242.96450939457205 82.91913886194114 C 243.53235908141966 83.5450638803533, 244.10020876826724 84.86512364250734, 244.66805845511485 85.56906273819776 C 245.23590814196245 86.27300183388817, 245.80375782881003 86.5940670335046, 246.37160751565762 87.14277343608362 C 246.9394572025052 87.69147983866263, 247.5073068893528 88.83363247133231, 248.0751565762004 88.86130115367187 C 248.64300626304802 88.88896983601144, 249.2108559498956 87.67645995832113, 249.7787056367432 87.30878553012101 C 250.34655532359082 86.9411111019209, 250.9144050104384 86.80958657125738, 251.482254697286 86.65525458447114 C 252.05010438413362 86.50092259768489, 252.6179540709812 86.36770549268326, 253.1858037578288 86.38279360940354 C 253.75365344467642 86.39788172612381, 254.321503131524 86.43823094858689, 254.8893528183716 86.74578328479278 C 255.45720250521921 87.05333562099867, 256.0250521920668 87.76774835207243, 256.5929018789144 88.2281076266389 C 257.160751565762 88.68846690120537, 257.7286012526096 89.19165812381125, 258.2964509394572 89.50793893219164 C 258.8643006263048 89.82421974057202, 259.4321503131524 89.63365463778031, 260 90.12579247692122 C 260.5678496868476 90.61793031606213, 261.1356993736952 92.1095963053925, 261.7035490605428 92.4607659670371 C 262.2713987473904 92.81193562868171, 262.839248434238 92.06133575043089, 263.4070981210856 92.23281044678883 C 263.9749478079332 92.40428514314678, 264.5427974947808 93.23329661295314, 265.1106471816284 93.48961414518475 C 265.678496868476 93.74593167741635, 266.2463465553236 93.84260408219427, 266.8141962421712 93.77071564017847 C 267.3820459290188 93.69882719816266, 267.9498956158664 93.52046083143712, 268.517745302714 93.0582834930899 C 269.08559498956157 92.59610615474269, 269.6534446764092 91.45561840734392, 270.2212943632568 90.99765161009515 C 270.78914405010437 90.53968481284637, 271.356993736952 90.35628593097029, 271.9248434237996 90.3104827095973 C 272.49269311064717 90.2646794882243, 273.0605427974948 90.67243922681266, 273.6283924843424 90.7228322818572 C 274.19624217118997 90.77322533690173, 274.7640918580376 90.5779412921362, 275.3319415448852 90.61284103986456 C 275.89979123173276 90.64774078759292, 276.4676409185804 90.5230257814065, 277.035490605428 90.93223076822736 C 277.60334029227556 91.34143575504821, 278.1711899791232 92.55432909938965, 278.7390396659708 93.06807096078965 C 279.30688935281836 93.58181282218966, 279.874739039666 93.92711513939642, 280.4425887265136 94.01468193662741 C 281.01043841336116 94.1022487338584, 281.57828810020874 93.64447650621241, 282.1461377870563 93.59347174417559 C 282.7139874739039 93.54246698213876, 283.2818371607516 93.73827721909053, 283.8496868475992 93.70865336440643 C 284.41753653444675 93.67902950972233, 284.98538622129433 93.38735163481931, 285.5532359081419 93.41572861607094 C 286.1210855949895 93.44410559732256, 286.6889352818372 93.81397666656362, 287.25678496868477 93.87891525191623 C 287.82463465553235 93.94385383726883, 288.39248434237993 93.72957283705429, 288.9603340292275 93.80536012818658 C 289.5281837160751 93.88114741931886, 290.0960334029228 94.10502731251928, 290.66388308977037 94.33363899870992 C 291.23173277661795 94.56225068490055, 291.7995824634656 97.21266961332576, 292.36743215031316 95.17703024533034 C 292.93528183716074 93.14139087733493, 293.5031315240084 83.33497246255993, 294.07098121085596 82.11980279073742 C 294.63883089770354 80.90463311891492, 295.2066805845512 86.45186591270887, 295.77453027139876 87.88601221439528 C 296.34237995824634 89.32015851608169, 296.910229645094 90.06959064116752, 297.47807933194156 90.72468060085588 C 298.04592901878914 91.37977056054423, 298.6137787056368 91.3169527836906, 299.18162839248436 91.81655197252542 C 299.74947807933194 92.31615116136024, 300.3173277661796 94.59359508841902, 300.88517745302715 93.72227573386482 C 301.45302713987473 92.85095637931062, 302.0208768267223 88.68574666743753, 302.5887265135699 86.58863584520024 C 303.1565762004175 84.49152502296296, 303.72442588726517 80.9246733499622, 304.29227557411275 81.1396108004411 C 304.86012526096033 81.35454825092, 305.4279749478079 86.11638368214989, 305.9958246346555 87.8782605480736 C 306.5636743215031 89.64013741399731, 307.13152400835077 90.93314607252933, 307.69937369519835 91.71087199598333 C 308.2672233820459 92.48859791943732, 308.8350730688935 92.66703005741135, 309.4029227557411 92.54461608879757 C 309.97077244258867 92.42220212018378, 310.53862212943636 91.13736332251753, 311.10647181628394 90.97638818430066 C 311.6743215031315 90.81541304608379, 312.2421711899791 91.14549598494663, 312.8100208768267 91.57876525949635 C 313.37787056367426 92.01203453404607, 313.94572025052184 92.97259564320194, 314.5135699373695 93.57600383159894 C 315.0814196242171 94.17941201999594, 315.6492693110647 94.97701384913526, 316.21711899791234 95.19921438987829 C 316.78496868476 95.42141493062132, 317.35281837160755 94.80693182143813, 317.92066805845513 94.90920707605711 C 318.4885177453027 95.0114823306761, 319.05636743215035 95.57913624845236, 319.62421711899793 95.81286591759219 C 320.1920668058455 96.04659558673202, 320.75991649269315 96.21108034487648, 321.32776617954073 96.31158509089616 C 321.8956158663883 96.41208983691584, 322.46346555323595 96.30249215759916, 323.03131524008353 96.41589439371025 C 323.5991649269311 96.52929662982133, 324.16701461377875 96.75884113511967, 324.7348643006263 96.99199850756267 C 325.3027139874739 97.22515588000567, 325.87056367432155 97.67416386393298, 326.4384133611691 97.81483862836829 C 327.0062630480167 97.95551339280361, 327.57411273486434 97.63570146656599, 328.1419624217119 97.83604709417459 C 328.7098121085595 98.03639272178319, 329.27766179540714 98.53043502177597, 329.8455114822547 99.01691239401985 C 330.4133611691023 99.50338976626374, 330.9812108559499 100.29185987607468, 331.54906054279746 100.75491132763788 C 332.11691022964504 101.21796277920109, 332.6847599164927 101.48245492767097, 333.25260960334026 101.7952211033991 C 333.82045929018784 102.10798727912723, 334.3883089770355 102.43222689702615, 334.95615866388306 102.63150838200669 C 335.52400835073064 102.83078986698722, 336.0918580375783 103.03332871191319, 336.65970772442586 102.99091001328229 C 337.22755741127344 102.94849131465139, 337.795407098121 102.60366295295185, 338.36325678496866 102.3769961902213 C 338.9311064718163 102.15032942749076, 339.4989561586639 101.74794094141106, 340.0668058455115 101.63090943689902 C 340.63465553235915 101.51387793238698, 341.2025052192067 101.44281868957728, 341.7703549060543 101.6748071631491 C 342.3382045929019 101.90679563672091, 342.9060542797495 102.7902803030113, 343.4739039665971 103.0228402783299 C 344.0417536534447 103.25540025364849, 344.6096033402923 103.05128247049493, 345.1774530271399 103.07016701506066 C 345.7453027139875 103.0890515596264, 346.3131524008351 103.13658355902318, 346.8810020876827 103.1361475457243 C 347.4488517745303 103.13571153242542, 348.0167014613779 103.23483500802149, 348.5845511482255 103.06755093526739 C 349.1524008350731 102.90026686251329, 349.72025052192066 102.37755795704304, 350.28810020876824 102.13244310919968 C 350.8559498956158 101.88732826135633, 351.42379958246346 101.83989251826286, 351.99164926931104 101.59686184820727 C 352.5594989561586 101.35383117815168, 353.12734864300626 100.93034780171877, 353.69519832985384 100.67425908886614 C 354.2630480167014 100.4181703760135, 354.83089770354906 100.20278148021015, 355.39874739039664 100.06032957109151 C 355.9665970772442 99.91787766197288, 356.53444676409185 99.90326040521667, 357.10229645093943 99.81954763415438 C 357.670146137787 99.73583486309208, 358.23799582463465 99.63020447360886, 358.80584551148223 99.55805294471776 C 359.3736951983298 99.48590141582666, 359.97703549060543 99.45037464754881, 360.50939457202503 99.38663846080777 C 361.04175365344463 99.32290227406673, 361.7515657620042 99.21080293036093, 362 99.17563582427155" fill="none" stroke="#f4b942" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#satelliteXrayChartGlow)"></path>
+       <path d="M 56 105.36492005668546 C 56.2839248434238 105.47083210256979, 57.135699373695196 105.70330595321195, 57.7035490605428 106.00039233199139 C 58.2713987473904 106.29747871077083, 58.839248434237994 106.91990023382411, 59.407098121085596 107.14743832936212 C 59.9749478079332 107.37497642490013, 60.54279749478079 107.56280257065025, 61.110647181628394 107.36562090521944 C 61.678496868475996 107.16843923978864, 62.24634655532359 107.55507817630127, 62.81419624217119 105.96434833677729 C 63.382045929018794 104.37361849725332, 63.94989561586639 100.2082689147789, 64.51774530271399 97.82124186807556 C 65.08559498956159 95.43421482137222, 65.6534446764092 93.31753354499412, 66.22129436325679 91.64218605655726 C 66.78914405010438 89.96683856812041, 67.35699373695199 89.71170174234648, 67.92484342379959 87.76915693745441 C 68.49269311064718 85.82661213256235, 69.06054279749479 82.76095150264638, 69.62839248434238 79.98691722720487 C 70.19624217118998 77.21288295176336, 70.76409185803759 74.47566127901547, 71.33194154488518 71.12495128480536 C 71.89979123173278 67.77424129059526, 72.46764091858039 63.2172162098797, 73.03549060542798 59.88265726194421 C 73.60334029227558 56.54809831400872, 74.17118997912318 53.92572514797183, 74.73903966597078 51.117597597192415 C 75.30688935281837 48.309470046413, 75.87473903966597 45.32910553412203, 76.44258872651356 43.033891957267684 C 77.01043841336116 40.73867838041334, 77.57828810020877 39.07969396457867, 78.14613778705638 37.34631613606636 C 78.71398747390398 35.61293830755406, 79.28183716075158 34.14201666870365, 79.84968684759917 32.63362498619389 C 80.41753653444677 31.125233303684123, 80.98538622129436 29.719539335270735, 81.55323590814196 28.295966041007784 C 82.12108559498955 26.872392746744833, 82.68893528183717 25.214538586904176, 83.25678496868477 24.092185220616184 C 83.82463465553236 22.96983185432819, 84.39248434237996 22.20501793035635, 84.96033402922755 21.56184584327984 C 85.52818371607515 20.91867375620333, 86.09603340292276 20.49346033870375, 86.66388308977035 20.23315269815711 C 87.23173277661795 19.97284505761047, 87.79958246346555 19.926230620165917, 88.36743215031315 20 C 88.93528183716074 20.073769379834083, 89.50313152400835 20.269521510635418, 90.07098121085595 20.675768977161603 C 90.63883089770354 21.082016443687788, 91.20668058455115 21.780625950858592, 91.77453027139875 22.43748479915712 C 92.34237995824634 23.094343647455645, 92.91022964509395 23.88724205665592, 93.47807933194154 24.616922066952764 C 94.04592901878914 25.346602077249607, 94.61377870563675 26.02513721938064, 95.18162839248434 26.81556486093818 C 95.74947807933194 27.605992502495724, 96.31732776617953 28.51356877301359, 96.88517745302713 29.35948791629802 C 97.45302713987472 30.20540705958245, 98.02087682672234 31.077208686797384, 98.58872651356994 31.89107972064476 C 99.15657620041753 32.70495075449214, 99.72442588726514 33.45372907051623, 100.29227557411274 34.24271411938227 C 100.86012526096033 35.03169916824831, 101.42797494780793 35.81812206210863, 101.99582463465552 36.62499001384098 C 102.56367432150311 37.43185796557333, 103.13152400835074 38.291124975586044, 103.69937369519833 39.08392182977637 C 104.26722338204593 39.8767186839667, 104.83507306889354 40.63972970868687, 105.40292275574113 41.38177113898294 C 105.97077244258872 42.12381256927901, 106.53862212943632 42.85446282126867, 107.10647181628391 43.5361704115528 C 107.67432150313151 44.21787800183694, 108.2421711899791 44.85453193221997, 108.81002087682671 45.47201668068773 C 109.37787056367432 46.08950142915549, 109.94572025052193 46.64490816195339, 110.51356993736952 47.24107890235935 C 111.08141962421712 47.83724964276531, 111.64926931106471 48.492455284632214, 112.21711899791231 49.04904112312349 C 112.7849686847599 49.60562696161476, 113.35281837160751 50.10032946535841, 113.9206680584551 50.580593933306965 C 114.4885177453027 51.060858401255516, 115.05636743215031 51.47164045424876, 115.6242171189979 51.93062793081478 C 116.1920668058455 52.3896154073808, 116.75991649269311 52.87635667035947, 117.3277661795407 53.33451879270311 C 117.8956158663883 53.792680915046745, 118.4634655532359 54.24926464299412, 119.0313152400835 54.67960066487661 C 119.5991649269311 55.1099366867591, 120.16701461377869 55.53799136030668, 120.7348643006263 55.916534923998036 C 121.30271398747391 56.295078487689395, 121.87056367432152 56.57733315592509, 122.43841336116911 56.95086204702477 C 123.0062630480167 57.32439093812445, 123.5741127348643 57.75999853581256, 124.1419624217119 58.1577082705961 C 124.70981210855949 58.55541800537965, 125.2776617954071 59.018673273071414, 125.8455114822547 59.33712045572607 C 126.41336116910229 59.65556763838073, 126.9812108559499 59.86612224236015, 127.54906054279749 60.068391366524075 C 128.1169102296451 60.270660490688, 128.68475991649268 60.54180005948551, 129.2526096033403 60.55073520070965 C 129.8204592901879 60.559670341933796, 130.38830897703548 60.35773402005492, 130.9561586638831 60.12200221386894 C 131.5240083507307 59.88627040768296, 132.09185803757828 59.43925287117431, 132.65970772442589 59.136344363593786 C 133.2275574112735 58.83343585601326, 133.79540709812107 58.34772491273308, 134.36325678496868 58.3045511683858 C 134.9311064718163 58.26137742403852, 135.49895615866387 58.516599430243865, 136.06680584551148 58.87730189751013 C 136.6346555323591 59.238004364776394, 137.20250521920664 59.974786124269265, 137.77035490605425 60.46876597198338 C 138.33820459290186 60.962745819697496, 138.90605427974947 61.35740831476473, 139.47390396659708 61.84118098379483 C 140.0417536534447 62.324953652824924, 140.60960334029227 62.87984340687925, 141.17745302713988 63.37140198616395 C 141.74530271398748 63.86296056544865, 140.11273486430062 44.35243279053036, 142.88100208768267 64.79053245950303 C 145.64926931106473 85.2286321284757, 155.01878914405012 184.18884622237388, 157.78705636743217 186 C 160.55532359081423 187.81115377762612, 158.92275574112736 93.92518346665825, 159.49060542797497 75.65745512525966 C 160.05845511482258 57.389726783861065, 160.6263048016702 76.13454736019034, 161.19415448851777 76.39362995160845 C 161.76200417536535 76.65271254302655, 162.32985386221293 77.14328388816482, 162.89770354906054 77.21195067376831 C 163.46555323590815 77.28061745937181, 164.03340292275573 76.83444662291569, 164.60125260960334 76.80563066522942 C 165.16910229645094 76.77681470754314, 165.73695198329852 76.96398667348993, 166.30480167014613 77.03905492765062 C 166.87265135699374 77.11412318181132, 167.44050104384132 76.92543666833666, 168.00835073068893 77.2560401901936 C 168.57620041753654 77.58664371205055, 169.14405010438415 78.81337050789264, 169.71189979123176 79.02267605879226 C 170.27974947807937 79.23198160969187, 170.84759916492698 78.65462311293065, 171.41544885177456 78.51187349559132 C 171.98329853862214 78.36912387825198, 172.55114822546972 77.97935279170629, 173.11899791231733 78.16617835475625 C 173.68684759916493 78.35300391780622, 174.25469728601252 79.2430827232564, 174.82254697286012 79.6328268738911 C 175.39039665970773 80.0225710245258, 175.9582463465553 80.9841914262719, 176.52609603340292 80.50464325856441 C 177.09394572025053 80.02509509085692, 177.6617954070981 80.00579828530515, 178.22964509394572 76.75553786764618 C 178.79749478079333 73.50527744998722, 179.3653444676409 64.12432962902598, 179.93319415448852 61.00308075261063 C 180.50104384133613 57.88183187619528, 181.06889352818368 57.99151850434887, 181.6367432150313 58.02804460915407 C 182.2045929018789 58.06457071395928, 182.7724425887265 60.07943911396212, 183.34029227557411 61.22223738144186 C 183.90814196242172 62.3650356489216, 184.4759916492693 63.71692442460535, 185.0438413361169 64.88483421403251 C 185.61169102296452 66.05274400345967, 186.1795407098121 67.13089361677866, 186.7473903966597 68.2296961180048 C 187.31524008350732 69.32849861923093, 187.8830897703549 70.4851313584447, 188.4509394572025 71.47764922138933 C 189.01878914405012 72.47016708433395, 189.5866388308977 73.49973756462549, 190.1544885177453 74.18480329567257 C 190.72233820459292 74.86986902671964, 191.2901878914405 75.10073898039256, 191.8580375782881 75.58804360767182 C 192.4258872651357 76.07534823495108, 192.9937369519833 76.6925385931616, 193.5615866388309 77.10863105934813 C 194.1294363256785 77.52472352553465, 194.6972860125261 77.67976748420219, 195.2651356993737 78.084598404791 C 195.8329853862213 78.4894293253798, 196.4008350730689 79.13780975571827, 196.9686847599165 79.53761658288101 C 197.5365344467641 79.93742341004376, 198.1043841336117 80.09770872120612, 198.6722338204593 80.48343936776746 C 199.2400835073069 80.8691700143288, 199.8079331941545 81.46931156202346, 200.3757828810021 81.8520004622491 C 200.9436325678497 82.23468936247473, 201.51148225469728 82.58655377457961, 202.0793319415449 82.77957276912124 C 202.6471816283925 82.97259176366288, 203.21503131524008 83.01527911933961, 203.7828810020877 83.01011442949888 C 204.3507306889353 83.00494973965816, 204.91858037578288 83.38054619126706, 205.48643006263046 82.74858463007689 C 206.05427974947804 82.11662306888672, 206.62212943632565 80.13839516290577, 207.18997912317326 79.2183450623579 C 207.75782881002087 78.29829496181003, 208.32567849686848 76.81568083868714, 208.89352818371609 77.22828402678967 C 209.4613778705637 77.64088721489219, 210.02922755741128 80.39618591391039, 210.59707724425886 81.69396419097305 C 211.16492693110644 82.99174246803571, 211.73277661795404 84.09885989144021, 212.30062630480165 85.01495368916561 C 212.86847599164926 85.931047486891, 213.43632567849687 86.61166496720158, 214.00417536534448 87.19052697732539 C 214.5720250521921 87.7693889874492, 215.13987473903967 88.08474319745409, 215.70772442588728 88.48812574990852 C 216.2755741127349 88.89150830236295, 216.84342379958247 89.30799773033793, 217.41127348643008 89.61082229205199 C 217.97912317327769 89.91364685376605, 218.54697286012527 90.22083186033012, 219.11482254697287 90.30507312019286 C 219.68267223382048 90.3893143800556, 220.25052192066806 90.4561000580531, 220.81837160751567 90.11626985122841 C 221.38622129436328 89.77643964440372, 221.95407098121086 88.7848231779913, 222.52192066805847 88.26609187924471 C 223.08977035490608 87.74736058049812, 223.65762004175366 87.80866232380707, 224.22546972860127 87.00388205874889 C 224.79331941544888 86.1991017936907, 225.36116910229646 84.6612347321219, 225.92901878914404 83.43741028889562 C 226.49686847599162 82.21358584566934, 227.06471816283923 80.82327468175737, 227.63256784968684 79.66093539939124 C 228.20041753653445 78.4985961170251, 228.76826722338203 77.22853225248366, 229.33611691022963 76.4633745946988 C 229.90396659707724 75.69821693691395, 230.47181628392482 75.32812954630322, 231.03966597077243 75.06998945268207 C 231.60751565762004 74.81184935906091, 232.17536534446762 75.06054265795568, 232.74321503131523 74.91453403297189 C 233.31106471816284 74.7685254079881, 233.87891440501042 74.03383291923657, 234.44676409185803 74.1939377027793 C 235.01461377870564 74.35404248632202, 235.58246346555322 75.31429280761343, 236.15031315240083 75.87516273422825 C 236.71816283924844 76.43603266084308, 237.28601252609602 76.83726438356598, 237.85386221294362 77.55915726246826 C 238.42171189979123 78.28105014137054, 238.98956158663884 79.49746078009919, 239.55741127348645 80.20652000764194 C 240.12526096033406 80.9155792351847, 240.69311064718164 81.36140948534161, 241.26096033402925 81.8135126277248 C 241.82881002087686 82.265615770108, 242.39665970772444 82.29321384352897, 242.96450939457205 82.91913886194114 C 243.53235908141966 83.5450638803533, 244.10020876826724 84.86512364250734, 244.66805845511485 85.56906273819776 C 245.23590814196245 86.27300183388817, 245.80375782881003 86.5940670335046, 246.37160751565762 87.14277343608362 C 246.9394572025052 87.69147983866263, 247.5073068893528 88.83363247133231, 248.0751565762004 88.86130115367187 C 248.64300626304802 88.88896983601144, 249.2108559498956 87.67645995832113, 249.7787056367432 87.30878553012101 C 250.34655532359082 86.9411111019209, 250.9144050104384 86.80958657125738, 251.482254697286 86.65525458447114 C 252.05010438413362 86.50092259768489, 252.6179540709812 86.36770549268326, 253.1858037578288 86.38279360940354 C 253.75365344467642 86.39788172612381, 254.321503131524 86.43823094858689, 254.8893528183716 86.74578328479278 C 255.45720250521921 87.05333562099867, 256.0250521920668 87.76774835207243, 256.5929018789144 88.2281076266389 C 257.160751565762 88.68846690120537, 257.7286012526096 89.19165812381125, 258.2964509394572 89.50793893219164 C 258.8643006263048 89.82421974057202, 259.4321503131524 89.63365463778031, 260 90.12579247692122 C 260.5678496868476 90.61793031606213, 261.1356993736952 92.1095963053925, 261.7035490605428 92.4607659670371 C 262.2713987473904 92.81193562868171, 262.839248434238 92.06133575043089, 263.4070981210856 92.23281044678883 C 263.9749478079332 92.40428514314678, 264.5427974947808 93.23329661295314, 265.1106471816284 93.48961414518475 C 265.678496868476 93.74593167741635, 266.2463465553236 93.84260408219427, 266.8141962421712 93.77071564017847 C 267.3820459290188 93.69882719816266, 267.9498956158664 93.52046083143712, 268.517745302714 93.0582834930899 C 269.08559498956157 92.59610615474269, 269.6534446764092 91.45561840734392, 270.2212943632568 90.99765161009515 C 270.78914405010437 90.53968481284637, 271.356993736952 90.35628593097029, 271.9248434237996 90.3104827095973 C 272.49269311064717 90.2646794882243, 273.0605427974948 90.67243922681266, 273.6283924843424 90.7228322818572 C 274.19624217118997 90.77322533690173, 274.7640918580376 90.5779412921362, 275.3319415448852 90.61284103986456 C 275.89979123173276 90.64774078759292, 276.4676409185804 90.5230257814065, 277.035490605428 90.93223076822736 C 277.60334029227556 91.34143575504821, 278.1711899791232 92.55432909938965, 278.7390396659708 93.06807096078965 C 279.30688935281836 93.58181282218966, 279.874739039666 93.92711513939642, 280.4425887265136 94.01468193662741 C 281.01043841336116 94.1022487338584, 281.57828810020874 93.64447650621241, 282.1461377870563 93.59347174417559 C 282.7139874739039 93.54246698213876, 283.2818371607516 93.73827721909053, 283.8496868475992 93.70865336440643 C 284.41753653444675 93.67902950972233, 284.98538622129433 93.38735163481931, 285.5532359081419 93.41572861607094 C 286.1210855949895 93.44410559732256, 286.6889352818372 93.81397666656362, 287.25678496868477 93.87891525191623 C 287.82463465553235 93.94385383726883, 288.39248434237993 93.72957283705429, 288.9603340292275 93.80536012818658 C 289.5281837160751 93.88114741931886, 290.0960334029228 94.10502731251928, 290.66388308977037 94.33363899870992 C 291.23173277661795 94.56225068490055, 291.7995824634656 97.21266961332576, 292.36743215031316 95.17703024533034 C 292.93528183716074 93.14139087733493, 293.5031315240084 83.33497246255993, 294.07098121085596 82.11980279073742 C 294.63883089770354 80.90463311891492, 295.2066805845512 86.45186591270887, 295.77453027139876 87.88601221439528 C 296.34237995824634 89.32015851608169, 296.910229645094 90.06959064116752, 297.47807933194156 90.72468060085588 C 298.04592901878914 91.37977056054423, 298.6137787056368 91.3169527836906, 299.18162839248436 91.81655197252542 C 299.74947807933194 92.31615116136024, 300.3173277661796 94.59359508841902, 300.88517745302715 93.72227573386482 C 301.45302713987473 92.85095637931062, 302.0208768267223 88.68574666743753, 302.5887265135699 86.58863584520024 C 303.1565762004175 84.49152502296296, 303.72442588726517 80.9246733499622, 304.29227557411275 81.1396108004411 C 304.86012526096033 81.35454825092, 305.4279749478079 86.11638368214989, 305.9958246346555 87.8782605480736 C 306.5636743215031 89.64013741399731, 307.13152400835077 90.93314607252933, 307.69937369519835 91.71087199598333 C 308.2672233820459 92.48859791943732, 308.8350730688935 92.66703005741135, 309.4029227557411 92.54461608879757 C 309.97077244258867 92.42220212018378, 310.53862212943636 91.13736332251753, 311.10647181628394 90.97638818430066 C 311.6743215031315 90.81541304608379, 312.2421711899791 91.14549598494663, 312.8100208768267 91.57876525949635 C 313.37787056367426 92.01203453404607, 313.94572025052184 92.97259564320194, 314.5135699373695 93.57600383159894 C 315.0814196242171 94.17941201999594, 315.6492693110647 94.97701384913526, 316.21711899791234 95.19921438987829 C 316.78496868476 95.42141493062132, 317.35281837160755 94.80693182143813, 317.92066805845513 94.90920707605711 C 318.4885177453027 95.0114823306761, 319.05636743215035 95.57913624845236, 319.62421711899793 95.81286591759219 C 320.1920668058455 96.04659558673202, 320.75991649269315 96.21108034487648, 321.32776617954073 96.31158509089616 C 321.8956158663883 96.41208983691584, 322.46346555323595 96.30249215759916, 323.03131524008353 96.41589439371025 C 323.5991649269311 96.52929662982133, 324.16701461377875 96.75884113511967, 324.7348643006263 96.99199850756267 C 325.3027139874739 97.22515588000567, 325.87056367432155 97.67416386393298, 326.4384133611691 97.81483862836829 C 327.0062630480167 97.95551339280361, 327.57411273486434 97.63570146656599, 328.1419624217119 97.83604709417459 C 328.7098121085595 98.03639272178319, 329.27766179540714 98.53043502177597, 329.8455114822547 99.01691239401985 C 330.4133611691023 99.50338976626374, 330.9812108559499 100.29185987607468, 331.54906054279746 100.75491132763788 C 332.11691022964504 101.21796277920109, 332.6847599164927 101.48245492767097, 333.25260960334026 101.7952211033991 C 333.82045929018784 102.10798727912723, 334.3883089770355 102.43222689702615, 334.95615866388306 102.63150838200669 C 335.52400835073064 102.83078986698722, 336.0918580375783 103.03332871191319, 336.65970772442586 102.99091001328229 C 337.22755741127344 102.94849131465139, 337.795407098121 102.60366295295185, 338.36325678496866 102.3769961902213 C 338.9311064718163 102.15032942749076, 339.4989561586639 101.74794094141106, 340.0668058455115 101.63090943689902 C 340.63465553235915 101.51387793238698, 341.2025052192067 101.44281868957728, 341.7703549060543 101.6748071631491 C 342.3382045929019 101.90679563672091, 342.9060542797495 102.7902803030113, 343.4739039665971 103.0228402783299 C 344.0417536534447 103.25540025364849, 344.6096033402923 103.05128247049493, 345.1774530271399 103.07016701506066 C 345.7453027139875 103.0890515596264, 346.3131524008351 103.13658355902318, 346.8810020876827 103.1361475457243 C 347.4488517745303 103.13571153242542, 348.0167014613779 103.23483500802149, 348.5845511482255 103.06755093526739 C 349.1524008350731 102.90026686251329, 349.72025052192066 102.37755795704304, 350.28810020876824 102.13244310919968 C 350.8559498956158 101.88732826135633, 351.42379958246346 101.83989251826286, 351.99164926931104 101.59686184820727 C 352.5594989561586 101.35383117815168, 353.12734864300626 100.93034780171877, 353.69519832985384 100.67425908886614 C 354.2630480167014 100.4181703760135, 354.83089770354906 100.20278148021015, 355.39874739039664 100.06032957109151 C 355.9665970772442 99.91787766197288, 356.53444676409185 99.90326040521667, 357.10229645093943 99.81954763415438 C 357.670146137787 99.73583486309208, 358.23799582463465 99.63020447360886, 358.80584551148223 99.55805294471776 C 359.3736951983298 99.48590141582666, 359.97703549060543 99.45037464754881, 360.50939457202503 99.38663846080777 C 361.04175365344463 99.32290227406673, 361.7515657620042 99.21080293036093, 362 99.17563582427155" fill="none" stroke="rgba(255,255,255,0.64)" stroke-width="0.58" stroke-linecap="round" stroke-linejoin="round"></path>
+    <circle cx="362" cy="99.17563582427155" r="4" fill="rgba(255,255,255,0.96)" stroke="#fff4d6" stroke-width="1.5"></circle>
+    <circle cx="362" cy="99.17563582427155" r="1.4000000000000001" fill="#fff4d6"></circle>
+    <text x="190" y="226" fill="rgba(31,26,23,0.58)" font-size="12" text-anchor="middle">Zaman (TSI)</text>
+    <text x="18" y="115" fill="rgba(31,26,23,0.58)" font-size="12" text-anchor="middle" transform="rotate(-90 18 115)">log10 Flux</text>
+  <g data-chart-hover-layer="true"></g></svg>
+          <p id="satelliteXrayMeta" class="chart-meta">GOES s1n1f1 C1.12 | Kullan1lan kategori Low | Ak1 1.12e-6 W/m² | Veri Canl1</p>
+        </section>
+
+        <section class="chart-card">
+          <div class="panel-head panel-head-inline">
+            <h3>Risk kırılımı</h3>
+            <span class="panel-note">Skor katkılarının dağılımı</span>
+          </div>
+          <div class="satellite-breakdown-list">
+            
+    <div class="satellite-breakdown-row">
+      <div class="satellite-breakdown-top">
+        <span>Geomagnetic (Kp)</span>
+        <strong>10</strong>
+      </div>
+      <div class="satellite-breakdown-track">
+        <div style="width:10%;"></div>
+      </div>
+    </div>
+  
+    <div class="satellite-breakdown-row">
+      <div class="satellite-breakdown-top">
+        <span>X-ray</span>
+        <strong>0</strong>
+      </div>
+      <div class="satellite-breakdown-track">
+        <div style="width:0%;"></div>
+      </div>
+    </div>
+  
+    <div class="satellite-breakdown-row">
+      <div class="satellite-breakdown-top">
+        <span>Yörünge tipi</span>
+        <strong>15</strong>
+      </div>
+      <div class="satellite-breakdown-track">
+        <div style="width:15%;"></div>
+      </div>
+    </div>
+  
+    <div class="satellite-breakdown-row">
+      <div class="satellite-breakdown-top">
+        <span>İrtifa</span>
+        <strong>10</strong>
+      </div>
+      <div class="satellite-breakdown-track">
+        <div style="width:10%;"></div>
+      </div>
+    </div>
+  
+          </div>
+        </section>
+
+        <section class="chart-card">
+          <div class="panel-head panel-head-inline">
+            <h3>Model disiplini</h3>
+            <span class="panel-note">Kullanılan ve ayıklanan bilgiler</span>
+          </div>
+          <div class="satellite-discipline-grid">
+            <div class="satellite-discipline-card">
+              <span>Kullanılan girdiler</span>
+              <ul><li>Kp: 3.33 (canlı)</li><li>X-ray kategorisi: Low (C1.12)</li><li>Uydu tipi: LEO</li><li>İrtifa: 550 km</li><li>Veri kalitesi: Canlı</li></ul>
+            </div>
+            <div class="satellite-discipline-card">
+              <span>Bağlamsal ama skorsuz</span>
+              <ul><li>24 saatlik maksimum Kp: 3.33</li><li>Kp +3 saat: 1.49</li><li>Trend: Stable</li><li>Son güncelleme: 29 Mar 2026 04:44</li><li>Weather driver skoru: 10/100</li><li>Maruziyet skoru: 25/25</li><li>Birlesik operasyon bandi: Moderate</li></ul>
+            </div>
+            <div class="satellite-discipline-card">
+              <span>Özellikle dışlananlar</span>
+              <ul><li>IMF Bz -3.4 nT</li><li>Proton yoğunluğu 3.8 p/cm3</li><li>Solar flux 178.2</li><li>Flare listesi (C1.12 dahil) alındı ama skorda kullanılmadı</li><li>CME özeti izleniyor ancak bu uydu skoruna henüz dahil değil</li></ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="satellite-actions-shell">
+        <section class="satellite-actions-card">
+          <div class="panel-head panel-head-inline">
+            <h3>Önerilen aksiyonlar</h3>
+            <span class="panel-note">Orta</span>
+          </div>
+          <ul class="satellite-actions-list">
+            <li>İzleme sıklığını artır ve telemetri marjlarını kontrol et.</li>
+          </ul>
+        </section>
+
+        <details class="satellite-raw-details">
+          <summary>Ham canlı veriyi göster</summary>
+          <div class="satellite-raw-grid">
+            <div>
+              <span>Kp / NOAA</span>
+              <pre>{
+  "kp_observed": 3.33,
+  "kp_used": 3.33,
+  "kp_forecast_3h": 1.492432496961837,
+  "observed_at": "2026-03-29T01:43:00"
+}</pre>
+            </div>
+            <div>
+              <span>X-ray / Solar</span>
+              <pre>{
+  "class": "C1.12",
+  "flux_w_m2": 0.0000011245605264775804,
+  "band_used": "Low",
+  "time": "2026-03-29T01:44:00Z"
+}</pre>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+      </article>
+
+      <article id="turkeyRiskMapPanel" class="panel panel-wide panel-turkey-risk-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Türkiye İl Bazlı Risk Paneli</h2>
+            <span class="panel-note">Veri alınan iller için seçim ve canlı NOAA sürücüleri</span>
+          </div>
+          <span id="turkeyRiskUpdated" class="panel-note">Son güncelleme 29 Mar 2026 04:46</span>
+        </div>
+        <div id="turkeyRiskContent" class="turkey-risk-content">
+          <article class="impact-card impact-empty">
+            <p>Türkiye il bazlı risk paneli veri geldikçe burada oluşturulacak.</p>
+          </article>
+        </div>
+      </article>
+
+      <article id="insightPanel" class="panel panel-wide panel-insight-panel">
+        <div class="panel-head">
+          <h2>Operasyonel İçgörüler</h2>
+          <span class="panel-note">Benzer olaylar ve yaklaşan pencere</span>
+        </div>
+        <div class="insight-grid">
+          <section class="insight-card">
+            <div class="insight-head">
+              <h3>CME Etki Penceresi</h3>
+              <span id="cmeWindowBadge" class="badge badge-neutral">Bekleniyor</span>
+            </div>
+            <p id="cmeWindowSummary" class="insight-summary">Yakın-Dünya verileri geldikçe tahmini etki penceresi burada güncellenecek.</p>
+            <p id="cmeWindowRange" class="insight-range">Henüz pencere hesaplanmadı.</p>
+            <div id="cmeWindowDrivers" class="insight-chips"></div>
+            <p id="cmeWindowInference" class="insight-fine">Bu alan, NOAA akışlarından türetilmiş operasyonel çıkarımı gösterir.</p>
+          </section>
+
+          <section class="insight-card">
+            <div class="insight-head">
+              <h3>Geçmiş Benzer Olaylar</h3>
+              <span class="panel-note">Kayıt geçmişi</span>
+            </div>
+            <div id="similarEventsList" class="similar-events"></div>
+          </section>
+        </div>
+      </article>
+
+      <article id="simulationPanel" class="panel panel-wide panel-simulation-panel">
+        <div class="panel-head">
+          <h2>Canlı Dünya Etki Simülasyonu</h2>
+          <span class="panel-note">Güneş rüzgârı ve manyetosfer</span>
+        </div>
+        <div class="simulation-shell">
+          <div class="simulation-stage">
+            <canvas id="spaceWeatherSimCanvas" class="space-weather-sim" aria-label="Güneş rüzgârı, Dünya ve manyetosfer simülasyonu" width="663" height="500"></canvas>
+            <div class="simulation-overlay">
+              <section class="simulation-callout simulation-callout-sun">
+                <span class="simulation-pill">Güneş Çıkışı</span>
+                <strong>Solar akış</strong>
+                <p id="simulationFlowLabel">AkÄ±ÅŸ sakin | 350 km/s</p>
+              </section>
+              <section class="simulation-callout simulation-callout-earth">
+                <span class="simulation-pill">Dünya</span>
+                <strong>Manyetik tepki</strong>
+                <p id="simulationImpactLabel">Aurora dÃ¼ÅŸÃ¼k | Kp 3.33 -&gt; 1.49</p>
+              </section>
+            </div>
+          </div>
+          <div class="simulation-meta">
+            <p id="simulationSummary" class="simulation-summary">CanlÄ± sahne ÅŸu anda sakin solar akÄ±ÅŸÄ± DÃ¼nya'nÄ±n manyetik kalkanÄ±yla eÅŸleÅŸtiriyor. Bz gÃ¼neye dÃ¶nÃ¼k olduÄŸu iÃ§in enerji aktarÄ±mÄ± hÄ±zlanÄ±yor. Aurora zayÄ±f seviyede, manyetik basÄ±nÃ§ ise %15 civarÄ±nda modelleniyor.</p>
+            <div class="simulation-stats">
+              <article class="simulation-stat">
+                <span>Akış hızı</span>
+                <strong id="simulationWindValue">350 km/s</strong>
+              </article>
+              <article class="simulation-stat">
+                <span>Aurora gücü</span>
+                <strong id="simulationAuroraValue">23%</strong>
+              </article>
+              <article class="simulation-stat">
+                <span>Manyetik basınç</span>
+                <strong id="simulationCompressionValue">15%</strong>
+              </article>
+              <article class="simulation-stat">
+                <span>Hedef Kp</span>
+                <strong id="simulationForecastValue">1.49</strong>
+              </article>
+            </div>
+            <div id="simulationLegend" class="simulation-legend"><span class="simulation-chip simulation-chip-flow">Solar akÄ±ÅŸ sakin</span><span class="simulation-chip simulation-chip-field">Bz gÃ¼neye -3.4 nT</span><span class="simulation-chip simulation-chip-aurora">Aurora soluk</span><span class="simulation-chip simulation-chip-risk">Manyetosfer geniÅŸ</span></div>
+            <section class="simulation-point-panel">
+              <div class="simulation-point-head">
+                <div>
+                  <span class="simulation-point-kicker">Seçili Nokta</span>
+                  <h3 id="simulationPointTitle">Kure uzerinde bir nokta sec</h3>
+                </div>
+                <span id="simulationPointBadge" class="simulation-point-badge" style="background: rgba(15, 95, 105, 0.1); color: rgb(15, 95, 105);">Secim bekleniyor</span>
+              </div>
+              <p id="simulationPointSummary" class="simulation-point-summary">Dunya kuresi uzerinde bir noktaya tiklayarak o bolgedeki uzay havasi etkisini inceleyebilirsin.</p>
+              <div class="simulation-point-grid">
+                <article class="simulation-point-metric">
+                  <span>Konum</span>
+                  <strong id="simulationPointLatLon">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>Yerel saat</span>
+                  <strong id="simulationPointLocalTime">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>Genel etki</span>
+                  <strong id="simulationPointOverall">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>Jeomanyetik</span>
+                  <strong id="simulationPointGeomag">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>GNSS</span>
+                  <strong id="simulationPointGnss">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>HF Radyo</span>
+                  <strong id="simulationPointHf">-</strong>
+                </article>
+              </div>
+              <div class="simulation-point-bars">
+                <div class="simulation-point-bar-row">
+                  <div class="simulation-point-bar-top">
+                    <span>Jeomanyetik baski</span>
+                    <strong id="simulationPointGeomagText">-</strong>
+                  </div>
+                  <div class="simulation-point-bar-track">
+                    <div id="simulationPointGeomagBar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                <div class="simulation-point-bar-row">
+                  <div class="simulation-point-bar-top">
+                    <span>GNSS / iyonosfer</span>
+                    <strong id="simulationPointGnssText">-</strong>
+                  </div>
+                  <div class="simulation-point-bar-track">
+                    <div id="simulationPointGnssBar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                <div class="simulation-point-bar-row">
+                  <div class="simulation-point-bar-top">
+                  <span>HF haberleşme</span>
+                    <strong id="simulationPointHfText">-</strong>
+                  </div>
+                  <div class="simulation-point-bar-track">
+                    <div id="simulationPointHfBar" style="width: 0%;"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <article id="solarPanel" class="panel panel-wide panel-solar-panel">
+        <div class="panel-head">
+          <div class="solar-head-copy">
+            <h2>Güneş Kaynaklı Parametreler</h2>
+            <span class="panel-note">NOAA + SILSO</span>
+            <p class="solar-entry-hint">Güneş kaynakları, radyasyon, iyonosfer ve operasyon etkilerini başlık başlık incelemek için butona tıkla.</p>
+          </div>
+          <button id="solarToggle" class="solar-toggle solar-toggle-prominent" type="button" aria-expanded="false">
+            <span class="solar-toggle-title">Detaylı veriyi aç</span>
+            <span class="solar-toggle-subtitle">Güneş kaynakları, radyasyon, iyonosfer ve operasyon katmanları</span>
+          </button>
+        </div>
+        <div id="solarContent" class="solar-content" aria-hidden="true">
+          <div class="solar-tab-row" role="tablist" aria-label="Solar parametre sekmeleri">
+            <button type="button" class="solar-tab is-active" data-solar-tab="overview" aria-pressed="true">Güneş Kaynakları</button>
+            <button type="button" class="solar-tab" data-solar-tab="radiation" aria-pressed="false">Radyasyon</button>
+            <button type="button" class="solar-tab" data-solar-tab="ionosphere" aria-pressed="false">İyonosfer</button>
+            <button type="button" class="solar-tab" data-solar-tab="magnetosphere" aria-pressed="false">Manyetosfer</button>
+            <button type="button" class="solar-tab" data-solar-tab="operations" aria-pressed="false">Operasyon</button>
+            <button type="button" class="solar-tab" data-solar-tab="all" aria-pressed="false">Tümü</button>
+          </div>
+          <div class="solar-grid">
+            <section class="solar-card">
+              <h3>Güneş Lekesi Sayısı</h3>
+              <p class="solar-meta" id="sunspotUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>NOAA (Güncel)</dt>
+                  <dd id="sunspotNoaaNow">-</dd>
+                </div>
+                <div>
+                  <dt>SILSO (Güncel)</dt>
+                  <dd id="sunspotSilsoNow">-</dd>
+                </div>
+                <div>
+                  <dt>NOAA (Tahmini)</dt>
+                  <dd id="sunspotNoaaPredicted">-</dd>
+                </div>
+                <div>
+                  <dt>SILSO (Tahmini)</dt>
+                  <dd id="sunspotSilsoPredicted">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card">
+              <h3>X-Ray Akısı (GOES)</h3>
+              <p class="solar-meta" id="xrayUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>Uzun Dalga (0.1-0.8nm)</dt>
+                  <dd id="xrayLongFlux">-</dd>
+                </div>
+                <div>
+                  <dt>Kısa Dalga (0.05-0.4nm)</dt>
+                  <dd id="xrayShortFlux">-</dd>
+                </div>
+                <div>
+                  <dt>Flare Sınıfı</dt>
+                  <dd id="xrayFlareClass">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card">
+              <h3>Solar Flare Sınıfları</h3>
+              <div id="flareClassLegend" class="solar-legend"></div>
+              <div id="flareList" class="solar-list-block"></div>
+            </section>
+
+            <section class="solar-card">
+              <h3>Koronal Kütle Atımı (CME)</h3>
+              <p class="solar-meta" id="cmeUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>Hız (km/s)</dt>
+                  <dd id="cmeSpeed">-</dd>
+                </div>
+                <div>
+                  <dt>Yön / Genişlik</dt>
+                  <dd id="cmeDirection">-</dd>
+                </div>
+                <div>
+                  <dt>Dünya Çarpma Olasılığı</dt>
+                  <dd id="cmeImpact">-</dd>
+                </div>
+                <div>
+                  <dt>Tahmini Varış</dt>
+                  <dd id="cmeArrival">-</dd>
+                </div>
+              </dl>
+              <p class="solar-note" id="cmeSummary">-</p>
+            </section>
+
+            <section class="solar-card">
+              <h3>Solar Radio Burst</h3>
+              <p class="solar-meta" id="radioUpdated">-</p>
+              <div id="radioBurstSummary" class="solar-list-block">-</div>
+            </section>
+
+            <section class="solar-card">
+              <h3>Solar Flux (F10.7)</h3>
+              <p class="solar-meta" id="solarFluxTime">-</p>
+              <div class="solar-value" id="solarFluxValue">-</div>
+            </section>
+
+            <section class="solar-card is-hidden">
+              <h3>Radyasyon Parametreleri</h3>
+              <p class="solar-meta" id="radiationUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>SEP Flux</dt>
+                  <dd id="sepFluxValue">-</dd>
+                </div>
+                <div>
+                  <dt>Proton Flux</dt>
+                  <dd id="protonFluxValue">-</dd>
+                </div>
+                <div>
+                  <dt>Electron Flux</dt>
+                  <dd id="electronFluxValue">-</dd>
+                </div>
+                <div>
+                  <dt>Heavy Ion Flux</dt>
+                  <dd id="heavyIonFluxValue">-</dd>
+                </div>
+                <div>
+                  <dt>Doz Hızı</dt>
+                  <dd id="doseRateValue">-</dd>
+                </div>
+                <div>
+                  <dt>&gt;10 MeV Proton</dt>
+                  <dd id="protonBandValue">-</dd>
+                </div>
+                <div>
+                  <dt>&gt;2 MeV Electron</dt>
+                  <dd id="electronBandValue">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card is-hidden">
+              <h3>İyonosfer Parametreleri</h3>
+              <p class="solar-meta" id="ionosphereUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>TEC</dt>
+                  <dd id="tecValue">-</dd>
+                </div>
+                <div>
+                  <dt>foF2</dt>
+                  <dd id="fof2Value">-</dd>
+                </div>
+                <div>
+                  <dt>hmF2</dt>
+                  <dd id="hmf2Value">-</dd>
+                </div>
+                <div>
+                  <dt>S4</dt>
+                  <dd id="s4Value">-</dd>
+                </div>
+                <div>
+                  <dt>σφ</dt>
+                  <dd id="sigmaPhiValue">-</dd>
+                </div>
+                <div>
+                  <dt>MUF / LUF</dt>
+                  <dd id="mufLufValue">-</dd>
+                </div>
+                <div>
+                  <dt>GPS Gecikmesi</dt>
+                  <dd id="ionoDelayValue">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card is-hidden">
+              <h3>Manyetosfer ve Aurora</h3>
+              <p class="solar-meta" id="magnetosphereUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>Auroral Oval</dt>
+                  <dd id="auroralOvalValue">-</dd>
+                </div>
+                <div>
+                  <dt>Aurora Olasılığı</dt>
+                  <dd id="auroraProbabilityValue">-</dd>
+                </div>
+                <div>
+                  <dt>Magnetopause Mesafesi</dt>
+                  <dd id="magnetopauseValue">-</dd>
+                </div>
+                <div>
+                  <dt>Radiation Belt</dt>
+                  <dd id="radiationBeltValue">-</dd>
+                </div>
+                <div>
+                  <dt>Substorm Göstergesi</dt>
+                  <dd id="substormValue">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card is-hidden">
+              <h3>Operasyonel Etki Parametreleri</h3>
+              <p class="solar-meta" id="operationalUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>HF Blackout</dt>
+                  <dd id="hfBlackoutValue">-</dd>
+                </div>
+                <div>
+                  <dt>GNSS Bozulması</dt>
+                  <dd id="gnssDegradationValue">-</dd>
+                </div>
+                <div>
+                  <dt>Yüzey Şarjlanma</dt>
+                  <dd id="surfaceChargingValue">-</dd>
+                </div>
+                <div>
+                  <dt>Dielektrik Şarj</dt>
+                  <dd id="deepChargingValue">-</dd>
+                </div>
+                <div>
+                  <dt>SEU Riski</dt>
+                  <dd id="seuRiskValue">-</dd>
+                </div>
+                <div>
+                  <dt>LEO Sürükleme</dt>
+                  <dd id="leoDragValue">-</dd>
+                </div>
+                <div>
+                  <dt>GIC Riski</dt>
+                  <dd id="gicRiskValue">-</dd>
+                </div>
+                <div>
+                  <dt>Havacılık Radyasyon</dt>
+                  <dd id="aviationRiskValue">-</dd>
+                </div>
+                <div>
+                  <dt>Kutup Rota Haberleşme</dt>
+                  <dd id="polarCommRiskValue">-</dd>
+                </div>
+              </dl>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel panel-noaa">
+        <div class="panel-head">
+          <h2>NOAA Ölçümleri</h2>
+          <span class="panel-note">Canlı ölçüm katmanı</span>
+        </div>
+        <dl id="noaaMetrics" class="metrics-grid"></dl>
+      </article>
+
+      <article class="panel panel-ground">
+        <div class="panel-head">
+          <h2>Yer Manyetometreleri</h2>
+          <span class="panel-note">INTERMAGNET istasyon takibi</span>
+        </div>
+        <div id="stationList" class="station-list"></div>
+      </article>
+
+      <article id="trendsPanel" class="panel panel-wide panel-trends-panel">
+        <div class="panel-head">
+          <h2>27 Günlük Genişletilmiş Bilimsel Eğilimler</h2>
+          <span class="panel-note">NOAA kaynak birleşimi</span>
+        </div>
+        <div class="chart-grid">
+          <section class="chart-card chart-card-wide chart-card-kp-model">
+            <div class="chart-head">
+              <h3>Gerçek Kp ve LSTM Karşılaştırma Grafiği</h3>
+              <span id="kpComparisonMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="kpComparisonChart" class="metric-chart metric-chart-wide" viewBox="0 0 860 280" preserveAspectRatio="none"></svg>
+            <div id="kpComparisonLegend" class="comparison-legend"></div>
+            <p class="chart-note">İnce çizgili bu grafik, gerçek Kp ile LSTM öngörüsünü aynı zaman akışında gösterir. Panel yenilendikçe seri otomatik olarak güncellenir.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>Kp (Gözlenen)</h3>
+              <span id="kpChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="kpChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Resmî Kp, son üç saatteki jeomanyetik etkinliğin özetidir. Değer yükseldikçe manyetik hareketlilik artar.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>Kp (Tahmini)</h3>
+              <span id="kpEstimatedChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="kpEstimatedChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Tahmini Kp, kısa vadeli yön değişimini daha erken görmenizi sağlar. Ani sıçramalar yaklaşan dalgalanmaları haber verebilir.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>Güneş Rüzgârı</h3>
+              <span id="speedChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="speedChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Hız arttıkça Dünya çevresindeki manyetik sistem üzerindeki baskı da güçlenebilir. Keskin artışlar yakından izlenmelidir.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>Proton Yoğunluğu</h3>
+              <span id="densityChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="densityChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Yoğunluk artışı, gelen plazma akışındaki sıkışmayı daha net gösterir. Hız ile birlikte okununca etki penceresi daha güvenilir yorumlanır.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>IMF B<sub>z</sub></h3>
+              <span id="bzChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="bzChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">B<sub>z</sub> uzun süre negatif kaldığında enerji aktarımı kolaylaşır. Bu durum jeomanyetik etkinliği güçlendirebilir.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>IMF Bt</h3>
+              <span id="btChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="btChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Toplam alan şiddeti, Bz ile birlikte okunduğunda manyetik alanın ne kadar organize ve kuvvetli geldiğini daha iyi hissettirir.</p>
+          </section>
+        </div>
+      </article>
+
+      <article class="panel panel-wide panel-history-panel">
+        <div class="panel-head">
+          <h2>Yakın Geçmiş</h2>
+          <span class="panel-note">Son değerlendirme izi</span>
+        </div>
+        <div class="history-wrap">
+          <svg id="historyChart" class="metric-chart metric-chart-wide" viewBox="0 0 860 220" preserveAspectRatio="none"></svg>
+          <div id="historyLegend" class="history-legend"></div>
+        </div>
+      </article>
+
+      <article id="nasaPanel" class="panel panel-wide panel-nasa-panel">
+        <div class="panel-head">
+          <h2>NASA Görsel Akışı</h2>
+          <span class="panel-note">Büyük önizleme ve canlı seçim şeridi</span>
+        </div>
+        <div class="image-gallery">
+          <section id="imageHero" class="image-hero"></section>
+          <div id="imageGrid" class="image-grid"></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener('error', function (event) {
+      var statusNode = document.getElementById('statusLine');
+      if (statusNode) {
+        var source = event && event.filename ? ' [' + event.filename + ':' + event.lineno + ':' + event.colno + ']' : '';
+        statusNode.textContent = 'Panel JavaScript hatası: ' + (event && event.message ? event.message : 'Bilinmeyen hata') + source;
+      }
+    });
+    window.addEventListener('unhandledrejection', function (event) {
+      var statusNode = document.getElementById('statusLine');
+      var reason = event && event.reason;
+      var text = reason && reason.message ? reason.message : String(reason || 'Bilinmeyen hata');
+      if (statusNode) {
+        statusNode.textContent = 'Panel veri akışı hatası: ' + text;
+      }
+    });
+  </script>
+  <script>
+    (function () {
+      function toNumber(value) {
+        var number = Number(value);
+        return Number.isFinite(number) ? number : null;
+      }
+
+      function formatNumber(value, digits) {
+        var number = toNumber(value);
+        return number === null ? '-' : number.toFixed(digits);
+      }
+
+      function setText(id, value) {
+        var node = document.getElementById(id);
+        if (node) {
+          node.textContent = value;
+        }
+      }
+
+      function applyBadge(level) {
+        var node = document.getElementById('levelBadge');
+        if (!node) return;
+        var normalized = String(level || 'normal').toLowerCase();
+        var labels = {
+          normal: 'Normal',
+          watch: 'İzleme',
+          warning: 'Uyarı',
+          severe: 'Şiddetli'
+        };
+        node.textContent = labels[normalized] || 'Normal';
+        node.className = 'badge ' + ({
+          normal: 'badge-normal',
+          watch: 'badge-watch',
+          warning: 'badge-warning',
+          severe: 'badge-severe'
+        }[normalized] || 'badge-neutral');
+      }
+
+      async function bootstrapCriticalStatus() {
+        try {
+          var response = await fetch('/api/status?refresh_if_empty=1&download_images=0', { cache: 'no-store' });
+          var payload = await response.json();
+          if (!response.ok || !payload || !payload.latest) {
+            throw new Error((payload && payload.error) || 'Durum verisi alınamadı.');
+          }
+
+          var latest = payload.latest || {};
+          var evaluation = latest.evaluation || {};
+          var noaa = evaluation.noaa || {};
+          applyBadge(evaluation.level || 'normal');
+          setText('scoreValue', '%' + formatNumber(evaluation.risk_percent != null ? evaluation.risk_percent : evaluation.score, 0));
+          setText('generatedAt', 'Son güncelleme (UTC): ' + String(latest.generated_at || '-'));
+          setText('riskNarrative', 'Acil veri yükleyici etkin: canlı veriler gösteriliyor, gelişmiş paneller tarayıcıda ayrıca işlenecek.');
+          setText('kpValue', formatNumber(noaa.kp, 2));
+          setText('kpEstimatedValue', formatNumber(noaa.kp_estimated, 2));
+          setText('kpLstmValue', formatNumber(noaa.kp_lstm_forecast && noaa.kp_lstm_forecast.predicted_kp, 2));
+          setText('speedValue', toNumber(noaa.solar_wind_speed_km_s) === null ? '-' : formatNumber(noaa.solar_wind_speed_km_s, 1) + ' km/s');
+          setText('bzValue', toNumber(noaa.bz_nt) === null ? '-' : formatNumber(noaa.bz_nt, 2) + ' nT');
+          setText('confidenceValue', '%' + formatNumber(evaluation.confidence_percent, 0));
+          setText('confidenceMeta', 'Acil veri yükleyici ile temel güven metriği gösteriliyor.');
+
+          var statusNode = document.getElementById('statusLine');
+          if (statusNode && (!statusNode.textContent || statusNode.textContent.indexOf('Panel JavaScript hatası') === -1)) {
+            statusNode.textContent = 'Temel canlı veriler yüklendi. Gelişmiş panel bileşenleri hazırlanıyor.';
+          }
+        } catch (error) {
+          var statusNode = document.getElementById('statusLine');
+          if (statusNode && statusNode.textContent.indexOf('Panel JavaScript hatası') === -1) {
+            statusNode.textContent = 'Temel veri yüklenemedi: ' + (error && error.message ? error.message : 'Bilinmeyen hata');
+          }
+        }
+      }
+
+      window.setTimeout(function () {
+        var scoreNode = document.getElementById('scoreValue');
+        if (scoreNode && String(scoreNode.textContent || '').trim() === '-') {
+          bootstrapCriticalStatus();
+        }
+      }, 150);
+    })();
+  </script>
+  <script src="/static/panel.js?v=20260329-imf-copy-trim-1"></script>
+
+
+</body></html>

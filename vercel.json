@@ -1,0 +1,31 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/panel.py": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/static/:path*",
+      "destination": "/api/panel?__route=/static/:path*"
+    },
+    {
+      "source": "/media/:path*",
+      "destination": "/api/panel?__route=/media/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/api/panel?__route=/api/:path*"
+    },
+    {
+      "source": "/",
+      "destination": "/api/panel?__route=/"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/api/panel?__route=/:path*"
+    }
+  ]
+}

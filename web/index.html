@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Language" content="tr">
+  <title>Uzay Havası Erken Uyarı Paneli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/panel.css?v=20260329-notification-balance-1">
+</head>
+<body>
+  <div class="backdrop"></div>
+  <main class="shell">
+    <header class="hero">
+      <nav class="hero-command-rail" aria-label="Hızlı gezinme">
+        <a href="#impactPanel">Etki</a>
+        <a href="#kpQueryPanel">Kp Sorgu</a>
+        <a href="#imfBzQueryPanel">IMF Bz</a>
+        <a href="#solarWindQueryPanel">Güneş Hızı</a>
+        <a href="#notifyPanel">Bildirim</a>
+        <a href="#satellitePanel">Uydu</a>
+        <a href="#simulationPanel">Simülasyon</a>
+        <a href="#solarPanel">Solar</a>
+        <a href="#trendsPanel">Grafikler</a>
+        <a href="#nasaPanel">NASA</a>
+      </nav>
+      <div class="hero-copy">
+        <p class="eyebrow">NOAA + NASA + INTERMAGNET</p>
+        <h1>Uzay Havası Erken Uyarı Paneli</h1>
+        <p class="lede">Gerçek zamanlı güneş rüzgârı, jeomanyetik etkinlik ve NASA görüntülerini daha güçlü bir görsel akışla izleyin. Panel, veriyi otomatik toplar, yorumlar ve karar desteği üretir.</p>
+        <div class="hero-actions">
+          <a class="primary hero-action-link" href="#simulationPanel">Simülasyonu Aç</a>
+          <a class="secondary hero-action-link" href="#solarPanel">Solar Veriye Git</a>
+        </div>
+        <div class="hero-tags" aria-label="Öne çıkan özellikler">
+          <span class="hero-tag">Resmî NOAA akışları</span>
+          <span class="hero-tag">NASA canlı görsel akışı</span>
+          <span class="hero-tag">Dakikada bir otomatik yenileme</span>
+        </div>
+      </div>
+      <!--
+        <p class="controls-kicker">Canlı Durum</p>
+        <p class="controls-title">Sistem arka planda sürekli tarama yapıyor; pano veriyi topluyor, yorumluyor ve kendini düzenli olarak güncelliyor.</p>
+        <label class="toggle">
+          <input id="imagesToggle" type="checkbox" checked>
+          <span>NASA görsellerini yerel önbelleğe al</span>
+        </label>
+        <p id="statusLine" class="status-line">Panel hazırlanıyor. Veriler her 1 dakikada bir otomatik olarak yenilenir.</p>
+        <section class="access-panel" aria-label="Paylaşım bağlantıları">
+          <div class="access-head">
+            <p class="access-kicker">Paylaşım Bağlantısı</p>
+            <span id="accessMode" class="badge badge-neutral">Hazırlanıyor</span>
+          </div>
+          <a id="accessPublicUrl" class="access-link access-link-disabled" href="#" target="_blank" rel="noreferrer noopener">Sabit bağlantı hazırlanıyor</a>
+          <p id="accessHint" class="access-hint">Panel aynı Wi-Fi ağında sabit bir bağlantı ile paylaşılacak. Hazır olduğunda adres burada görünecek.</p>
+          <div class="access-meta">
+            <span>Yerel adres</span>
+            <a id="accessLocalUrl" href="#" target="_blank" rel="noreferrer noopener">Yerel adres yükleniyor</a>
+          </div>
+        </section>
+      -->
+    </header>
+
+    <section class="panel-grid notify-panel-grid">
+      <article id="notifyPanel" class="panel panel-wide panel-notify-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Telefon Uyarıları</h2>
+            <span class="panel-note">Her kullanıcı kendi Pushbullet hesabıyla kişisel bildirim alabilir</span>
+          </div>
+          <span id="notificationPanelStatus" class="badge badge-neutral">Hazırlanıyor</span>
+        </div>
+        <div id="notificationPanelContent" class="notify-panel-content">
+          <article class="impact-card impact-empty">
+            <p>Telefon bildirim paneli yükleniyor.</p>
+          </article>
+        </div>
+      </article>
+    </section>
+
+    <section class="summary-grid">
+      <article class="signal-card level-card signal-risk">
+        <p class="card-kicker">Güneş Fırtınası Riski</p>
+        <div class="level-row">
+          <span id="levelBadge" class="badge badge-neutral">Bekleniyor</span>
+          <span id="scoreValue" class="score-value">-</span>
+        </div>
+        <div class="risk-meter" aria-hidden="true">
+          <div id="riskBar" class="risk-bar"></div>
+        </div>
+        <div class="risk-scale">
+          <span>%0</span>
+          <span>%35</span>
+          <span>%60</span>
+          <span>%85+</span>
+        </div>
+        <div class="summary-card-copy summary-card-copy-risk">
+          <p id="generatedAt" class="meta">Henüz veri yok.</p>
+          <p class="summary-card-explainer">Bu skor Kp, IMF Bz, güneş rüzgârı, yoğunluk ve yer ölçümlerini birlikte yorumlar.</p>
+          <p id="riskNarrative" class="risk-narrative">Canlı risk açıklaması veri geldikçe burada güncellenir.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-kp">
+        <p class="card-kicker">Kp (Gözlenen)</p>
+        <p id="kpValue" class="metric">-</p>
+        <div class="summary-card-copy">
+          <p class="meta"><span class="summary-unit-pill">NOAA</span> Resmî 3 saatlik ölçüm</p>
+          <p class="summary-card-explainer">Dünya manyetik alanındaki son 3 saatlik dalgalanmanın sayısal özetidir.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-kp-est">
+        <p class="card-kicker">Kp (Tahmini)</p>
+        <p id="kpEstimatedValue" class="metric">-</p>
+        <div class="summary-card-copy">
+          <p class="meta"><span class="summary-unit-pill">NOAA</span> Dakikalık kısa vade</p>
+          <p class="summary-card-explainer">Yakın saatlerde jeomanyetik yönün güçlenip güçlenmeyeceğini erken gösterir.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-kp-ai">
+        <p class="card-kicker">Kp (LSTM Öngörü)</p>
+        <p id="kpLstmValue" class="metric">-</p>
+        <div class="summary-card-copy">
+          <p id="kpLstmMeta" class="meta">Yeterli geçmiş veri biriktiğinde model 3 saat sonrası için öngörü üretir.</p>
+          <p class="summary-card-explainer">Model, geçmiş Kp örüntülerinden öğrenerek kısa vadeli eğilimi sayısal olarak tahmin eder.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-wind">
+        <p class="card-kicker">Güneş Rüzgârı</p>
+        <p id="speedValue" class="metric">-</p>
+        <div class="summary-card-copy">
+          <p class="meta"><span class="summary-unit-pill">km/s</span> Plazma akış hızı</p>
+          <p class="summary-card-explainer">Hız arttıkça Dünya manyetosferine binen dinamik basınç ve olası etki artabilir.</p>
+        </div>
+      </article>
+
+      <article class="signal-card signal-bz">
+        <p class="card-kicker">IMF B<sub>z</sub></p>
+        <p id="bzValue" class="metric">-</p>
+        <div class="summary-card-copy">
+          <p class="meta"><span class="summary-unit-pill">nT</span> Kuzey-güney manyetik yön</p>
+          <p class="summary-card-explainer">Negatif Bz, güneş rüzgârı enerjisinin Dünya manyetosferine aktarımını kolaylaştırır.</p>
+        </div>
+      </article>
+
+      <article class="signal-card confidence-card signal-confidence">
+        <p class="card-kicker">Tahmin Güveni</p>
+        <p id="confidenceValue" class="metric">-</p>
+        <div class="summary-card-copy">
+          <p id="confidenceMeta" class="meta">Veri uyumu ve kapsama bekleniyor.</p>
+          <p class="summary-card-explainer">Kaynaklar birbiriyle ne kadar uyumluysa panelin bu yorumdan emin olma düzeyi de o kadar yükselir.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel-grid">
+      <article id="impactPanel" class="panel panel-wide panel-impact-panel">
+        <div class="panel-head">
+          <h2>Türkiye İçin Etki Tahmini</h2>
+          <span class="panel-note">Sektör bazlı hızlı okuma</span>
+        </div>
+        <div id="impactGrid" class="impact-grid"></div>
+      </article>
+
+      <article id="turkeyRiskMapPanel" class="panel panel-wide panel-turkey-risk-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Türkiye İl Bazlı Risk Paneli</h2>
+            <span class="panel-note">İl seçerek yerel parametreleri inceleyin</span>
+          </div>
+          <span id="turkeyRiskUpdated" class="panel-note">Hazırlanıyor</span>
+        </div>
+        <div id="turkeyRiskContent" class="turkey-risk-content">
+          <article class="impact-card impact-empty">
+            <p>Türkiye il bazlı risk paneli canlı NOAA verisi geldikçe burada oluşturulacak.</p>
+          </article>
+        </div>
+      </article>
+
+      <article id="kpQueryPanel" class="panel panel-wide panel-archive-query-panel panel-kp-query-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Tarih Bazlı Kp Sorgulama</h2>
+            <span class="panel-note">Seçilen tarih için günlük maksimum Kp değerini ve varsa ileri tarih öngörüsünü gösterir</span>
+          </div>
+          <span id="kpQueryAvailability" class="panel-note">Arşiv hazırlanıyor</span>
+        </div>
+        <div class="kp-query-shell">
+          <div class="kp-query-toolbar">
+            <label class="kp-query-field" for="kpQueryDateInput">
+              <span>Sorgulanacak tarih</span>
+              <div class="kp-query-input-row">
+                <input id="kpQueryDateInput" type="date" inputmode="none" autocomplete="off">
+                <button id="kpQueryOpenPicker" class="kp-query-picker" type="button" aria-label="Takvimden tarih seç">Takvimden seç</button>
+              </div>
+            </label>
+            <button id="kpQuerySubmit" class="primary kp-query-submit" type="button">Kp sorgula</button>
+          </div>
+          <p id="kpQueryDateHint" class="kp-query-date-hint">Takvimden bir gün seçebilir ya da alana <code>YYYY-AA-GG</code> biçiminde tarih yazabilirsin.</p>
+          <div class="kp-query-examples" aria-label="Örnek Kp sorguları">
+            <button type="button" class="kp-query-chip" data-kp-query-date="1935-06-15">1935 örneği</button>
+            <button type="button" class="kp-query-chip" data-kp-query-date="1989-03-13">1989 fırtınası</button>
+            <button type="button" class="kp-query-chip" data-kp-query-date="2003-10-29">2003 Halloween</button>
+            <button type="button" class="kp-query-chip" data-kp-query-date="2027-03-28">Gelecek tarih</button>
+          </div>
+          <p id="kpQueryStatus" class="kp-query-status">Bir tarih seçtiğinde gerçek Kp değeri ya da gerekiyorsa ileri tarih öngörüsü burada görünecek.</p>
+          <div id="kpQueryResult" class="kp-query-result">
+            <article class="impact-card impact-empty">
+              <p>Seçilen tarihe ait günlük maksimum Kp, risk seviyesi ve beklenen değer aralığı burada gösterilecek.</p>
+            </article>
+          </div>
+        </div>
+      </article>
+
+      <article id="solarWindQueryPanel" class="panel panel-wide panel-archive-query-panel panel-solar-wind-query-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Tarih Bazlı Güneş Rüzgârı Hızı Sorgulama</h2>
+            <span class="panel-note">Seçilen tarih için 5 günlük temsilî güneş rüzgârı hızını ve varsa ileri tarih öngörüsünü gösterir</span>
+          </div>
+          <span id="solarWindQueryAvailability" class="panel-note">RTSW arşivi hazırlanıyor</span>
+        </div>
+        <div class="kp-query-shell">
+          <div class="kp-query-toolbar">
+            <label class="kp-query-field" for="solarWindQueryDateInput">
+              <span>Sorgulanacak tarih</span>
+              <div class="kp-query-input-row">
+                <input id="solarWindQueryDateInput" type="date" inputmode="none" autocomplete="off">
+                <button id="solarWindQueryOpenPicker" class="kp-query-picker" type="button" aria-label="Takvimden tarih seç">Takvimden seç</button>
+              </div>
+            </label>
+            <button id="solarWindQuerySubmit" class="primary kp-query-submit" type="button">Hızı sorgula</button>
+          </div>
+          <p id="solarWindQueryDateHint" class="kp-query-date-hint">Takvimden bir gün seçebilir ya da alana <code>YYYY-AA-GG</code> biçiminde tarih yazabilirsin.</p>
+          <div class="kp-query-examples" aria-label="Örnek güneş rüzgârı sorguları">
+            <button type="button" class="kp-query-chip" data-solar-wind-query-date="1998-01-05">Erken arşiv</button>
+            <button type="button" class="kp-query-chip" data-solar-wind-query-date="2003-10-29">2003 örneği</button>
+            <button type="button" class="kp-query-chip" data-solar-wind-query-date="2023-09-07">Son gerçek blok</button>
+            <button type="button" class="kp-query-chip" data-solar-wind-query-date="2027-03-28">Gelecek tarih</button>
+          </div>
+          <p id="solarWindQueryStatus" class="kp-query-status">Bir tarih seçtiğinde gerçek 5 günlük güneş rüzgârı bloğu ya da gerekiyorsa ileri tarih öngörüsü burada görünecek.</p>
+          <div id="solarWindQueryResult" class="kp-query-result">
+            <article class="impact-card impact-empty">
+              <p>Seçilen tarihe ait 5 günlük temsilî güneş rüzgârı hızı, beklenen aralık, hız seviyesi ve kısa yorum burada gösterilecek.</p>
+            </article>
+          </div>
+        </div>
+      </article>
+
+      <article id="imfBzQueryPanel" class="panel panel-wide panel-archive-query-panel panel-imf-bz-query-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Tarih Bazlı IMF Bz Sorgulama</h2>
+            <span class="panel-note">Seçilen tarih için 5 günlük temsilî IMF Bz değerini ve varsa ileri tarih öngörüsünü gösterir</span>
+          </div>
+          <span id="imfBzQueryAvailability" class="panel-note">RTSW arşivi hazırlanıyor</span>
+        </div>
+        <div class="kp-query-shell">
+          <div class="kp-query-toolbar">
+            <label class="kp-query-field" for="imfBzQueryDateInput">
+              <span>Sorgulanacak tarih</span>
+              <div class="kp-query-input-row">
+                <input id="imfBzQueryDateInput" type="date" inputmode="none" autocomplete="off">
+                <button id="imfBzQueryOpenPicker" class="kp-query-picker" type="button" aria-label="Takvimden tarih seç">Takvimden seç</button>
+              </div>
+            </label>
+            <button id="imfBzQuerySubmit" class="primary kp-query-submit" type="button">IMF Bz sorgula</button>
+          </div>
+          <p id="imfBzQueryDateHint" class="kp-query-date-hint">Takvimden bir gün seçebilir ya da alana <code>YYYY-AA-GG</code> biçiminde tarih yazabilirsin.</p>
+          <div class="kp-query-examples" aria-label="Örnek IMF Bz sorguları">
+            <button type="button" class="kp-query-chip" data-imf-bz-query-date="1998-02-15">Erken arşiv</button>
+            <button type="button" class="kp-query-chip" data-imf-bz-query-date="2003-10-29">2003 örneği</button>
+            <button type="button" class="kp-query-chip" data-imf-bz-query-date="2023-09-07">Son gerçek blok</button>
+            <button type="button" class="kp-query-chip" data-imf-bz-query-date="2027-03-28">Gelecek tarih</button>
+          </div>
+          <p id="imfBzQueryStatus" class="kp-query-status">Bir tarih seçtiğinde gerçek 5 günlük IMF Bz bloğu ya da gerekiyorsa ileri tarih öngörüsü burada görünecek.</p>
+          <div id="imfBzQueryResult" class="kp-query-result">
+            <article class="impact-card impact-empty">
+              <p>Seçilen tarihe ait 5 günlük temsilî IMF Bz değeri, beklenen aralık ve kısa yorum burada gösterilecek.</p>
+              <p>Bz ≤ -10 nT çok negatif, -10 ile -5 nT arası negatif, -5 ile +5 nT arası nötr / zayıf, +5 nT ve üzeri ise pozitif olarak yorumlanır.</p>
+            </article>
+          </div>
+        </div>
+      </article>
+
+      <article id="satellitePanel" class="panel panel-wide panel-satellite-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Uydu Etki Paneli</h2>
+            <span class="panel-note">Yörünge bazlı operasyon riski</span>
+          </div>
+          <span id="satelliteUpdated" class="panel-note">Hazırlanıyor</span>
+        </div>
+        <div id="satellitePanelContent" class="satellite-panel-content">
+          <article class="impact-card impact-empty">
+            <p>Uydu etki paneli canlı Kp ve X-ray verileri geldikçe burada oluşturulacak.</p>
+          </article>
+        </div>
+      </article>
+
+      <article id="simulationPanel" class="panel panel-wide panel-simulation-panel">
+        <div class="panel-head">
+          <h2>Canlı Dünya Etki Simülasyonu</h2>
+          <span class="panel-note">Güneş rüzgârı ve manyetosfer</span>
+        </div>
+        <div class="simulation-shell">
+          <div class="simulation-stage">
+            <canvas id="spaceWeatherSimCanvas" class="space-weather-sim" aria-label="Güneş rüzgârı, Dünya ve manyetosfer simülasyonu"></canvas>
+            <div class="simulation-overlay">
+              <section class="simulation-callout simulation-callout-sun">
+                <span class="simulation-pill">Güneş Çıkışı</span>
+                <strong>Solar akış</strong>
+                <p id="simulationFlowLabel">Akış modelleniyor.</p>
+              </section>
+              <section class="simulation-callout simulation-callout-earth">
+                <span class="simulation-pill">Dünya</span>
+                <strong>Manyetik tepki</strong>
+                <p id="simulationImpactLabel">Canlı etki bekleniyor.</p>
+              </section>
+            </div>
+          </div>
+          <div class="simulation-meta">
+            <p id="simulationSummary" class="simulation-summary">Canlı NOAA ve Kp verileri geldikçe simülasyon kendini otomatik olarak günceller.</p>
+            <div class="simulation-stats">
+              <article class="simulation-stat">
+                <span>Akış hızı</span>
+                <strong id="simulationWindValue">-</strong>
+              </article>
+              <article class="simulation-stat">
+                <span>Aurora gücü</span>
+                <strong id="simulationAuroraValue">-</strong>
+              </article>
+              <article class="simulation-stat">
+                <span>Manyetik basınç</span>
+                <strong id="simulationCompressionValue">-</strong>
+              </article>
+              <article class="simulation-stat">
+                <span>Hedef Kp</span>
+                <strong id="simulationForecastValue">-</strong>
+              </article>
+            </div>
+            <div id="simulationLegend" class="simulation-legend"></div>
+            <section class="simulation-point-panel">
+              <div class="simulation-point-head">
+                <div>
+                  <span class="simulation-point-kicker">Seçili Nokta</span>
+                  <h3 id="simulationPointTitle">Küre üzerinde bir nokta seç</h3>
+                </div>
+                <span id="simulationPointBadge" class="simulation-point-badge">Hazır</span>
+              </div>
+              <p id="simulationPointSummary" class="simulation-point-summary">Dünya küresi üzerinde bir noktaya tıklayarak o bölgedeki uzay havası etkisini inceleyebilirsin.</p>
+              <div class="simulation-point-grid">
+                <article class="simulation-point-metric">
+                  <span>Konum</span>
+                  <strong id="simulationPointLatLon">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>Yerel saat</span>
+                  <strong id="simulationPointLocalTime">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>Genel etki</span>
+                  <strong id="simulationPointOverall">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>Jeomanyetik</span>
+                  <strong id="simulationPointGeomag">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>GNSS</span>
+                  <strong id="simulationPointGnss">-</strong>
+                </article>
+                <article class="simulation-point-metric">
+                  <span>HF Radyo</span>
+                  <strong id="simulationPointHf">-</strong>
+                </article>
+              </div>
+              <div class="simulation-point-bars">
+                <div class="simulation-point-bar-row">
+                  <div class="simulation-point-bar-top">
+                    <span>Jeomanyetik baski</span>
+                    <strong id="simulationPointGeomagText">-</strong>
+                  </div>
+                  <div class="simulation-point-bar-track">
+                    <div id="simulationPointGeomagBar"></div>
+                  </div>
+                </div>
+                <div class="simulation-point-bar-row">
+                  <div class="simulation-point-bar-top">
+                    <span>GNSS / iyonosfer</span>
+                    <strong id="simulationPointGnssText">-</strong>
+                  </div>
+                  <div class="simulation-point-bar-track">
+                    <div id="simulationPointGnssBar"></div>
+                  </div>
+                </div>
+                <div class="simulation-point-bar-row">
+                  <div class="simulation-point-bar-top">
+                  <span>HF haberleşme</span>
+                    <strong id="simulationPointHfText">-</strong>
+                  </div>
+                  <div class="simulation-point-bar-track">
+                    <div id="simulationPointHfBar"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <article id="solarPanel" class="panel panel-wide panel-solar-panel">
+        <div class="panel-head">
+          <div class="solar-head-copy">
+            <h2>Uzay Havası Parametreleri</h2>
+            <span class="panel-note">NOAA + SILSO</span>
+            <p class="solar-entry-hint">Güneş kaynakları, radyasyon, iyonosfer ve operasyon etkilerini başlık başlık incelemek için butona tıkla.</p>
+          </div>
+          <button id="solarToggle" class="solar-toggle solar-toggle-prominent" type="button" aria-expanded="false">
+            <span class="solar-toggle-title">Detaylı veriyi aç</span>
+            <span class="solar-toggle-subtitle">Güneş kaynakları, radyasyon, iyonosfer ve operasyon katmanları</span>
+          </button>
+        </div>
+        <div id="solarContent" class="solar-content" aria-hidden="true">
+          <div class="solar-tab-row" role="tablist" aria-label="Solar parametre sekmeleri">
+            <button type="button" class="solar-tab is-active" data-solar-tab="overview" aria-pressed="true">Güneş Kaynakları</button>
+            <button type="button" class="solar-tab" data-solar-tab="radiation" aria-pressed="false">Radyasyon</button>
+            <button type="button" class="solar-tab" data-solar-tab="ionosphere" aria-pressed="false">İyonosfer</button>
+            <button type="button" class="solar-tab" data-solar-tab="magnetosphere" aria-pressed="false">Manyetosfer</button>
+            <button type="button" class="solar-tab" data-solar-tab="operations" aria-pressed="false">Operasyon</button>
+            <button type="button" class="solar-tab" data-solar-tab="all" aria-pressed="false">Tümü</button>
+          </div>
+          <div class="solar-grid">
+            <section class="solar-card">
+              <h3>Güneş Lekesi Sayısı</h3>
+              <p class="solar-meta" id="sunspotUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>NOAA (Güncel)</dt>
+                  <dd id="sunspotNoaaNow">-</dd>
+                </div>
+                <div>
+                  <dt>SILSO (Güncel)</dt>
+                  <dd id="sunspotSilsoNow">-</dd>
+                </div>
+                <div>
+                  <dt>NOAA (Tahmini)</dt>
+                  <dd id="sunspotNoaaPredicted">-</dd>
+                </div>
+                <div>
+                  <dt>SILSO (Tahmini)</dt>
+                  <dd id="sunspotSilsoPredicted">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card">
+              <h3>X-Ray Akısı (GOES)</h3>
+              <p class="solar-meta" id="xrayUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>Uzun Dalga (0.1-0.8nm)</dt>
+                  <dd id="xrayLongFlux">-</dd>
+                </div>
+                <div>
+                  <dt>Kısa Dalga (0.05-0.4nm)</dt>
+                  <dd id="xrayShortFlux">-</dd>
+                </div>
+                <div>
+                  <dt>Flare Sınıfı</dt>
+                  <dd id="xrayFlareClass">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card">
+              <h3>Solar Flare Sınıfları</h3>
+              <div id="flareClassLegend" class="solar-legend"></div>
+              <div id="flareList" class="solar-list-block"></div>
+            </section>
+
+            <section class="solar-card">
+              <h3>Koronal Kütle Atımı (CME)</h3>
+              <p class="solar-meta" id="cmeUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>Hız (km/s)</dt>
+                  <dd id="cmeSpeed">-</dd>
+                </div>
+                <div>
+                  <dt>Yön / Genişlik</dt>
+                  <dd id="cmeDirection">-</dd>
+                </div>
+                <div>
+                  <dt>Dünya Çarpma Olasılığı</dt>
+                  <dd id="cmeImpact">-</dd>
+                </div>
+                <div>
+                  <dt>Tahmini Varış</dt>
+                  <dd id="cmeArrival">-</dd>
+                </div>
+              </dl>
+              <p class="solar-note" id="cmeSummary">-</p>
+            </section>
+
+            <section class="solar-card">
+              <h3>Solar Radio Burst</h3>
+              <p class="solar-meta" id="radioUpdated">-</p>
+              <div id="radioBurstSummary" class="solar-list-block">-</div>
+            </section>
+
+            <section class="solar-card">
+              <h3>Solar Flux (F10.7)</h3>
+              <p class="solar-meta" id="solarFluxTime">-</p>
+              <div class="solar-value" id="solarFluxValue">-</div>
+            </section>
+
+            <section class="solar-card">
+              <h3>Radyasyon Parametreleri</h3>
+              <p class="solar-meta" id="radiationUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>SEP Flux</dt>
+                  <dd id="sepFluxValue">-</dd>
+                </div>
+                <div>
+                  <dt>Proton Flux</dt>
+                  <dd id="protonFluxValue">-</dd>
+                </div>
+                <div>
+                  <dt>Electron Flux</dt>
+                  <dd id="electronFluxValue">-</dd>
+                </div>
+                <div>
+                  <dt>Heavy Ion Flux</dt>
+                  <dd id="heavyIonFluxValue">-</dd>
+                </div>
+                <div>
+                  <dt>Doz Hızı</dt>
+                  <dd id="doseRateValue">-</dd>
+                </div>
+                <div>
+                  <dt>&gt;10 MeV Proton</dt>
+                  <dd id="protonBandValue">-</dd>
+                </div>
+                <div>
+                  <dt>&gt;2 MeV Electron</dt>
+                  <dd id="electronBandValue">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card">
+              <h3>İyonosfer Parametreleri</h3>
+              <p class="solar-meta" id="ionosphereUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>TEC</dt>
+                  <dd id="tecValue">-</dd>
+                </div>
+                <div>
+                  <dt>foF2</dt>
+                  <dd id="fof2Value">-</dd>
+                </div>
+                <div>
+                  <dt>hmF2</dt>
+                  <dd id="hmf2Value">-</dd>
+                </div>
+                <div>
+                  <dt>S4</dt>
+                  <dd id="s4Value">-</dd>
+                </div>
+                <div>
+                  <dt>σφ</dt>
+                  <dd id="sigmaPhiValue">-</dd>
+                </div>
+                <div>
+                  <dt>MUF / LUF</dt>
+                  <dd id="mufLufValue">-</dd>
+                </div>
+                <div>
+                  <dt>GPS Gecikmesi</dt>
+                  <dd id="ionoDelayValue">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card">
+              <h3>Manyetosfer ve Aurora</h3>
+              <p class="solar-meta" id="magnetosphereUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>Auroral Oval</dt>
+                  <dd id="auroralOvalValue">-</dd>
+                </div>
+                <div>
+                  <dt>Aurora Olasılığı</dt>
+                  <dd id="auroraProbabilityValue">-</dd>
+                </div>
+                <div>
+                  <dt>Magnetopause Mesafesi</dt>
+                  <dd id="magnetopauseValue">-</dd>
+                </div>
+                <div>
+                  <dt>Radiation Belt</dt>
+                  <dd id="radiationBeltValue">-</dd>
+                </div>
+                <div>
+                  <dt>Substorm Göstergesi</dt>
+                  <dd id="substormValue">-</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="solar-card">
+              <h3>Operasyonel Etki Parametreleri</h3>
+              <p class="solar-meta" id="operationalUpdated">-</p>
+              <dl class="solar-list">
+                <div>
+                  <dt>HF Blackout</dt>
+                  <dd id="hfBlackoutValue">-</dd>
+                </div>
+                <div>
+                  <dt>GNSS Bozulması</dt>
+                  <dd id="gnssDegradationValue">-</dd>
+                </div>
+                <div>
+                  <dt>Yüzey Şarjlanma</dt>
+                  <dd id="surfaceChargingValue">-</dd>
+                </div>
+                <div>
+                  <dt>Dielektrik Şarj</dt>
+                  <dd id="deepChargingValue">-</dd>
+                </div>
+                <div>
+                  <dt>SEU Riski</dt>
+                  <dd id="seuRiskValue">-</dd>
+                </div>
+                <div>
+                  <dt>LEO Sürükleme</dt>
+                  <dd id="leoDragValue">-</dd>
+                </div>
+                <div>
+                  <dt>GIC Riski</dt>
+                  <dd id="gicRiskValue">-</dd>
+                </div>
+                <div>
+                  <dt>Havacılık Radyasyon</dt>
+                  <dd id="aviationRiskValue">-</dd>
+                </div>
+                <div>
+                  <dt>Kutup Rota Haberleşme</dt>
+                  <dd id="polarCommRiskValue">-</dd>
+                </div>
+              </dl>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel panel-noaa">
+        <div class="panel-head">
+          <h2>NOAA Ölçümleri</h2>
+          <span class="panel-note">Canlı ölçüm katmanı</span>
+        </div>
+        <dl id="noaaMetrics" class="metrics-grid"></dl>
+      </article>
+
+      <article class="panel panel-ground">
+        <div class="panel-head">
+          <h2>Yer Manyetometreleri</h2>
+          <span class="panel-note">INTERMAGNET istasyon takibi</span>
+        </div>
+        <div id="stationList" class="station-list"></div>
+      </article>
+
+      <article id="trendsPanel" class="panel panel-wide panel-trends-panel">
+        <div class="panel-head">
+          <h2>27 Günlük Genişletilmiş Bilimsel Eğilimler</h2>
+          <span class="panel-note">NOAA kaynak birleşimi</span>
+        </div>
+        <div class="chart-grid">
+          <section class="chart-card chart-card-wide chart-card-kp-model">
+            <div class="chart-head">
+              <h3>Gerçek Kp ve LSTM Karşılaştırma Grafiği</h3>
+              <span id="kpComparisonMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="kpComparisonChart" class="metric-chart metric-chart-wide" viewBox="0 0 860 280" preserveAspectRatio="none"></svg>
+            <div id="kpComparisonLegend" class="comparison-legend"></div>
+            <p class="chart-note">İnce çizgili bu grafik, gerçek Kp ile LSTM öngörüsünü aynı zaman akışında gösterir. Panel yenilendikçe seri otomatik olarak güncellenir.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>Kp (Gözlenen)</h3>
+              <span id="kpChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="kpChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Resmî Kp, son üç saatteki jeomanyetik etkinliğin özetidir. Değer yükseldikçe manyetik hareketlilik artar.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>Kp (Tahmini)</h3>
+              <span id="kpEstimatedChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="kpEstimatedChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Tahmini Kp, kısa vadeli yön değişimini daha erken görmenizi sağlar. Ani sıçramalar yaklaşan dalgalanmaları haber verebilir.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>Güneş Rüzgârı</h3>
+              <span id="speedChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="speedChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Hız arttıkça Dünya çevresindeki manyetik sistem üzerindeki baskı da güçlenebilir. Keskin artışlar yakından izlenmelidir.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>Proton Yoğunluğu</h3>
+              <span id="densityChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="densityChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Yoğunluk artışı, gelen plazma akışındaki sıkışmayı daha net gösterir. Hız ile birlikte okununca etki penceresi daha güvenilir yorumlanır.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>IMF B<sub>z</sub></h3>
+              <span id="bzChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="bzChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">B<sub>z</sub> uzun süre negatif kaldığında enerji aktarımı kolaylaşır. Bu durum jeomanyetik etkinliği güçlendirebilir.</p>
+          </section>
+
+          <section class="chart-card">
+            <div class="chart-head">
+              <h3>IMF Bt</h3>
+              <span id="btChartMeta" class="chart-meta">-</span>
+            </div>
+            <svg id="btChart" class="metric-chart" viewBox="0 0 380 230" preserveAspectRatio="none"></svg>
+            <p class="chart-note">Toplam alan şiddeti, Bz ile birlikte okunduğunda manyetik alanın ne kadar organize ve kuvvetli geldiğini daha iyi hissettirir.</p>
+          </section>
+        </div>
+      </article>
+
+      <article class="panel panel-wide panel-history-panel">
+        <div class="panel-head">
+          <h2>Yakın Geçmiş</h2>
+          <span class="panel-note">Son değerlendirme izi</span>
+        </div>
+        <div class="history-wrap">
+          <svg id="historyChart" class="metric-chart metric-chart-wide" viewBox="0 0 860 220" preserveAspectRatio="none"></svg>
+          <div id="historyLegend" class="history-legend"></div>
+        </div>
+      </article>
+
+      <article id="nasaPanel" class="panel panel-wide panel-nasa-panel">
+        <div class="panel-head">
+          <h2>NASA Görsel Akışı</h2>
+          <span class="panel-note">Büyük önizleme ve canlı seçim şeridi</span>
+        </div>
+        <div class="image-gallery">
+          <section id="imageHero" class="image-hero"></section>
+          <div id="imageGrid" class="image-grid"></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener('error', function (event) {
+      var statusNode = document.getElementById('statusLine');
+      if (statusNode) {
+        var source = event && event.filename ? ' [' + event.filename + ':' + event.lineno + ':' + event.colno + ']' : '';
+        statusNode.textContent = 'Panel JavaScript hatası: ' + (event && event.message ? event.message : 'Bilinmeyen hata') + source;
+      }
+    });
+    window.addEventListener('unhandledrejection', function (event) {
+      var statusNode = document.getElementById('statusLine');
+      var reason = event && event.reason;
+      var text = reason && reason.message ? reason.message : String(reason || 'Bilinmeyen hata');
+      if (statusNode) {
+        statusNode.textContent = 'Panel veri akışı hatası: ' + text;
+      }
+    });
+  </script>
+  <script>
+    (function () {
+      function toNumber(value) {
+        var number = Number(value);
+        return Number.isFinite(number) ? number : null;
+      }
+
+      function formatNumber(value, digits) {
+        var number = toNumber(value);
+        return number === null ? '-' : number.toFixed(digits);
+      }
+
+      function setText(id, value) {
+        var node = document.getElementById(id);
+        if (node) {
+          node.textContent = value;
+        }
+      }
+
+      function applyBadge(level) {
+        var node = document.getElementById('levelBadge');
+        if (!node) return;
+        var normalized = String(level || 'normal').toLowerCase();
+        var labels = {
+          normal: 'Normal',
+          watch: 'İzleme',
+          warning: 'Uyarı',
+          severe: 'Şiddetli'
+        };
+        node.textContent = labels[normalized] || 'Normal';
+        node.className = 'badge ' + ({
+          normal: 'badge-normal',
+          watch: 'badge-watch',
+          warning: 'badge-warning',
+          severe: 'badge-severe'
+        }[normalized] || 'badge-neutral');
+      }
+
+      async function bootstrapCriticalStatus() {
+        try {
+          var response = await fetch('/api/status?refresh_if_empty=1&download_images=0', { cache: 'no-store' });
+          var payload = await response.json();
+          if (!response.ok || !payload || !payload.latest) {
+            throw new Error((payload && payload.error) || 'Durum verisi alınamadı.');
+          }
+
+          var latest = payload.latest || {};
+          var evaluation = latest.evaluation || {};
+          var noaa = evaluation.noaa || {};
+          applyBadge(evaluation.level || 'normal');
+          setText('scoreValue', '%' + formatNumber(evaluation.risk_percent != null ? evaluation.risk_percent : evaluation.score, 0));
+          setText('generatedAt', 'Son güncelleme (UTC): ' + String(latest.generated_at || '-'));
+          setText('riskNarrative', 'Acil veri yükleyici etkin: canlı veriler gösteriliyor, gelişmiş paneller tarayıcıda ayrıca işlenecek.');
+          setText('kpValue', formatNumber(noaa.kp, 2));
+          setText('kpEstimatedValue', formatNumber(noaa.kp_estimated, 2));
+          setText('kpLstmValue', formatNumber(noaa.kp_lstm_forecast && noaa.kp_lstm_forecast.predicted_kp, 2));
+          setText('speedValue', toNumber(noaa.solar_wind_speed_km_s) === null ? '-' : formatNumber(noaa.solar_wind_speed_km_s, 1) + ' km/s');
+          setText('bzValue', toNumber(noaa.bz_nt) === null ? '-' : formatNumber(noaa.bz_nt, 2) + ' nT');
+          setText('confidenceValue', '%' + formatNumber(evaluation.confidence_percent, 0));
+          setText('confidenceMeta', 'Acil veri yükleyici ile temel güven metriği gösteriliyor.');
+
+          var statusNode = document.getElementById('statusLine');
+          if (statusNode && (!statusNode.textContent || statusNode.textContent.indexOf('Panel JavaScript hatası') === -1)) {
+            statusNode.textContent = 'Temel canlı veriler yüklendi. Gelişmiş panel bileşenleri hazırlanıyor.';
+          }
+        } catch (error) {
+          var statusNode = document.getElementById('statusLine');
+          if (statusNode && statusNode.textContent.indexOf('Panel JavaScript hatası') === -1) {
+            statusNode.textContent = 'Temel veri yüklenemedi: ' + (error && error.message ? error.message : 'Bilinmeyen hata');
+          }
+        }
+      }
+
+      window.setTimeout(function () {
+        var scoreNode = document.getElementById('scoreValue');
+        if (scoreNode && String(scoreNode.textContent || '').trim() === '-') {
+          bootstrapCriticalStatus();
+        }
+      }, 150);
+    })();
+  </script>
+  <script src="/static/panel.js?v=20260329-notification-tr-time-1"></script>
+</body>
+</html>

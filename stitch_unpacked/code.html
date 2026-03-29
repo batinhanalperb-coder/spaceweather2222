@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HELIOS OBSERVATORY | Solar Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0c1225; }
+        ::-webkit-scrollbar-thumb { background: #3d4949; }
+        .glass-panel {
+            background: rgba(51, 56, 77, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-container-lowest": "#070d20",
+                "inverse-primary": "#006a6a",
+                "on-surface-variant": "#bdc9c8",
+                "on-error-container": "#ffdad6",
+                "outline": "#879392",
+                "error": "#ffb4ab",
+                "inverse-on-surface": "#2a3044",
+                "surface-bright": "#33384d",
+                "error-container": "#93000a",
+                "surface-tint": "#71d6d6",
+                "tertiary-fixed": "#e2e2e2",
+                "on-error": "#690005",
+                "primary-fixed": "#8ef3f2",
+                "on-secondary": "#1b2b68",
+                "surface-variant": "#2e3449",
+                "surface-dim": "#0c1225",
+                "on-primary-fixed": "#002020",
+                "surface-container": "#191f32",
+                "on-primary-fixed-variant": "#004f50",
+                "secondary-container": "#364583",
+                "secondary-fixed": "#dde1ff",
+                "background": "#0c1225",
+                "on-surface": "#dce1fc",
+                "inverse-surface": "#dce1fc",
+                "on-primary-container": "#002f2f",
+                "tertiary": "#c6c6c6",
+                "on-secondary-container": "#a6b5fb",
+                "surface-container-high": "#23293d",
+                "on-background": "#dce1fc",
+                "on-tertiary-fixed-variant": "#454747",
+                "surface-container-highest": "#2e3449",
+                "surface-container-low": "#151b2e",
+                "on-tertiary-container": "#282a2a",
+                "primary-container": "#329f9f",
+                "on-secondary-fixed-variant": "#334380",
+                "secondary-fixed-dim": "#b8c4ff",
+                "on-tertiary": "#2f3131",
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-primary": "#003737",
+                "primary-fixed-dim": "#71d6d6",
+                "on-secondary-fixed": "#001453",
+                "primary": "#71d6d6",
+                "surface": "#0c1225",
+                "secondary": "#b8c4ff",
+                "outline-variant": "#3d4949",
+                "tertiary-fixed-dim": "#c6c6c6",
+                "tertiary-container": "#909191"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 h-16 fixed top-0 z-50 bg-[#0c1225] dark:bg-[#0c1225]">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tighter text-[#71d6d6] dark:text-[#71d6d6] font-headline uppercase">HELIOS OBSERVATORY</span>
+<div class="hidden md:flex gap-6 ml-8 items-center h-full">
+<a class="text-[#71d6d6] border-b-2 border-[#71d6d6] pb-1 font-['Space_Grotesk'] uppercase tracking-[0.1rem] text-sm" href="#">Telemetry</a>
+<a class="text-[#dce1fc]/60 hover:text-[#71d6d6] transition-colors duration-200 font-['Space_Grotesk'] uppercase tracking-[0.1rem] text-sm" href="#">Visualizer</a>
+<a class="text-[#dce1fc]/60 hover:text-[#71d6d6] transition-colors duration-200 font-['Space_Grotesk'] uppercase tracking-[0.1rem] text-sm" href="#">Archive</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-highest border-none text-xs font-label uppercase tracking-widest px-4 py-2 w-64 focus:ring-1 focus:ring-primary focus:bg-surface-bright" placeholder="QUERY COORDINATES..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-sm text-outline">search</span>
+</div>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors">notifications_active</button>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors">settings</button>
+<img alt="Mission Controller Profile" class="w-8 h-8 rounded-full border border-primary/20" data-alt="portrait of a focused female mission controller with short hair in a dark techwear uniform with subtle glowing blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD13tCtcU4h_y28SLX7dHTtHVOtur5o3EV7NDswwl6Li16LQCA4ETfC4E2qFUBUJGghqpHS-PgPDVxci5Bcv71hluj5Kmwd1H0uSA_5W8c-7LWdr-_DS8LMazrYiOOwAubAmhdZ72dRrzTdatMWVlAuAyyrjRTMgCktlxF0NlhUa9TPuj4_CqmSnNOKSqjPFFQFRPaYd4AdTejm0-7sGQyfr0CZBszHSBZaZ-lLGa5ggNSF9GLYXgA1kW1ft58OyY17prLZgeLvzJA"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="h-screen w-20 md:w-64 fixed left-0 top-0 bg-[#151b2e] dark:bg-[#151b2e] border-r border-[#3d4949]/15 flex flex-col pt-20 pb-6 z-40">
+<div class="px-6 mb-8 hidden md:block">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sensors</span>
+</div>
+<div>
+<h2 class="text-[#71d6d6] font-['Space_Grotesk'] font-black text-sm tracking-tighter">SOLAR COMMAND</h2>
+<p class="text-[10px] text-outline font-bold tracking-widest uppercase">Station ID: ALPHA-9</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="bg-[#2e3449] text-[#71d6d6] border-l-4 border-[#71d6d6] py-4 px-6 flex items-center gap-4 group" href="#">
+<span class="material-symbols-outlined text-xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sensors</span>
+<span class="font-['Inter'] uppercase text-[10px] tracking-widest font-bold hidden md:block">Telemetry</span>
+</a>
+<a class="text-[#dce1fc]/50 py-4 px-6 flex items-center gap-4 hover:bg-[#2e3449]/50 hover:text-[#dce1fc] transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">wb_sunny</span>
+<span class="font-['Inter'] uppercase text-[10px] tracking-widest font-bold hidden md:block">Imagery</span>
+</a>
+<a class="text-[#dce1fc]/50 py-4 px-6 flex items-center gap-4 hover:bg-[#2e3449]/50 hover:text-[#dce1fc] transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span class="font-['Inter'] uppercase text-[10px] tracking-widest font-bold hidden md:block">Analytics</span>
+</a>
+<a class="text-[#dce1fc]/50 py-4 px-6 flex items-center gap-4 hover:bg-[#2e3449]/50 hover:text-[#dce1fc] transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">warning</span>
+<span class="font-['Inter'] uppercase text-[10px] tracking-widest font-bold hidden md:block">Alerts</span>
+</a>
+<a class="text-[#dce1fc]/50 py-4 px-6 flex items-center gap-4 hover:bg-[#2e3449]/50 hover:text-[#dce1fc] transition-all group" href="#">
+<span class="material-symbols-outlined text-xl">history</span>
+<span class="font-['Inter'] uppercase text-[10px] tracking-widest font-bold hidden md:block">Archive</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full bg-error-container text-error py-3 rounded-sm font-label text-[10px] font-bold tracking-widest uppercase hidden md:block hover:bg-error-container/80 transition-colors">
+                EMERGENCY PROTOCOL
+            </button>
+<div class="border-t border-outline-variant/10 pt-4 space-y-2">
+<a class="text-[#dce1fc]/40 flex items-center gap-4 px-2 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">terminal</span>
+<span class="font-['Inter'] uppercase text-[9px] tracking-widest font-bold hidden md:block">System Health</span>
+</a>
+<a class="text-[#dce1fc]/40 flex items-center gap-4 px-2 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">help_outline</span>
+<span class="font-['Inter'] uppercase text-[9px] tracking-widest font-bold hidden md:block">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-20 md:ml-64 pt-20 px-6 pb-12 transition-all">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Hero Visual Feed (Left Main) -->
+<section class="col-span-12 lg:col-span-8 space-y-6">
+<div class="relative aspect-video w-full bg-surface-container-low overflow-hidden group">
+<img alt="NASA Visual Feed" class="w-full h-full object-cover mix-blend-screen opacity-80 group-hover:scale-105 transition-transform duration-[10s]" data-alt="high-resolution solar photography showing intense corona loops and solar flares in vibrant orange and deep blue ultraviolet spectrum wavelengths" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnGKPa5pAa2oZtxh8folB9GDVQxJgCiYue3FXvt3Fb2uOrsZ6GJOf8MNEsjL5rWk7byG94uhc0S5u9BkqtQtL6OelFL1KNA9gAwVDX_-IsHjDVATMgLVUSnHN1cSHhbljx3NznFSvAiyMmFORCdojiyGxA8h-B11Z1rAyDtqrH4-CAJ7pgERvngquLqJwA-__C2g7viJqD00Ec8vhhgj7LGMKjadeq7m6aqkJzDiMltPgp_Q3aD1v4syIkcJg6Uekl45aW0ttrJuI"/>
+<!-- Glass Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-6 left-6 space-y-1">
+<div class="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1 border-l-2 border-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-primary">LIVE FEED // SDO AIA 171</span>
+</div>
+<h1 class="text-4xl font-headline font-bold text-on-surface uppercase tracking-tight">ACTIVE REGION 3421</h1>
+</div>
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+<div class="glass-panel p-4 max-w-sm">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest mb-1">Observation Status</p>
+<p class="text-xs text-on-surface/80 leading-relaxed font-light">EIT 171 Channel observing the solar transition region. Current flare activity is nominal with minor flaring in AR 3421. Magnetic field lines showing high complexity.</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-3xl font-headline font-light tracking-tighter">0.0028 <span class="text-xs uppercase text-outline">Wm²</span></span>
+<div class="flex gap-1">
+<span class="px-2 py-0.5 bg-surface-bright text-[9px] font-bold tracking-widest uppercase border border-outline-variant/20">171 Å</span>
+<span class="px-2 py-0.5 bg-surface-bright text-[9px] font-bold tracking-widest uppercase border border-outline-variant/20">195 Å</span>
+<span class="px-2 py-0.5 bg-surface-bright text-[9px] font-bold tracking-widest uppercase border border-outline-variant/20">304 Å</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Impact Map Panel -->
+<div class="bg-surface-container-low p-6 space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-xs font-label font-bold uppercase tracking-widest text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">public</span>
+                            Global Impact Prediction
+                        </h3>
+<div class="flex gap-4">
+<span class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-outline">
+<span class="w-2 h-2 rounded-full bg-error"></span> GNSS Risk
+                            </span>
+<span class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-outline">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Nominal
+                            </span>
+</div>
+</div>
+<div class="h-64 bg-surface-dim relative overflow-hidden">
+<img alt="Impact Map" class="w-full h-full object-cover opacity-40" data-alt="abstract stylized world map with glowing grid lines and heat-map overlays in neon cyan and emergency red over polar regions" data-location="Global" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBfGTX40W_klqqH38CxqzCz_AJo4xD61leXcuzEuC5l7i60htsdjllXwR9YKgVAiiJOn8q0_bKQsysbdAQNawh7ylIdh0yZIOiq3XhYbhQ6eiEtObqPkL2hk9VjNKu_ON-5gTemK-8vpUnF3ei1jdQ-XCMYU4X5CuAFUFx4DJmB9ncYatczicu3wdTdQCzIp256HuJlctleAalmFL7hj2ImtuqEjVOWi1A80lGGCMIrntyQIqrEhqsH3YotZHczxXbQBjtJOE_5UQ"/>
+<!-- Simulated Data Points -->
+<div class="absolute top-10 right-20 w-32 h-32 bg-error/10 rounded-full blur-3xl"></div>
+<div class="absolute inset-0 grid grid-cols-12 grid-rows-6 opacity-10">
+<div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div>
+<div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div><div class="border border-outline/20"></div>
+</div>
+<!-- HUD Labels -->
+<div class="absolute bottom-4 right-4 flex flex-col items-end">
+<span class="text-[10px] font-mono text-primary">SCANNING... SECTOR 7G</span>
+<span class="text-[10px] font-mono text-on-surface/40">LAT: 72.502 // LON: -12.421</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column Panels -->
+<section class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Critical Alert Panel -->
+<div class="bg-surface-container-high p-6 space-y-6">
+<div class="flex items-center justify-between border-b border-outline-variant/10 pb-4">
+<h3 class="text-xs font-label font-bold uppercase tracking-[0.2em] text-on-surface">Mission Critical Stats</h3>
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[9px] font-bold uppercase tracking-widest border border-primary/20">Real-Time</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest">Solar Wind Risk</p>
+<p class="text-4xl font-headline font-bold text-primary">14.2%</p>
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-primary h-full w-[14%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest">Kp Index (Max)</p>
+<p class="text-4xl font-headline font-bold text-on-surface">3.22</p>
+<p class="text-[9px] text-primary/60 uppercase font-bold tracking-widest">Predicted: G1 (Low)</p>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/10">
+<div class="flex justify-between items-center mb-2">
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest">Radio Blackout Prob.</p>
+<span class="text-xs font-headline font-bold text-error">R1 Minor</span>
+</div>
+<div class="flex gap-1 h-3">
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-error"></div>
+<div class="flex-1 bg-surface-container-highest"></div>
+<div class="flex-1 bg-surface-container-highest"></div>
+<div class="flex-1 bg-surface-container-highest"></div>
+</div>
+</div>
+</div>
+<!-- AI System Log -->
+<div class="bg-surface-container-lowest p-6 border-l-2 border-primary/40 space-y-4">
+<h3 class="text-xs font-label font-bold uppercase tracking-[0.2em] text-primary">HELIOS_AI INTERPRETATION</h3>
+<div class="space-y-3">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-lg">psychology</span>
+<p class="text-xs leading-relaxed text-on-surface/80">
+                                Analysis of AR 3421 suggests a 45% probability of M-class flaring within the next 12 hours. Current solar wind speeds are stabilizing at 410km/s. No significant CME activity detected in past 6 orbital hours.
+                            </p>
+</div>
+<div class="bg-primary/5 p-3 rounded-sm border border-primary/10">
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                STATUS: NOMINAL
+                            </p>
+<p class="text-[9px] text-on-surface/60 mt-1 italic">Expect quiet conditions for satellite station-keeping.</p>
+</div>
+</div>
+</div>
+<!-- 27-Day Forecast Section -->
+<div class="bg-surface-container-low p-6 space-y-4">
+<h3 class="text-xs font-label font-bold uppercase tracking-widest text-outline">Long-Term Kp Trend</h3>
+<div class="space-y-3">
+<div class="flex items-end h-20 gap-1">
+<div class="flex-1 bg-primary/30 h-[20%]"></div>
+<div class="flex-1 bg-primary/30 h-[15%]"></div>
+<div class="flex-1 bg-primary/30 h-[35%]"></div>
+<div class="flex-1 bg-primary/30 h-[25%]"></div>
+<div class="flex-1 bg-error h-[65%]"></div>
+<div class="flex-1 bg-error h-[80%]"></div>
+<div class="flex-1 bg-error h-[55%]"></div>
+<div class="flex-1 bg-primary/30 h-[40%]"></div>
+<div class="flex-1 bg-primary/30 h-[20%]"></div>
+<div class="flex-1 bg-primary/30 h-[10%]"></div>
+<div class="flex-1 bg-primary/30 h-[15%]"></div>
+<div class="flex-1 bg-primary/30 h-[20%]"></div>
+</div>
+<div class="flex justify-between text-[9px] font-bold text-outline uppercase tracking-tighter">
+<span>Today</span>
+<span>Day +7</span>
+<span>Day +14</span>
+<span>Day +21</span>
+</div>
+<button class="w-full text-center text-[10px] text-primary font-bold uppercase tracking-widest py-2 border border-outline-variant/10 hover:bg-primary/5 transition-all">
+                            Download Science Report
+                        </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Data Streams (Bottom Section) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+<div class="bg-surface-container-low p-5 space-y-3 group hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest">Solar Wind Velocity</p>
+<p class="text-2xl font-headline font-bold text-on-surface">412.8 <span class="text-[10px] text-outline ml-1">km/s</span></p>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">speed</span>
+</div>
+<div class="h-12 w-full flex items-center gap-1">
+<div class="flex-1 bg-primary/10 h-1/2"></div>
+<div class="flex-1 bg-primary/20 h-2/3"></div>
+<div class="flex-1 bg-primary/40 h-3/4"></div>
+<div class="flex-1 bg-primary/20 h-1/2"></div>
+<div class="flex-1 bg-primary/10 h-1/3"></div>
+<div class="flex-1 bg-primary/5 h-2/3"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 space-y-3 group hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest">Proton Density</p>
+<p class="text-2xl font-headline font-bold text-on-surface">1.45 <span class="text-[10px] text-outline ml-1">p/cm³</span></p>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">grain</span>
+</div>
+<div class="h-12 w-full flex items-center gap-1">
+<div class="flex-1 bg-primary/5 h-1/3"></div>
+<div class="flex-1 bg-primary/10 h-1/2"></div>
+<div class="flex-1 bg-primary/15 h-2/3"></div>
+<div class="flex-1 bg-primary/10 h-1/2"></div>
+<div class="flex-1 bg-primary/5 h-1/4"></div>
+<div class="flex-1 bg-primary/2 h-1/5"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 space-y-3 group hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] text-outline font-bold uppercase tracking-widest">Magnetic Field (Bt)</p>
+<p class="text-2xl font-headline font-bold text-on-surface">5.12 <span class="text-[10px] text-outline ml-1">nT</span></p>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">settings_input_antenna</span>
+</div>
+<div class="h-12 w-full flex items-center gap-1">
+<div class="flex-1 bg-primary/20 h-2/3"></div>
+<div class="flex-1 bg-primary/30 h-1/2"></div>
+<div class="flex-1 bg-primary/20 h-3/4"></div>
+<div class="flex-1 bg-primary/10 h-1/2"></div>
+<div class="flex-1 bg-primary/5 h-2/3"></div>
+<div class="flex-1 bg-primary/10 h-1/2"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Only on dashboard) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary-container shadow-2xl flex items-center justify-center rounded-lg hover:scale-105 transition-transform active:scale-95 group z-50">
+<span class="material-symbols-outlined text-2xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add_alert</span>
+<div class="absolute right-16 bg-surface-bright px-3 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-outline-variant/20 shadow-xl">
+<span class="text-[10px] font-bold uppercase tracking-widest">New Protocol</span>
+</div>
+</button>
+</body></html>

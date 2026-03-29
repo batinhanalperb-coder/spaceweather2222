@@ -1,0 +1,43 @@
+{
+  "poll_interval_seconds": 60,
+  "output_dir": "output",
+  "download_images": true,
+  "sharing": {
+    "named_tunnel": {
+      "enabled": false,
+      "hostname": "",
+      "tunnel_name": "",
+      "tunnel_id": "",
+      "credentials_file": "",
+      "protocol": "http2"
+    }
+  },
+  "alerting": {
+    "min_level": "warning",
+    "webhook_url": ""
+  },
+  "intermagnet": {
+    "stations": [
+      "BOU",
+      "FRD",
+      "OTT"
+    ],
+    "hours_back": 6
+  },
+  "kp_lstm": {
+    "training_history_limit": 2160,
+    "max_training_samples": 240
+  },
+  "thresholds": {
+    "kp_watch": 5.0,
+    "kp_warning": 7.0,
+    "solar_wind_speed_watch": 600.0,
+    "solar_wind_speed_warning": 750.0,
+    "bz_watch": -10.0,
+    "bz_warning": -18.0,
+    "density_watch": 20.0,
+    "density_warning": 35.0,
+    "ground_delta_watch_nt": 120.0,
+    "ground_delta_warning_nt": 250.0
+  }
+}

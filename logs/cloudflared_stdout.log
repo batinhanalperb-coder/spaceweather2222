@@ -1,0 +1,529 @@
+{"level":"info","time":"2026-03-28T18:24:30Z","message":"Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee, are subject to the Cloudflare Online Services Terms of Use (https://www.cloudflare.com/website-terms/), and Cloudflare reserves the right to investigate your use of Tunnels for violations of such terms. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps"}
+{"level":"info","time":"2026-03-28T18:24:30Z","message":"Requesting new quick Tunnel on trycloudflare.com..."}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"+--------------------------------------------------------------------------------------------+"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"|  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"|  https://usual-identified-beaches-decrease.trycloudflare.com                               |"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"+--------------------------------------------------------------------------------------------+"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp]"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"Version 2026.3.0 (Checksum 59b12880b24af581cf5b1013db601c7d843b9b097e9c78aa5957c7f39f741885)"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"GOOS: windows, GOVersion: go1.24.13, GoArch: amd64"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"Settings: map[ha-connections:1 logfile:C:\\Users\\PCX\\Desktop\\Yeni klasör (2)\\logs\\cloudflared_stdout.log loglevel:info no-autoupdate:true protocol:quic url:http://127.0.0.1:8080]"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"cloudflared will not automatically update on Windows systems."}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"Generated Connector ID: 85bdbed6-09a2-49ba-ac55-d40a9f624cc0"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"Initial protocol quic"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"ICMP proxy will use 10.230.6.22 as source for IPv4"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"ICMP proxy will use fe80::3a5:21d8:f8bf:fb61 in zone Wi-Fi as source for IPv6"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"cloudflared does not support loading the system root certificate pool on Windows. Please use --origin-ca-pool <PATH> to specify the path to the certificate pool"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"ICMP proxy will use 10.230.6.22 as source for IPv4"}
+{"level":"info","event":0,"ip":"198.41.200.233","connIndex":0,"time":"2026-03-28T18:24:37Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"ICMP proxy will use fe80::3a5:21d8:f8bf:fb61 in zone Wi-Fi as source for IPv6"}
+{"level":"info","time":"2026-03-28T18:24:37Z","message":"Starting metrics server on 127.0.0.1:20241/metrics"}
+{"level":"error","event":0,"ip":"198.41.200.233","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:24:42Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.233","connIndex":0,"time":"2026-03-28T18:24:42Z","message":"Retrying connection in up to 2s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:24:43Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:24:48Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:24:48Z","message":"Retrying connection in up to 4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:24:50Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:24:55Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:24:55Z","message":"Retrying connection in up to 8s"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:25:00Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.73","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:25:05Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:25:05Z","message":"Retrying connection in up to 16s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:25:09Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:25:14Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:25:14Z","message":"Retrying connection in up to 32s"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T18:25:38Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.77","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:25:43Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T18:25:43Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:26:01Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:26:06Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:26:06Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:26:20Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.53","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:26:25Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:26:25Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:26:30Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.63","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:26:35Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:26:35Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:26:41Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.192.27","connIndex":0,"time":"2026-03-28T18:26:41Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.27","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:26:47Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.27","connIndex":0,"time":"2026-03-28T18:26:47Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.57","connIndex":0,"time":"2026-03-28T18:27:14Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.57","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:27:19Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.57","connIndex":0,"time":"2026-03-28T18:27:19Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T18:27:36Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.227","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:27:41Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T18:27:41Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:27:49Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.53","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:27:54Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:27:55Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:28:26Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:28:31Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:28:31Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:28:55Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.107","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:29:00Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:29:00Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2026-03-28T18:29:26Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.67","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:29:31Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2026-03-28T18:29:31Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:29:55Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:30:00Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:30:00Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:30:00Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:30:05Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:30:05Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:30:09Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:30:09Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:30:14Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:30:14Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T18:30:37Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.113","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:30:42Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T18:30:42Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:30:46Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:30:51Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:30:51Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T18:31:00Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.113","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:31:05Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T18:31:05Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:31:26Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:31:31Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:31:31Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:31:55Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:32:00Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:32:00Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T18:32:25Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.113","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:32:30Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T18:32:30Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:32:38Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:32:43Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:32:43Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:32:54Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:32:59Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:32:59Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:33:10Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:33:10Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:33:15Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:33:15Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:33:21Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.107","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:33:26Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:33:26Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T18:33:56Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.167","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:34:01Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T18:34:01Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:34:08Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:34:13Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:34:13Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:34:34Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.63","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:34:39Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:34:39Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:35:11Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:35:16Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:35:16Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:35:41Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.63","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:35:46Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:35:46Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.193","connIndex":0,"time":"2026-03-28T18:36:09Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.193","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:36:14Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.193","connIndex":0,"time":"2026-03-28T18:36:14Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:36:36Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:36:41Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:36:41Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:36:51Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:36:51Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.107","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:36:56Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:36:56Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:37:10Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:37:15Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:37:15Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:37:24Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:37:29Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:37:29Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:37:32Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:37:37Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:37:37Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T18:37:56Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.167","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:38:01Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T18:38:01Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:38:02Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:38:07Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:38:07Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:38:19Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.63","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:38:24Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:38:24Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:38:49Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.107","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:38:54Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:38:54Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T18:39:11Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.33","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:39:16Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T18:39:16Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T18:39:22Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:39:22Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:39:27Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:39:27Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:39:32Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.73","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:39:37Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:39:37Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:39:47Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:39:52Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:39:52Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:40:22Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.107","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:40:27Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:40:27Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:40:45Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:40:50Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:40:50Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:40:57Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:41:02Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:41:02Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T18:41:27Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.113","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:41:32Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T18:41:32Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:41:52Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:41:57Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:41:57Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:42:10Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:42:15Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:42:15Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:42:46Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:42:46Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:42:51Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:42:51Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T18:43:00Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.7","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:43:05Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T18:43:05Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:43:12Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:43:17Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:43:17Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T18:43:43Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.77","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:43:48Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T18:43:48Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:44:13Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:44:18Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:44:18Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:44:46Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:44:51Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:44:51Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T18:44:53Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.227","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:44:58Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T18:44:58Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2026-03-28T18:45:01Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.67","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:45:06Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2026-03-28T18:45:06Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:45:19Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.53","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:45:24Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:45:24Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:45:41Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:45:41Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:45:46Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:45:46Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T18:46:01Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.77","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:46:06Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T18:46:06Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:46:26Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:46:31Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:46:31Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:46:49Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.73","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:46:54Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:46:54Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T18:46:55Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.227","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:47:00Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T18:47:00Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:47:25Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:47:30Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:47:30Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:47:40Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:47:45Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:47:45Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:48:14Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.73","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:48:19Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:48:19Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.233","connIndex":0,"time":"2026-03-28T18:48:49Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.233","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:48:54Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.233","connIndex":0,"time":"2026-03-28T18:48:54Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.200.233","connIndex":0,"time":"2026-03-28T18:49:21Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.193","connIndex":0,"time":"2026-03-28T18:49:21Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.193","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:49:26Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.193","connIndex":0,"time":"2026-03-28T18:49:26Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:49:54Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:49:59Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:49:59Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T18:50:13Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.167","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:50:18Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T18:50:18Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:50:46Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:50:51Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T18:50:51Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T18:51:04Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.77","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:51:09Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T18:51:09Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:51:28Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.63","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:51:33Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T18:51:33Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:51:41Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.107","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:51:46Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:51:46Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:52:09Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:52:14Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:52:14Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:52:44Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:52:49Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:52:49Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:53:08Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:53:08Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:53:13Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:53:13Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:53:28Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:53:33Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:53:33Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:53:57Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:54:02Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:54:02Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:54:11Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.73","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:54:16Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:54:16Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:54:23Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:54:28Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T18:54:28Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:54:39Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:54:44Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:54:44Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:55:12Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.73","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:55:17Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:55:17Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.193","connIndex":0,"time":"2026-03-28T18:55:41Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.193","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:55:46Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.193","connIndex":0,"time":"2026-03-28T18:55:46Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:56:16Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.53","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:56:21Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:56:21Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:56:40Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:56:40Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:56:45Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:56:45Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:57:16Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.53","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:57:21Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:57:21Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:57:51Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:57:56Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T18:57:56Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:58:14Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.73","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:58:19Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T18:58:19Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:58:40Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:58:45Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:58:45Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:59:07Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.107","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:59:12Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T18:59:12Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T18:59:13Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.167","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:59:18Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T18:59:18Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:59:46Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T18:59:51Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T18:59:51Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T18:59:55Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.53","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:00:00Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T19:00:00Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T19:00:17Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:00:17Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:00:22Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:00:22Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:00:34Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:00:39Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:00:39Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.57","connIndex":0,"time":"2026-03-28T19:01:10Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.57","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:01:15Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.57","connIndex":0,"time":"2026-03-28T19:01:15Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:01:36Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:01:41Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:01:41Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:01:59Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:02:04Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:02:04Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:02:26Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:02:31Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:02:31Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.43","connIndex":0,"time":"2026-03-28T19:02:40Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.43","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:02:45Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.43","connIndex":0,"time":"2026-03-28T19:02:45Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:02:58Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:03:03Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:03:03Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:03:30Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.7","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:03:35Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:03:35Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:03:46Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T19:03:46Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.227","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:03:51Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T19:03:51Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T19:04:09Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.33","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:04:14Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T19:04:14Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:04:42Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:04:47Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:04:47Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T19:04:58Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.77","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:05:03Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T19:05:03Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:05:09Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.7","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:05:14Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:05:14Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:05:15Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:05:20Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:05:20Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T19:05:29Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.77","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:05:34Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T19:05:34Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T19:06:01Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.53","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:06:06Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T19:06:06Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T19:06:30Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.167","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:06:35Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T19:06:35Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T19:06:54Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T19:06:54Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.113","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:06:59Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T19:06:59Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:07:26Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:07:31Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:07:31Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:07:43Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:07:48Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:07:48Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T19:08:10Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.63","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:08:15Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T19:08:15Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:08:39Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:08:44Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:08:44Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:09:12Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:09:17Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:09:17Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T19:09:20Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.227","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:09:25Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T19:09:25Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T19:09:37Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.63","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:09:42Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T19:09:42Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T19:09:58Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.33","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:10:03Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T19:10:03Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T19:10:05Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:10:05Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:10:10Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:10:10Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:10:39Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:10:44Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:10:44Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T19:10:45Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.227","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:10:50Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.227","connIndex":0,"time":"2026-03-28T19:10:50Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T19:11:08Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.167","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:11:13Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.167","connIndex":0,"time":"2026-03-28T19:11:13Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T19:11:33Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.113","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:11:38Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.113","connIndex":0,"time":"2026-03-28T19:11:38Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:11:48Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:11:53Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:11:53Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:12:01Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:12:06Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:12:06Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T19:12:09Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.33","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:12:14Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.33","connIndex":0,"time":"2026-03-28T19:12:14Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:12:18Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:12:23Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:12:23Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:12:47Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:12:47Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.7","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:12:52Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:12:52Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:12:53Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:12:58Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:12:58Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.43","connIndex":0,"time":"2026-03-28T19:13:29Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.43","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:13:34Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.43","connIndex":0,"time":"2026-03-28T19:13:34Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:13:46Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:13:51Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:13:51Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T19:14:18Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.73","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:14:23Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.73","connIndex":0,"time":"2026-03-28T19:14:23Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.43","connIndex":0,"time":"2026-03-28T19:14:37Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.43","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:14:42Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.43","connIndex":0,"time":"2026-03-28T19:14:42Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2026-03-28T19:15:08Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.67","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:15:13Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.67","connIndex":0,"time":"2026-03-28T19:15:13Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:15:26Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.7","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:15:31Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:15:31Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:15:34Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:15:39Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:15:39Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:16:04Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T19:16:04Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.107","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:16:09Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.107","connIndex":0,"time":"2026-03-28T19:16:09Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:16:09Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:16:14Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:16:14Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.233","connIndex":0,"time":"2026-03-28T19:16:28Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.233","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:16:33Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.233","connIndex":0,"time":"2026-03-28T19:16:33Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:16:50Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:16:55Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:16:55Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:17:16Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:17:21Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:17:21Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:17:37Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:17:42Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:17:42Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T19:18:00Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.63","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:18:05Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.63","connIndex":0,"time":"2026-03-28T19:18:05Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:18:14Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:18:19Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:18:19Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:18:24Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:18:29Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:18:29Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:18:57Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:18:57Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.23","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:19:02Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.23","connIndex":0,"time":"2026-03-28T19:19:02Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T19:19:13Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.53","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:19:18Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.53","connIndex":0,"time":"2026-03-28T19:19:18Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:19:39Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:19:44Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:19:44Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T19:19:50Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.77","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:19:55Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.77","connIndex":0,"time":"2026-03-28T19:19:55Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.193","connIndex":0,"time":"2026-03-28T19:19:57Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.193","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:20:02Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.193","connIndex":0,"time":"2026-03-28T19:20:02Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:20:16Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:20:21Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:20:21Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:20:27Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:20:32Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:20:32Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:21:01Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.7","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:21:06Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.7","connIndex":0,"time":"2026-03-28T19:21:06Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:21:27Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.47","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:21:32Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:21:32Z","message":"Retrying connection in up to 1m4s"}
+{"level":"warn","event":0,"ip":"198.41.192.47","connIndex":0,"time":"2026-03-28T19:21:59Z","message":"If this log occurs persistently, and cloudflared is unable to connect to Cloudflare Network with `quic` protocol, then most likely your machine/network is getting its egress UDP to port 7844 (or others) blocked or dropped. Make sure to allow egress connectivity as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ports-and-ips/\nIf you are using private routing to this Tunnel, then ICMP, UDP (and Private DNS Resolution) will not work unless your cloudflared can connect with Cloudflare Network with `quic`."}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:21:59Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.192.37","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:22:04Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.192.37","connIndex":0,"time":"2026-03-28T19:22:04Z","message":"Retrying connection in up to 1m4s"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:22:25Z","message":"Tunnel connection curve preferences: [X25519MLKEM768 CurveP256]"}
+{"level":"error","event":0,"ip":"198.41.200.13","connIndex":0,"error":"failed to dial to edge with quic: timeout: no recent network activity","time":"2026-03-28T19:22:30Z","message":"Failed to dial a quic connection"}
+{"level":"info","event":0,"ip":"198.41.200.13","connIndex":0,"time":"2026-03-28T19:22:30Z","message":"Retrying connection in up to 1m4s"}
