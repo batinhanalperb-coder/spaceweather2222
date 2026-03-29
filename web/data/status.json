@@ -1,1 +1,19 @@
-
+{
+  "latest": {
+    "generated_at": "2026-03-29 12:00",
+    "evaluation": {
+      "level": "watch",
+      "risk_percent": 45,
+      "confidence_percent": 78,
+      "noaa": {
+        "kp": 3.5,
+        "kp_estimated": 4.2,
+        "kp_lstm_forecast": {
+          "predicted_kp": 4.8
+        },
+        "solar_wind_speed_km_s": 520,
+        "bz_nt": -6.3
+      }
+    }
+  }
+}
